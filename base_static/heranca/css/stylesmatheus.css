@@ -231,7 +231,13 @@ header{
     .home1-block{
         display: block !important;
         margin: auto !important;
-        height: 400px !important;
+        height: 440px !important;
+    }
+    .block1-title{
+        font-size: 4vw !important;
+    }
+    .block1-text{
+        font-size: 3vw !important;
     }
     .icons{
         height: 250px !important;
@@ -248,21 +254,21 @@ header{
     }
     .icon-main-text > h2{
         font-family: ruda;
-        font-size: 9px !important;
+        font-size: 12px !important;
     }
     .icon-subtext{
         bottom: 15px !important;
     }
     .icon-subtext > h3{
-        font-size: 8px !important;   
+        font-size: 10px !important;   
     }
     .icon-more{
-        font-size: 6px !important;
+        font-size: 9px !important;
     }
 }
 @media (max-width:415px){
     .home1-block{
-        height: 300px !important;
+        height: 360px !important;
     }
     .header-logo{
         display: none !important;
@@ -298,7 +304,7 @@ header{
         font-size: 5px !important;   
     }
     .icon-more{
-        font-size: 3px !important;
+        font-size: 4px !important;
     }
 }
 .signup{
@@ -323,7 +329,6 @@ header{
 /* Home2 */
 
 .icons{
-    border: 1px solid black;
     margin-top: 40px;
     display: flex;
     align-items: center;
