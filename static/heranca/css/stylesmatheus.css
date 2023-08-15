@@ -56,6 +56,9 @@ header{
 .nav-li{
     list-style: none;
 }
+.sidebar-btn{
+    display: none;
+}
 .header-search{
     font-size: 16px;
     display: inline;
@@ -83,6 +86,7 @@ header{
 .home1-block{
     display: flex;
     justify-content: space-between;
+    height: 520px;
 }
 .block1, .block2{
     display: flex;
@@ -91,32 +95,95 @@ header{
    
    /* border: 1px solid black;*/
     margin: 0px 20px;
-    padding: 0px 50px;
+    padding: 0px 20px;
 }
 .block1{
-    width: 55%;
+    width: 59%;
 }
 .block2{
-    width: 45%;
+    width: 41%;
 }
 
 .block1-title{
     font-family: ruda;
-    font-size: 50px;
+    font-size: 3.2vw;
     color: #C3282E;
     margin-bottom: 10px;
     text-align: justify;
     
 }
 .block1-text{
-    font-size: 35px;
-    text-indent: 2px;
+    
+    font-size: 2.3vw;
     font-weight: 500;
     text-align: justify;
     text-indent: 50px;
-    line-height: 45px;
+
     letter-spacing: 1px;
 }
+.block3 > div, .block3{
+    width: 200px;
+    display: none;
+}
+@media (max-width:1235px){
+    .header-form{
+        width: 300px !important;
+    }
+    .nav-li-links{
+        margin: 0 14px 0 0 !important;
+    
+    }
+    .home1{
+        padding: 0px !important;
+    }
+    .home1-block{
+        display: block !important;
+        margin: auto !important;
+        height: 720px !important;
+    }
+    .block3 > div, .block3{
+        width: 400px !important;
+        display: block !important;
+        margin: auto !important;
+    }
+    .block3 > div > img{
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .block1, .block2, .block3{
+        display: block !important;
+        margin: auto !important;
+        width: 83% !important;
+        padding:  0px !important;    
+    }
+    .block > div, .block2 > div{
+        display: block !important;
+        margin: auto !important;
+       
+    }
+
+}
+@media (max-width: 980px){
+    .header-nav{
+        display: none !important;
+    }
+    .sidebar-btn{
+        display: block;
+    }
+    .block3 > div, .block3{
+        width: 280px !important;
+    }
+}
+@media (max-width:415px){
+    .header-logo{
+        display: none !important;
+    }
+    .block3 > div, .block3{
+        width: 230px !important;
+    }
+}
+
 .signup{
     display: block;
     padding: 10px 24px;
