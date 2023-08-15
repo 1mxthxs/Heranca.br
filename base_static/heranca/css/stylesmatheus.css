@@ -1,0 +1,137 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'ruda';
+    src: url(../fonts/Ruda-Black.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'articulate';
+    src: url(../fonts/Articulate.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family: demo;
+    src: url(../fonts/Bright.otf) format('opentype');
+}
+
+
+header{
+    background-color: rgb(255, 255, 255);
+    padding: 30px 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.header-logo{
+    display: block;
+    width: 100px;
+  
+}
+.search-icon{
+    position: relative; 
+    right: 40px;
+    width: 28px;
+}
+.header-form{
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.header-nav{
+    font-family: ruda-black;
+}
+.header-nav-ul{
+    font-family: helvetica;
+    display: flex;
+}
+.nav-li{
+    list-style: none;
+}
+.header-search{
+    font-size: 16px;
+    display: inline;
+    margin: auto;
+    width: 100%;
+    height: 38px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 2px solid #572102;
+
+}
+.nav-li-links{
+    text-align: center;
+    color: #602417;
+    text-decoration: none;
+    display: block;
+    font-size: 17px;
+    padding: 5px 10px;
+    margin: 0 24px 0 0;
+
+}
+.home1{
+    padding: 20px;
+}
+.home1-block{
+    display: flex;
+    justify-content: space-between;
+}
+.block1, .block2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    border: 1px solid black;
+    margin: 0px 20px;
+    padding: 0px 50px;
+}
+.block1{
+    width: 55%;
+}
+.block2{
+    width: 45%;
+}
+
+.block1-title{
+    font-family: ruda;
+    font-size: 50px;
+    color: #C3282E;
+    margin-bottom: 10px;
+    text-align: justify;
+    
+}
+.block1-text{
+    font-size: 35px;
+    text-indent: 2px;
+    font-weight: 500;
+    text-align: justify;
+    text-indent: 50px;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+.signup{
+    display: block;
+    padding: 10px 24px;
+    width: 180px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    font-family: ruda;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 30px auto 10px auto;
+    background: #C3282E;
+    color: #ffffff;
+
+}
+.signup:hover{
+    transform: translateY(-10px);
+}
