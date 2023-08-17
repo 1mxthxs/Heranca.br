@@ -109,17 +109,21 @@ header{
     font-family: ruda;
     font-size: 3.2vw;
     color: #C3282E;
+    
     margin-bottom: 10px;
     text-align: justify;
     
 }
 .block1-text{
-    font-size: 2.3vw;
+    font-family: poppins;
+    font-size: 1.9vw;
     font-weight: 500;
     text-align: justify;
     text-indent: 50px;
-
-    letter-spacing: 1px;
+    color:#572102;
+}
+b{
+    color: #7D2102;
 }
 
 .block3 > div, .block3{
@@ -230,8 +234,27 @@ header{
     .home1-block{
         display: block !important;
         margin: auto !important;
-        height: 500px !important;
+        height: 460px !important;
     }
+}
+
+@media (max-width:767px){
+    .home3 > h2{
+        padding: 8px 15px !important;
+        font-size: 17px !important;
+        width: 130px !important;
+    }
+    
+
+    button{
+        background-color: transparent;
+        font-size: 28px;
+        top: 75px !important;     
+    }
+    .slide-btn-center{
+        width: 87%;
+    }
+
 }
 @media (max-width:650px){
     .signup{
@@ -243,7 +266,7 @@ header{
     .home1-block{
         display: block !important;
         margin: auto !important;
-        height: 440px !important;
+        height: 520px !important;
     }
     .block1-title{
         font-size: 4vw !important;
@@ -278,6 +301,8 @@ header{
         font-size: 9px !important;
     }
 
+
+
     .footer-media{
         bottom: 12px !important;
     }
@@ -291,7 +316,7 @@ header{
 }
 @media (max-width:415px){
     .home1-block{
-        height: 360px !important;
+        height: 380px !important;
     }
     .header-logo{
         display: none !important;
@@ -329,7 +354,25 @@ header{
     .icon-more{
         font-size: 4px !important;
     }
+    .home3 > h2{
+        padding: 5px 11px !important;
+        font-size: 11px !important;
+        width: 105px !important;
+    }
 
+    .slide-button {
+        height: 290px !important;
+    }
+    button{
+        background-color: transparent;
+        font-size: 20px;
+        padding: 20px 8px !important;
+        top: 80px !important;    
+        border: 1px solid black; 
+    }
+    .slide-btn-center{
+        width: 87%;
+    }
     .footer-media{
         bottom: 8px !important;
     }
@@ -417,6 +460,115 @@ header{
     font-family: poppins;
     color: #CC362F;
 }
+
+
+
+.home3 > h2{
+    padding: 8px 15px;
+    background-color: #F78E1C;
+    color: white;
+    font-family: ruda;
+    width: 240px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+button{
+    background-color: transparent;
+    font-size: 34px;
+    cursor: pointer;
+    padding: 40px 15px;
+    position: relative;
+    top: 70px;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    color: white;
+ 
+}
+.slide-button-content{
+    width: 100%;
+    height: 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.slide-btn-center{
+    width: 87%;
+    height: 0px;
+}
+
+
+
+.slides {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 290px;
+}
+.owl-carousel .owl-stage {
+    display: flex;
+    align-items: center;
+    transition: 0.6s;
+}
+
+.owl-carousel .owl-item {
+    width: 700px; 
+    height: 400px; 
+    margin: 0 5px; 
+}
+.slide {
+    display: flex;
+    align-items: center; /* Alinhar as imagens na parte inferior */
+    transition: .6s;
+    height: 290px;
+}
+.slide:hover{
+    transform: scale(1.04);
+}
+.slide-title {
+    position: relative;
+    bottom: 70px;
+    padding: 0 20px;
+    color: white;
+    font-size: larger;
+}
+.content {
+    width: 100%;
+    height: 100%;
+}
+.slide-img {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+.slide-selection {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.slide-option-btn {
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(185, 185, 185, 0.389);
+    margin: 6px 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.slide-option:checked + .slide-option-btn {
+    background-color: rgb(45, 45, 45); /* Ou qualquer outra propriedade de estilo que você desejar */
+}
+
+
+
+
+
 
 
 footer{

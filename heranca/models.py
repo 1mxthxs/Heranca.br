@@ -1,3 +1,22 @@
 from django.db import models
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.exceptions import ValidationError
 
-# Create your models here.
+def validate_image_ratio(image):
+    img = Image.open(image)
+    width, height = img.size
+    if width / height != 16 / 9:
+        raise ValidationError("A proporção da imagem deve ser 16:9.")
+
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=200)
+    conteudo = models.TextField()
+    image = models.ImageField(upload_to='News/cover/%Y/%m/%d/', blank=True, null=True)
+    is_public = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.titulo
+
+

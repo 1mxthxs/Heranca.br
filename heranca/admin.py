@@ -1,3 +1,7 @@
 from django.contrib import admin
+from image_cropping import ImageCroppingMixin
+from .models import Noticia
 
-# Register your models here.
+@admin.register(Noticia)
+class NoticiaAdmin(ImageCroppingMixin, admin.ModelAdmin):
+    pass

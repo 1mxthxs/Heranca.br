@@ -7,6 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'heranca/images/logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'heranca/css/stylesmatheus.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+    
     <title>HERANÇA</title>
 </head>
 <body>
@@ -115,14 +126,65 @@
         </section>
         <section class="home3">
             <h2>Notícias</h2>
-            <div class="slides">
-                <div class="slide">
-                    <img class="slide-img" src="" alt="">
-                    <h2 class="slide-title">Líderyanomami: Marco temporal derrmará mais o sangue dos...</h2>
+            <div class="slide-button">
+                <div class="slide-button-content">
+                    <button class="slide-prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slide-btn-center"></div>
+                    <button class="slide-next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                
+                <div class="slides owl-carousel">      
+                    {% for noticia in noticias|slice:":10" %}
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img class="slide-img" src="{{ noticia.image.url }}" alt="{{ noticia.titulo }}">
+                            <h2 class="slide-title">{{ noticia.titulo }}</h2>
+                        </div>
+                    </div>
+                    {% endfor %} 
+                </div>   
+               
             </div>
-        </section>
+            <div class="slide-selection">
+                
+                {% for noticia in noticias|slice:":10" %}
+                <input class="slide-option" hidden type="radio" name="slide" id="slide{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} data-position="{{ forloop.counter }}">
+                <label class="slide-option-btn" for="slide{{ forloop.counter }}"></label>
+                {% endfor %}
+            </div>
+        </section>      
+        <script>
+            jQuery(document).ready(function($) {
+                var owl = $('.owl-carousel');
+                var prevBtn = $('.slide-prev-btn');
+                var nextBtn = $('.slide-next-btn');
+                owl.owlCarousel({
+                    center: true,
+                    loop: {% if noticias.count >= 3 %}true{% else %}false{% endif %},
+                    items: 2,
+                    margin: 10,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 3
+                        }
+                    }
+                });
+                prevBtn.on('click', function() {
+                    owl.trigger('prev.owl.carousel');
+                });
+            
+                nextBtn.on('click', function() {
+                    owl.trigger('next.owl.carousel');
+                });
+            
+                $('.slide-option').on('change', function() {
+                    var position = $(this).data('position') - 1;
+                    owl.trigger('to.owl.carousel', position);
+                });
+            });
+        </script>        
     </main>
     <section class="section1">
         <main class="main2">
