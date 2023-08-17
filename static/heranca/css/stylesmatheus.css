@@ -565,7 +565,47 @@ button{
     background-color: rgb(45, 45, 45); /* Ou qualquer outra propriedade de estilo que você desejar */
 }
 
-
+.more-news{
+    min-width: 200px;
+    max-width: 360px;
+    
+}
+.more-news:hover{
+    transform: translateY(0) !important;
+}
+.phrase{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.phrase-text{
+    width: 60%;
+}
+.phrase-main-text,.phrase-author-text{
+    font-family: poppins;
+    text-align: justify;
+    width: 100%;
+    display: block;
+    padding: 17px 0px 17px 17px;
+}
+.phrase-main-text{
+    color: #572102;
+    font-weight: 500;
+    font-size: 4.2vw;
+    height: 90%;
+}
+.phrase-author-text{
+    color: #572102;
+    font-weight: 600;
+    font-size: 4.5vw;
+    height: 10%;
+}
+.phrase-img{
+    width: 40%;
+}
+.phrase-img img{
+    width: 100%;
+}
 
 
 
