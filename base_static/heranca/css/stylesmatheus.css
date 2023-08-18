@@ -619,12 +619,24 @@ button{
 .phrase-img img{
     width: 100%;
 }
-.home5-block{
+.home5-blocks{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: lightgreen;
 }
+.home5-blocks{
+    background-color: lightblue;
+    width: 100%;
+}
+.home5-block{
+    width: 290px;
+    padding: 12px;
+}
+.home5-block-img, .home5-block-img > img{
+    width:100%;
+}
+
 
 
 
