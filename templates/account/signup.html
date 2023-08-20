@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+<div class="section" id="cadastroSection">
+	<h2>Cadastrar</h2>
+	<h4>Já tem uma conta?</h4>
+	<a href="{% url 'account_login' %}" id="abrirLogin">Entrar!</a>
+	<form method="post" class="signup-form form_credentials" action="{% url 'account_signup' %}">
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	  <button type="submit">Cadastrar</button>
+	</form>
+	
+</div>
+
+
+{% endblock %}

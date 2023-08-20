@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% include '../heranca/partials/head.html' %}
+</head>
+
+<body>
+    {% include '../heranca/partials/header.html' %}
+    {% include 'heranca/partials/home1.html' %}
+
+
+    {% block body %}
+    <div id="modalBackground">
+    <div id="modalContent">
+        <a href="{% url 'index' %}" id="fecharModalButton">&times;</a>
+        {% block content %}
+        
+        {% endblock %}     
+        {% if form.errors %}
+        <div class="error-messages">
+        <p><strong>{% trans "Erros:" %}</strong></p>
+        <ul>
+            {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        </div>
+    {% endif %}
+    </div>
+    </div>
+    {% endblock %}
+    {% block extra_body %}
+
+    {% endblock %}
+</body>
+</html>

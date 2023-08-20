@@ -1,0 +1,41 @@
+{% load i18n %}
+<div id="sidebar-off" onclick="sair()"></div>
+<div id="sidebar">
+    <h1 class="sidebar-h1">UnivesityConnect</h1>
+    <p class="sidebar-p">
+        {% if user.username %}{% trans "Olá" %} {{ user.username|title }}!
+        {% else %}{% trans "Conecte-se com a gente!" %}
+        {% endif %}
+    </p>
+    {% if user.username %}
+        <a class="sidebar-block" href="{% url 'UniversityConnect:profile' %}"> {% trans "Perfil" %}</a>
+        <a class="sidebar-block" href="{% if request.path == '/' %}
+        {% elif request.path != '/' %}{% url 'UniversityConnect:homepage' %}
+        {% endif %}">Home</a>
+            
+        <select id="lang-options-2" class="sidebar-block lang-side-block" onchange="updateLanguageURL('lang-link-2')">
+            <option value="" disabled selected hidden>{% trans "Idioma" %}</option>
+            <option value="pt-br">Português</option>
+            <option value="en">English</option>
+        </select>
+       
+        <a class="sidebar-block sidebar-block-bottom" href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
+    {% else %}
+        <a class="sidebar-block" href="{% url 'account_login' %}">{% trans "Entrar" %}</a>
+        <a class="sidebar-block" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
+        <a class="sidebar-block" href="
+        {% if request.path == '/' %}#
+        {% elif request.path != '/' %}{% url 'UniversityConnect:homepage' %}
+        {% endif %}">Home</a>
+        <select id="lang-options-3" class="sidebar-block lang-side-block" onchange="updateLanguageURL('lang-link-3')">
+            <option value="" disabled selected hidden>{% trans "Idioma" %}</option>
+            <option value="pt-br">Português</option>
+            <option value="en">English</option>
+        </select>
+    {% endif %}
+    <a href="{% url 'set-language' 'en' %}" id="lang-link-2" style="display: none;">Link</a>
+    <a href="{% url 'set-language' 'en' %}" id="lang-link-3" style="display: none;">Link</a>
+</div>
+    
+    
+    

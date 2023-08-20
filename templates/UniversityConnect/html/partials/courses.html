@@ -1,0 +1,32 @@
+{% load static %}
+{% load i18n %}
+{% if curso %}
+
+    {% for curso in curso %}
+        <a class="option-block-link" href="{% url 'UniversityConnect:cursos_detail' curso.id %}">
+            <div class="options-block">
+                {% if lang %}
+                    <h2>{{ curso.tittle_en }}</h2>
+                    <p>{{ curso.mini_description_en }}</p>
+                {% else %}
+                    <h2>{{ curso.titulo }}</h2>
+                    <p>{{ curso.mini_descricao }}</p>
+                {% endif %}
+                <div class="details-icon">
+                    <img src="{% static "/UniversityConnect/images/icons/enter.png" %}" alt="">
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+
+{% else %}
+    <a class="option-block-link" href="{% url 'UniversityConnect:homepage' %}">
+        <div class="options-block">
+            <h2>{% trans "Nenhum curso encontrado!" %}</h2>
+            <p>{% trans "Clique aqui para voltar ao inicio" %}</p>
+            <div class="details-icon">
+                <img src="{% static "/UniversityConnect/images/icons/enter.png" %}" alt="">
+            </div>
+        </div>
+    </a>
+{% endif %}

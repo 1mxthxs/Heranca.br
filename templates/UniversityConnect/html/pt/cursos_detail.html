@@ -1,0 +1,94 @@
+{% load static %}
+{% load i18n %}
+{% include '../partials/head.html' %}
+<link rel="stylesheet" href="{% static '/UniversityConnect/css/course_detail.css' %}">
+</head>
+{% include '../partials/header.html' %}
+<main>
+    <div class="home-title">
+        <h2>{% trans "Curso de" %} 
+            {% if lang %}{{ curso.tittle_en }}
+            {% else %}{{ curso.titulo }}
+            {% endif %}</h2>
+    </div>
+    <section class="home"> 
+        <div class="block1">
+            <div class="block1-img">
+                {% if curso.image %}
+                    <img src="{{curso.image.url}}" alt="curso img">
+                {% else %} 
+                    <div class="no-img"> NO IMG </div>
+                {% endif %}
+            </div>
+            <div class="block1-content">
+                {% if lang %}
+                <h2 class="content-title">{{ curso.tittle_en }}</h2>
+                <p class="content-description">{{ curso.description_en }}</p>
+                {% else %}
+                <h2 class="content-title">{{ curso.titulo }}</h2>
+                <p class="content-description">{{ curso.descricao }}</p>
+                {% endif %}
+                
+            </div>
+        </div>
+        <div class="block2">
+            <div class="block2-content">
+                {% if lang %}
+                <p class="content-description">{{ curso.categoria.name_en }}</p>
+                <p class="content-description">{{ curso.formacao.name_en }}</p>
+                <p class="content-level">{{ curso.nivel_curso.name_en }}</p>
+                <p class="content-time">{{ curso.time_course_en }}</p>
+                <p class="content-hours">{{ curso.carga_horaria }} hours</p>
+                <p class="content-pay">US${{ mensalidade_us }}</p>                 
+                {% else %}
+                <p class="content-description">{{ curso.categoria }}</p>
+                <p class="content-description">{{ curso.formacao }}</p>
+                <p class="content-level">{{ curso.nivel_curso }}</p>
+                <p class="content-time">{{ curso.tempo_curso }}</p>
+                <p class="content-hours">{{ curso.carga_horaria }} horas</p>
+                <p class="content-pay">R${{ curso.mensalidade }}</p>
+                {% endif %}
+               
+                <a class="content-course" href="#">{% trans "Cadastrar no Curso!" %}</a>
+            </div>
+            <div class="other">
+                <h2>{% trans "Outros Cursos" %}</h2>
+                <p>{% trans "Relacionados com" %} 
+                    {% if lang %}{{ curso.categoria.name_en }}
+                    {% else %}{{ curso.categoria }}
+                    {% endif %}
+                    
+                </p>
+                {% if outro %}
+                    {% for outro in outro %}
+                        <a class="option-block-link" href="{% url 'UniversityConnect:cursos_detail' outro.id %}">
+                            <div class="options-block">
+                                {% if lang %}
+                                <h2>{{ outro.tittle_en }}</h2>
+                                <p>{{ outro.mini_description_en }}</p>
+                                {% else %}
+                                <h2>{{ outro.titulo }}</h2>
+                                <p>{{ outro.mini_descricao }}</p>
+                                {% endif %}
+                                <div class="details-icon">
+                                    <img src="{% static "/UniversityConnect/images/icons/enter.png" %}" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                <a class="option-block-link" href="">
+                    <div class="options-block">
+                        <h2>{% trans "Não há cursos" %}</h2>
+                        <p>{% trans "Não há mais cursos cadastrados com essa categoria." %}</p>
+                        <div class="details-icon">
+                            <img src="{% static "/UniversityConnect/images/icons/enter.png" %}" alt="">
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</main>
+{% include '../partials/footer.html' %}

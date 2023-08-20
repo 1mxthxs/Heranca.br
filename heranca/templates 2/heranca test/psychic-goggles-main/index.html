@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        @font-face {
+            font-family: 'ruda';
+            src: url(Ruda-Black.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'articulate';
+            src: url(Articulate.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'poppins';
+            src: url(Poppins-Medium.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: demo;
+            src: url(Bright.otf) format('opentype');
+        }
+        @font-face {
+            font-family: 'decalotype';
+            src: url(decalotype.ttf) format('opentype');
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css?v=0.18">
+    <link rel="stylesheet" href="telas.css?v=0.17">
+
+    <title>Inicio</title>
+</head>
+<body>
+    <section class="section">
+        <header>
+            <img class="logo" src="imagens/logo.png">
+    
+            <div class="ii">
+                <input class="input" type="text" id="searchInput" placeholder="Digite a palavra">
+
+                <button id="searchButton">Buscar</button>
+                <button id="clearButton">Limpar</button>
+
+                <label class="limpar" for="clearButton"><img src="imagens/x.png" alt=""></label>
+
+                <script>
+                    document.getElementById("searchButton").addEventListener("click", function() {
+                        // Restaurar o destaque azul das palavras encontradas
+                        var elementsToClear = document.querySelectorAll("span[style='color: blue;']");
+                        elementsToClear.forEach(function(element) {
+                            element.style.color = ""; // ou null
+                        });
+            
+                        performSearch();
+                    });
+            
+                    document.getElementById("searchInput").addEventListener("keyup", function(event) {
+                        // Verifica se a tecla pressionada foi o "Enter" (código 13)
+                        if (event.keyCode === 13) {
+                            // Realize a pesquisa
+                            performSearch();
+                        }
+                    });
+            
+                    document.getElementById("clearButton").addEventListener("click", function() {
+                        // Deselecionar o texto no input
+                        document.getElementById("searchInput").value = '';
+            
+                        // Restaurar o destaque azul das palavras encontradas
+                        var elementsToClear = document.querySelectorAll("span[style='color: blue;']");
+                        elementsToClear.forEach(function(element) {
+                            element.style.color = ""; // ou null
+                        });
+                    });
+            
+                    document.querySelector(".limpar").addEventListener("click", function() {
+                        // Deselecionar o texto no input
+                        document.getElementById("searchInput").value = '';
+            
+                        // Restaurar o destaque azul das palavras encontradas
+                        var elementsToClear = document.querySelectorAll("span[style='color: blue;']");
+                        elementsToClear.forEach(function(element) {
+                            element.style.color = ""; // ou null
+                        });
+                    });
+            
+                    function performSearch() {
+                        var searchText = document.getElementById("searchInput").value.toLowerCase(); // Converter para minúsculas
+                        var elementsToSearch = document.querySelectorAll(".tit, .tit1, .tit2, .tit3, .tit4, p1, p, h6");
+                        var foundElement = null;
+                        var slide1 = document.querySelector('.s1');
+                        let marginIncrement = 0;
+            
+                        elementsToSearch.forEach(function(element, index) {
+                            var elementText = element.textContent.toLowerCase();
+                            if (elementText.includes(searchText)) {
+                                // Criar uma expressão regular para destacar apenas a palavra pesquisada
+                                var regex = new RegExp(searchText, 'gi');
+                                var innerHTML = elementText.replace(regex, function(matched) {
+                                    return '<span style="color: blue;">' + matched + '</span>';
+                                });
+                                element.innerHTML = innerHTML;
+                                foundElement = element;
+            
+                                // Atualizar a posição do slide com base no índice da classe correspondente
+                                marginIncrement = -20 * index;
+                                marginIncrement = Math.max(marginIncrement, -80);
+                                marginIncrement = Math.min(marginIncrement, 0);
+                                slide1.style.marginLeft = `${marginIncrement}%`;
+                            } else {
+                                // Restaurar o texto original sem destaque
+                                element.innerHTML = elementText;
+                            }
+                        });
+            
+                        if (foundElement) {
+                            // Scroll suavemente até o elemento encontrado
+                            foundElement.scrollIntoView({ behavior: "smooth" });
+            
+                            // Centralize o elemento encontrado na janela do navegador
+                            var windowHeight = window.innerHeight;
+                            var elementTopOffset = foundElement.getBoundingClientRect().top;
+                            var scrollOffset = elementTopOffset - (windowHeight / 2);
+                            window.scrollBy(0, scrollOffset);
+                        }
+                    }
+                </script>
+
+
+                <label for="searchButton"><img class="lupa" src="imagens/lupa.png" alt="lupa"></label> 
+            </div>
+
+
+
+            <input type="checkbox" id="checkbox" class="checkbox">
+            <label for="checkbox" class="checkbox-img">
+                <img class="bnt" src="imagens/Menu.png" alt="bnt-img">
+            </label>
+    
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">INÍCIO</a></li>
+                    <li><a href="#">QUEM SOMOS</a></li>
+                    <li><a href="#">QUIZ</a></li>
+                    <li><a href="index2.html">ENGLISH</a></li>
+                    <li><a id="login" href="#">ENTRAR</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="main1">
+            <h1 class="pt">Descubra tudo sobre as tribos indígenas da nossa região!</h1>
+
+            <p class="pt p1">Venha ver a história dos <b>maiores povos indígenas que se localizam perto de Manacapuru</b>, todas as dificuldades que esses povos indígenas passam ou passaram.</p>
+            <p class="pt p1">Venha fazer parte dessa <b>conscientização indígena e aprenda mais sobre as origens e heranças dos povos indigenas!!</b></p>
+
+
+            <a class="inicie" id="cadastroButton" >Cadastre-se</a>
+
+            <img class="fundo1" src="imagens/fundo1.png" alt="">
+            <img class="fundo3" src="imagens/fundo1.png" alt="">
+            <img class="fundo2" src="imagens/fundo2.png" alt="">
+
+            <img class="foto1" src="imagens/foto1.png" alt="foto1">
+            <img class="foto2" src="imagens/foto2.png" alt="foto2">
+        </main>
+    </section>
+
+    <section class="section1">
+        <main class="main2">
+            <ul class="icons">
+                <li class="liIcons"><a class="cultura" href="#"><img class="png" src="imagens/quiz.png" alt=""></a><h6>Cultura</h6></li>
+                <li class="liIcons"><a class="tribos" href="#"><img class="png" src="imagens/estrela.png" alt=""></a><h6>Tribos</h6></li>
+                <li class="liIcons"><a class="doações" href="#"><img class="png" src="imagens/mapa.png" alt=""></a><h6>Doações</h6></li>
+                <li class="liIcons"><a class="comunidade" href="#"><img class="png" src="imagens/jornal.png" alt=""></a><h6>Comunidade</h6></li>
+            </ul>
+
+            <h5 class="main2h5">Notícias</h5>
+        </main>
+    </section>
+
+    <section class="section2">
+        <div class="content1">
+            <div class="slides">
+                <input type="radio" name="slide" id="slide1">
+                <input type="radio" name="slide" id="slide2">
+                <input type="radio" name="slide" id="slide3" checked>
+                <input type="radio" name="slide" id="slide4">
+                <input type="radio" name="slide" id="slide5">
+            
+                <div class="slide s1">
+                    <a href="#"><img src="imagens/ind3.png" alt=""></a>
+                    <p class="tit tit3">Salgueiro divulga video de conversa com xamã do povo...</p>
+                </div>
+                <div class="slide s2">
+                    <a href="#"><img src="imagens/ind1.png" alt=""></a>
+                    <p class="tit tit1">Ao vivo: Sonia guajajara vai á comissão do senado sobre...</p>
+                </div>
+
+                <div class="slide s3">
+                    <a href="#"><img src="imagens/ind2.png" alt=""></a>
+                    <p class="tit tit2">Líder yanomami: Marco temporal derramará mais o sangue dos...</p>
+                </div>  
+
+                <div class="slide s4">
+                    <a href="#"><img src="imagens/ind3.png" alt=""></a>
+                    <p class="tit tit3">Salgueiro divulga video de conversa com xamã do povo...</p>
+                </div>
+
+                <div class="slide s5">
+                    <a href="#"><img src="imagens/ind1.png" alt=""></a>
+                    <p class="tit tit1">Ao vivo: Sonia guajajara vai á comissão do senado sobre...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="setas">
+                <label class="b1" for="b1"><img src="imagens/seta-direita.png"></label>
+                <label class="b2" for="b2"><img src="imagens/seta-direita.png"></label>
+
+                <button id="b1" class="b1"></button>
+                <button id="b2" class="b2"></button>
+        </div>
+    </section>
+
+    <section class="section3">
+        <h6 class="h6">Mais Notícias</h6>
+
+        <p>Enquanto existir uma erva, uma árvore ou um rio no planeta, nós povos indígenas existiremos.” <br> – Edilene Batista Kiriri -</p>
+
+        <img class="indio" src="imagens/indio.png">
+    </section>
+
+    <section class="section4">
+        <div class="icons2">
+            <img src="imagens/quiz.png">
+            <img src="imagens/pessoa.png">
+        </div>
+        <div class="text2">
+            <p>Neste quiz, convidamos você a embarcar em uma jornada fascinante pela <b>herança cultural de tribos indígenas.</b> Explore conosco a <b>riqueza das tradições, histórias e costumes</b> que moldaram essas comunidades ao longo dos séculos.      Pronto para se aventurar e descobrir a herança cultural dessas tribos indígenas?</p>
+            <p>Neste espaço, você <b>encontrará um tesouro linguístico</b> que nos conecta às ricas <b>tradições e à herança cultural</b> de tribos indígenas. Explore conosco as palavras que expressam <b>a sabedoria, a espiritualidade, a conexão com a natureza e a identidade única desses povos.</b></p>
+        </div>
+    </section>
+
+    <section class="rodape">
+
+        <div class="rimage">
+            <img class="chapeu1" src="imagens/chapeu.png" alt="chapeu">
+            <img class="chapeu2" src="imagens/invertido.png" alt="chapeu">
+            <img class="Rlogo" src="imagens/logo.png" alt="logo">
+        </div>
+        
+
+        <ul class="icons3">
+            <li class="liIcons"><a href="https://www.facebook.com/profile.php?id=100093649415123&mibextid=ZbWKwL" target="_blank" ><img class="pp" src="imagens/facebook.png" alt=""></a></li>
+            <li class="liIcons"><a href="https://instagram.com/ifheranca.br?igshid=MjEwN2IyYWYwYw==" target="_blank" ><img class="pp" src="imagens/insta.png" alt=""></a></li>
+            <li class="liIcons"><a href="https://twitter.com/BrHeranca81461?t=X0hbDFXeKxIR_7zlz3URFA&s=08" target="_blank" ><img class="pp" src="imagens/twi.png" alt=""></a></li>
+
+            <li class="kk" >POLÍTICA DE PRIVACIDADE</li>
+            <li class="kk">TERMOS DE USO</li>
+            <li class="kk" >CENTRAL DE AJUDA</li>
+            <li class="kk" >@2023</li>
+        </ul>
+
+
+    </section>
+    
+    <!-- escurece a tela -->
+    <div id="modalBackground"></div>
+
+    <!-- Cadastra Conta -->
+    <div id="modalContent">
+        <button id="fecharModalButton"><img src="imagens/x.png"></button>
+
+        <!-- Conteúdo do modal de Cadastra -->
+        <h5 class="h5titulo">Cadastra Conta</h5>
+
+        <div class="ll">
+            <h4>já registrado?  <a class="alogin" id="login2"  href="#">Login</a></li></h4>
+
+            <h5 class="title">NOME</h5>
+            <input id="nome" class="cadastra" type="text">
+            
+            <h5 class="title">Email</h5>
+            <input id="email" class="cadastra" type="text">
+
+            <h5 class="title">SENHA</h5>
+            <input id="senha" class="cadastra" type="password">
+
+            <a class="inicie1" href="#" onclick="cadastra()">Continuar</a>
+        </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="modalContent3">
+        <button id="fecharModalButton3"><img src="imagens/x.png"></button>
+        <!-- Conteúdo do modal de login -->
+        <h5 class="h5titulo3">Login</h5>
+
+        <h5 class="subtitulo">Faça o login para continuar</h5>
+        <div class="ll">
+            <h5 class="title">Email</h5>
+            <input id="logEmail" class="cadastra" type="text">
+
+            <h5 class="title">SENHA</h5>
+            <input id="logSenha" class="cadastra" type="password">
+            <h4>Esqueceu sua senha? <a class="aaperte" id="esqueceu" href="#">Aperte aui!</a></h4>
+
+            <a class="inicie1" onclick="Entrar()" href="#">continua</a>
+        </div>
+    </div>
+
+    <!-- Redefinir a senha -->
+    <div id="modalContent4">
+        <button id="fecharModalButton4"><img src="imagens/x.png"></button>
+            <!-- Conteúdo do modal de login -->
+            <h5 class="h5titulo3">Esqueceu sua senha?</h5>
+            <h5 class="h5titulo4">Faça uma nova senha</h5>
+
+            <div class="ll">
+                <h5 class="title">Email</h5>
+                <input class="cadastra" type="text">
+
+                <a class="inicie1" href="#">continua</a>
+            </div>
+    </div>
+
+
+    <script src="app.js?v=0.4"></script>
+    <script src="cadastra.js"></script>
+    <script src="login.js"></script>
+    <script src="app copy.js"></script>
+</body>
+</html>

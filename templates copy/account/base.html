@@ -1,0 +1,46 @@
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/UniversityConnect/css/auth.css' %}">
+    <link rel="stylesheet" href="{% static '/UniversityConnect/css/styles.css' %}">
+    {% block extra_head %}
+    {% include '../UniversityConnect/html/partials/head.html' %}
+    {% endblock %}
+  </head>
+  <body>
+    
+    {% block body %}
+      {% include '../UniversityConnect/html/partials/header.html' %}
+    <!---
+    {% if messages %}
+    <div>
+      <strong>{% trans "Messages:" %}</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  -->
+
+
+    {% block content %}
+
+    
+    {% endblock %}
+   
+    {% endblock %}
+    {% block extra_body %}
+    
+    {% endblock %}
+   
+  </body>
+ 
+</html>

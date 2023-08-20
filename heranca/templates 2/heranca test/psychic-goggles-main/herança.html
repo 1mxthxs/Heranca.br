@@ -1,0 +1,346 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js?v=0.1" defer></script>
+    <link rel="shortcut icon" href="{% static 'heranca/images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'heranca/css/styles.css' %}">
+    <title>HERANÇA</title>
+</head>
+<body>
+
+    <section class="section">
+        <header>
+            <img class="logo" src="Design sem nome.png" alt="logo">
+
+            <div class="input-wrapper">
+                <input class="iputli" type="text">
+                <img class="lupa" src="{% static 'heranca/images/lupa.png'%}" alt="lupa">
+            </div>
+
+            <nav>
+                <ul class="ulnavegation">
+                    <img class="ico1" src="{% static 'heranca/images/internet.png'%}" alt="idioma"> 
+                    <li class="linavegation1"><a class="anavegation" id="idioma" href="#"><b>PT-BR</b></a></li>
+                    <li class="linavegation2"><a class="anavegation" id="login"  href="#"><b>Entrar</b></a></li>
+                    <img class="ico2" src="{% static 'heranca/images/usuario-de-perfil.png'%}" alt="perfil">
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main1">
+            <h1 class="pt">Descubra tudo sobre as tribos indígenas da nossa região!</h1>
+            <p class="pt p1">Venha ver a história dos maiores povos indígenas que se localizam perto de Manacapuru, todas as dificuldades que esses povos indígenas passam ou passaram.</p>
+            <p class="pt p1">Venha fazer parte dessa conscientização indígena e aprenda mais sobre as origens e heranças dos povos indigenas!!.</p>
+            <a class="inicie" id="cadastroButton" href="#">Cadastre-se</a>
+
+            <img class="fundo1" src="{% static 'heranca/images/fundo1.png'%}" alt="">
+            <img class="fundo3" src="{% static 'heranca/images/fundo1.png'%}" alt="">
+            <img class="fundo2" src="{% static 'heranca/images/fundo2.png'%}" alt="">
+
+            <img class="foto1" src="{% static 'heranca/images/fundo1.png'%}" alt="foto1">
+            <img class="foto2" src="{% static 'heranca/images/fundo2.png'%}" alt="foto2">
+            
+            <div id="modalBackground"></div>
+            <div class="-CADASTRA-" id="modalContent">
+            <button id="fecharModalButton">X</button>
+                <!-- Conteúdo do modal de login -->
+                <h5 class="h5titulo">Cadastra Conta</h5>
+
+                <div class="ll">
+                    <h4>já registrado?  <a class="alogin" id="login2"  href="#">Login</a></li></h4>
+                    <h5 class="title">NOME</h5>
+                    <input class="cadastra" type="text">
+                    
+                    <h5 class="title">Email</h5>
+                    <input class="cadastra" type="text">
+
+                    <h5 class="title">SENHA</h5>
+                    <input class="cadastra" type="password">
+                    <h4>Esqueceu sua senha? <a class="aaperte" id="esqueceu" href="#">Aperte aui!</a></h4>
+
+                    <a class="inicie1" href="#">Continua</a>
+                </div>
+            </div>
+            <script>
+                // Obtém referências aos elementos
+                var cadastroButton = document.getElementById("cadastroButton");
+                var modalBackground = document.getElementById("modalBackground");
+                var modalContent = document.getElementById("modalContent");
+                var fecharModalButton = document.getElementById("fecharModalButton");
+
+                // Adiciona um evento de clique ao botão/link de cadastro
+                cadastroButton.addEventListener("click", function() {
+                modalBackground.style.display = "block"; // Exibe o fundo escurecido
+                modalContent.style.display = "block"; // Exibe o modal
+                });
+
+                // Adiciona um evento de clique ao botão de fechar
+                fecharModalButton.addEventListener("click", function() {
+                modalBackground.style.display = "none"; // Esconde o fundo escurecido
+                modalContent.style.display = "none"; // Esconde o modal
+                });
+            </script>
+
+
+
+            <div class="-ENGLISH-" id="modalContent2">
+            <button id="fecharModalButton2">X</button>
+                <!-- Conteúdo do modal de login -->
+                <h3 class="h30"><a id="bnt" href="#"><b>English</b></a></h5>
+            </div>
+            <script>
+                // Obtém referências aos elementos
+                var idioma = document.getElementById("idioma");
+                var modalBackground = document.getElementById("modalBackground");
+                var modalContent2 = document.getElementById("modalContent2");
+                var fecharModalButton2 = document.getElementById("fecharModalButton2");
+
+                // Adiciona um evento de clique ao botão/link de cadastro
+                idioma.addEventListener("click", function() {
+                modalBackground.style.display = "block"; // Exibe o fundo escurecido
+                modalContent2.style.display = "block"; // Exibe o modal
+                });
+
+                // Adiciona um evento de clique ao botão de fechar
+                fecharModalButton2.addEventListener("click", function() {
+                modalBackground.style.display = "none"; // Esconde o fundo escurecido
+                modalContent2.style.display = "none"; // Esconde o modal
+                });
+            </script>
+
+
+
+            <div class="------LOGIN-----" id="modalContent3">
+            <button id="fecharModalButton3">X</button>
+                <!-- Conteúdo do modal de login -->
+                <h5 class="h5titulo3">Login</h5>
+
+                <div class="ll">
+                    <h5 class="title">Email</h5>
+                    <input class="cadastra" type="text">
+
+                    <h5 class="title">SENHA</h5>
+                    <input class="cadastra" type="password">
+                    <h4>Esqueceu sua senha? <a class="aaperte" id="esqueceu2" href="#">Aperte aui!</a></h4>
+
+                    <a class="inicie1" href="#">continua</a>
+                </div>
+            </div>
+            <script>
+                // Obtém referências aos elementos
+                var login = document.getElementById("login");
+                var modalBackground = document.getElementById("modalBackground");
+                var modalContent3 = document.getElementById("modalContent3");
+                var fecharModalButton3 = document.getElementById("fecharModalButton3");
+
+                // Adiciona um evento de clique ao botão/link de cadastro
+                login.addEventListener("click", function() {
+                modalBackground.style.display = "block"; // Exibe o fundo escurecido
+                modalContent3.style.display = "block"; // Exibe o modal
+                });
+
+                // Adiciona um evento de clique ao botão de fechar
+                fecharModalButton3.addEventListener("click", function() {
+                modalBackground.style.display = "none"; // Esconde o fundo escurecido
+                modalContent3.style.display = "none"; // Esconde o modal
+                });
+            </script>
+
+
+            <div class="------LOGIN2-----" id="modalContent3">
+                <button id="fecharModalButton3">X</button>
+                    <!-- Conteúdo do modal de login -->
+                    <h5 class="h5titulo3">Login</h5>
+
+                    <div class="ll">
+                        <h5 class="title">Email</h5>
+                        <input class="cadastra" type="text">
+
+                        <h5 class="title">SENHA</h5>
+                        <input class="cadastra" type="password">
+                        <h4>Esqueceu sua senha? <a class="aaperte" id="esqueceu2" href="#">Aperte aui!</a></h4>
+
+                        <a class="inicie1" href="#">continua</a>
+                    </div>
+                </div>
+                <script>
+                    // Obtém referências aos elementos
+                    var login2 = document.getElementById("login2");
+                    var modalBackground = document.getElementById("modalBackground");
+                    var modalContent3 = document.getElementById("modalContent3");
+                    var fecharModalButton3 = document.getElementById("fecharModalButton3");
+
+                    // Adiciona um evento de clique ao botão/link de cadastro
+                    login2.addEventListener("click", function() {
+                    modalBackground.style.display = "block"; // Exibe o fundo escurecido
+                    modalContent3.style.display = "block"; // Exibe o modal
+                    });
+
+                    // Adiciona um evento de clique ao botão de fechar
+                    fecharModalButton3.addEventListener("click", function() {
+                    modalBackground.style.display = "none"; // Esconde o fundo escurecido
+                    modalContent3.style.display = "none"; // Esconde o modal
+                    });
+                </script>
+
+                
+
+            <div id="modalContent4">
+                <button id="fecharModalButton4">X</button>
+                    <!-- Conteúdo do modal de login -->
+                    <h5 class="h5titulo3">Esqueceu sua senha?</h5>
+                    <h5 class="h5titulo4">Faça uma nova senha</h5>
+
+                    <div class="ll">
+                        <h5 class="title">Email</h5>
+                        <input class="cadastra" type="text">
+
+                        <a class="inicie1" href="#">continua</a>
+                    </div>
+                </div>
+                <script>
+                    // Obtém referências aos elementos
+                    var esqueceu = document.getElementById("esqueceu");
+                    var modalBackground = document.getElementById("modalBackground");
+                    var modalContent4 = document.getElementById("modalContent4");
+                    var fecharModalButton4 = document.getElementById("fecharModalButton4");
+
+                    // Adiciona um evento de clique ao botão/link de cadastro
+                    esqueceu.addEventListener("click", function() {
+                    modalBackground.style.display = "block"; // Exibe o fundo escurecido
+                    modalContent4.style.display = "block"; // Exibe o modal
+                    });
+
+                    // Adiciona um evento de clique ao botão de fechar
+                    fecharModalButton4.addEventListener("click", function() {
+                    modalBackground.style.display = "none"; // Esconde o fundo escurecido
+                    modalContent4.style.display = "none"; // Esconde o modal
+                    });
+                </script>
+
+
+
+            <div id="modalContent4">
+                <button id="fecharModalButton4">X</button>
+                    <!-- Conteúdo do modal de login -->
+                    <h5 class="h5titulo3">Esqueceu sua senha?</h5>
+
+                    <div class="ll">
+                        <h5 class="title">Email</h5>
+                        <input class="cadastra" type="text">
+
+                        <h5 class="title">SENHA</h5>
+                        <input class="cadastra" type="password">
+                        <h4>Esqueceu sua senha? <a class="aaperte" id="esqueceu" href="#">Aperte aui!</a></h4>
+
+                        <a class="inicie1" href="#">continua</a>
+                    </div>
+                </div>
+                <script>
+                    // Obtém referências aos elementos
+                    var esqueceu2 = document.getElementById("esqueceu2");
+                    var modalBackground = document.getElementById("modalBackground");
+                    var modalContent4 = document.getElementById("modalContent4");
+                    var fecharModalButton4 = document.getElementById("fecharModalButton4");
+
+                    // Adiciona um evento de clique ao botão/link de cadastro
+                    esqueceu2.addEventListener("click", function() {
+                    modalBackground.style.display = "block"; // Exibe o fundo escurecido
+                    modalContent4.style.display = "block"; // Exibe o modal
+                    });
+
+                    // Adiciona um evento de clique ao botão de fechar
+                    fecharModalButton4.addEventListener("click", function() {
+                    modalBackground.style.display = "none"; // Esconde o fundo escurecido
+                    modalContent4.style.display = "none"; // Esconde o modal
+                    });
+                </script>
+        </main>
+    </section>
+
+    <section class="section1">
+        <main class="main2">
+            <h2>Você vai encontrar no site:</h2>
+
+            <ul class="icons">
+                <li class="liIcons"><img class="facebook" src="quiz.png" alt=""></a><h6>Quiz Educativo</h6></li>
+                <li class="liIcons"><img class="discordia" src="pessoa.png" alt=""></a><h6>Palavras Indígenas</h6></li>
+                <li class="liIcons"><img class="instagram" src="estrela.png" alt=""></a><h6>Cultura</h6></li>
+                <li class="liIcons"><img class="facebook" src="mapa.png" alt=""></a><h6>Localização</h6></li>
+                <li class="liIcons"><img class="facebook" src="jornal.png" alt=""></a><h6>Notícias</h6></li>
+            </ul>
+        </main>
+        <main class="main21">
+            <p>Enquanto existir uma erva, uma árvore ou um rio no planeta, nós povos indígenas existiremos.” </p>
+            <p>– Edilene Batista Kiriri -</p>
+        </main>
+
+        <img class="indio" src="indio.png" alt="indio">
+         
+        <a class="noticias" id="noticias" href="#">noticias</a>
+    </section>
+
+    <section class="section2">
+        <div class="content4">
+            <div class="slides">
+                <input class="uj" type="radio" name="slide" id="slide1" checked>
+                <input class="uj" type="radio" name="slide" id="slide2">
+                <input class="uj" type="radio" name="slide" id="slide3">
+                <input class="uj" type="radio" name="slide" id="slide4">
+                <input class="uj" type="radio" name="slide" id="slide5">
+    
+                <div class="slide s1">
+                    <img src="n2.png" alt="">
+                </div>
+    
+                <div class="slide s2">
+                    <img src="n1.png" alt="">
+                </div>
+    
+                <div class="slide s3">
+                    <img src="n3.png" alt="">
+    
+                </div>
+
+                <div class="slide s4">
+                    <img src="n4.png" alt="">
+                </div>
+
+                <div class="slide s5">
+    
+                </div>
+            </div>
+    
+            <div class="navegationQ">
+                <label class="bar" for="slide1"></label>
+                <label class="bar" for="slide2"></label>
+                <label class="bar" for="slide3"></label>
+                <label class="bar" for="slide4"></label>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="rodape">
+        <img class="cha1" src="chapeu.png" alt="chapeu">
+        <img class="cha" src="invertido.png" alt="chapeu">
+        <img class="Rlogo" src="logo.png" alt="logo">
+
+        <ul class="icons2">
+            <li class="liIcons"><a href="https://www.facebook.com/profile.php?id=100093649415123&mibextid=ZbWKwL" target="_blank" ><img class="pp" src="facebook.png" alt=""></a></li>
+            <li class="liIcons"><a href="https://instagram.com/ifheranca.br?igshid=MjEwN2IyYWYwYw==" target="_blank" ><img class="pp" src="insta.png" alt=""></a></li>
+            <li class="liIcons"><a href="https://twitter.com/BrHeranca81461?t=X0hbDFXeKxIR_7zlz3URFA&s=08" target="_blank" ><img class="pp" src="twi.png" alt=""></a></li>
+
+            <h5 class="uu">POLÍTICA DE PRIVACIDADE</h5>
+            <h5 class="uu">TERMOS DE USO</h5>
+            <h5 class="uu">CENTRAL DE AJUDA</h5>
+            <h5 class="uu">@2023</h5>
+        </ul>
+    </section>
+    
+</body>
+</html>
