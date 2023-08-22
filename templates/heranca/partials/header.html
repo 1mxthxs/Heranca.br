@@ -1,19 +1,26 @@
 {% load static %}
+{% load i18n %}
+{% include 'heranca/partials/sidebar.html' %}
 <header>
+    <script src="{% static 'heranca/js/sidebar.js' %}"></script>
+    {% include 'heranca/partials/sidebar.html' %}
     <img class="header-logo" src="{% static 'heranca/images/logo.png' %}" alt="logo">
     <form class="header-form" action="">
         <input class="header-search" type="text" placeholder="Digite a palavra">
         <img class="search-icon" src="{% static 'heranca/images/lupa.png'%}" alt="lupa">
     </form>
     <div class="sidebar-btn">
-        <img src="{% static 'heranca/images/menu.png' %}" alt="menu-btn">
+        <img src="{% static 'heranca/images/menu.png' %}" alt="menu-btn" id="home-linkstyle-menu" onclick="entrar()">
     </div>
     <nav class="header-nav">
         <ul class="header-nav-ul">
             <li class="nav-li"><a class="nav-li-links" href="{% url 'index' %}">INÍCIO</a></li>
             <li class="nav-li"><a class="nav-li-links" href="#">QUEM SOMOS</a></li>
             <li class="nav-li"><a class="nav-li-links"  href="#">QUIZ</a></li>
-            <li class="nav-li"><a class="nav-li-links"  href="#">PT-BR</a></li>
+            {% if 'en/' in request.path  %}<li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'pt-br' %}"">EN-US</a></li>
+            {% else %}<li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'en' %}"">PT-BR</a></li>
+            {% endif %}
+            
             {% if user.is_authenticated %}
             <li class="nav-li"><a class="nav-li-links" href="{% url 'account_logout' %}" id="">SAIR</a></li>
             {% else %}

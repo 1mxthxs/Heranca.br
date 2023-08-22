@@ -1,14 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
-from django.contrib.auth.models import User
-from django.contrib import messages
 from .models import Noticia
-from django.urls import reverse, reverse_lazy
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_protect
+from django.urls import reverse_lazy
+
 
 
 def index(request):
@@ -21,24 +16,6 @@ def index(request):
     noticias = Noticia.objects.all()
     
     return render(request, 'heranca/herança.html', {'page_title': page_title,'noticias': noticias,'login_form': login_form,'signup_form': signup_form, 'error_message': error_message,})
-
-def index2(request):
-    return render(request, 'heranca/psychic-goggles-main/herança.html')
-
-
-@require_POST
-@csrf_protect
-def verify_login(request):
-    username = request.POST.get('login')
-    password = request.POST.get('password')
-
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return redirect(reverse("index"))
-    else:
-        error_message = "Usuário ou senha incorretos."
-        return redirect(reverse('index') + f'?error={error_message}')
 
 
 @login_required(login_url=reverse_lazy('index'))
@@ -56,3 +33,7 @@ def profile(request):
         'signup_form': signup_form,}
 
     return render(request, 'heranca/herança.html', context=context)
+
+
+def error_page(request):
+    return render(request, 'error.html')

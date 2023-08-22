@@ -1,0 +1,25 @@
+{% load i18n %}
+<div id="sidebar-off" onclick="sair()"></div>
+
+<div id="sidebar">
+    <div class="sidebar-user">
+        <div class="user-img"><img src="" alt=""></div>
+        <div class="user-name"></div>
+    </div>
+    {% if user.is_autheticated %}
+        <a class="sidebar-block" href="{% url 'profile' %}"> {% trans "Perfil" %}</a>
+        <a class="sidebar-block sidebar-block-bottom" href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
+    {% else %}
+        <a class="sidebar-block" href="{% url 'account_login' %}">{% trans "Entrar" %}</a>
+        <a class="sidebar-block" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
+        
+    {% endif %}
+    <div class="sidebar-site-options block-options">
+        <h3></h3>
+        <a href="" class="sidebar-block sidebar-site-option">English</a>
+        <a class="sidebar-block sidebar-site-option">{% trans "Quem somos" %}</a>
+    </div>
+</div>
+    
+    
+    

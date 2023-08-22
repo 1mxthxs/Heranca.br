@@ -1,0 +1,8 @@
+templates/account/*.html
+templates/account/email/*.html
+templates/account/messages/*.html
+templates/account/snippets/*.html
+templates/openid/*.html
+templates/socialaccount/*.html
+templates/socialaccount/messages/*.html
+templates/socialaccount/snippets/templates/socialaccount/*.html*.html
