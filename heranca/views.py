@@ -1,21 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
 from .models import Noticia
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy,reverse
+
 
 
 
 def index(request):
-    error_message = request.GET.get('error', None)
-    user = request.user 
-    login_form = LoginForm()  # Instância do formulário de login
-    signup_form = SignupForm() 
     page_title = "Herança!"
-        
+    user = request.user 
+    if user.is_authenticated:
+        page_title = f"Herança - {user.username.title()}"
+    login_form = LoginForm()
+    signup_form = SignupForm() 
     noticias = Noticia.objects.all()
     
-    return render(request, 'heranca/herança.html', {'page_title': page_title,'noticias': noticias,'login_form': login_form,'signup_form': signup_form, 'error_message': error_message,})
+    return render(request, 'heranca/herança.html', {'page_title': page_title,'noticias': noticias,'login_form': login_form,'signup_form': signup_form, 'user':user,})
 
 
 @login_required(login_url=reverse_lazy('index'))
@@ -32,8 +33,4 @@ def profile(request):
     context = {'request': request,'page_title': page_title, 'user':user,'noticias': noticias,'login_form': login_form,
         'signup_form': signup_form,}
 
-    return render(request, 'heranca/herança.html', context=context)
-
-
-def error_page(request):
-    return render(request, 'error.html')
+    return redirect(reverse("index"))

@@ -1,12 +1,26 @@
+{% load static %}
 {% load i18n %}
 <div id="sidebar-off" onclick="sair()"></div>
 
 <div id="sidebar">
     <div class="sidebar-user">
-        <div class="user-img"><img src="" alt=""></div>
-        <div class="user-name"></div>
+        <div class="user-img">
+            {% if user.is_authenticated and user.image%}
+            <img src="{{ user.image.url }}" alt="">
+            {% else %}
+            <img src="{% static 'heranca/images/default_user_img.png' %}" alt="">
+            {% endif %}
+            
+        </div>
+        {% if user.is_authenticated %}
+        <h3 class="user-name">{{ user.username }}</h3>
+        {% else %}
+        <h3 class="user-name">Usuário não cadastrado!</h3>
+        {% endif %}
+        
     </div>
-    {% if user.is_autheticated %}
+    <h3>Perfil</h3>
+    {% if user.is_authenticated %}
         <a class="sidebar-block" href="{% url 'profile' %}"> {% trans "Perfil" %}</a>
         <a class="sidebar-block sidebar-block-bottom" href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
     {% else %}
@@ -14,9 +28,13 @@
         <a class="sidebar-block" href="{% url 'account_signup' %}">{% trans "Registrar" %}</a>
         
     {% endif %}
+    <h3>Site</h3>
     <div class="sidebar-site-options block-options">
-        <h3></h3>
-        <a href="" class="sidebar-block sidebar-site-option">English</a>
+        {% if 'en/' in request.path  %}
+        <a class="sidebar-block sidebar-site-option"href="{% url 'set-language' 'pt-br' %}">Porutguês</a>
+        {% else %}
+        <a class="sidebar-block sidebar-site-option"  href="{% url 'set-language' 'en' %}">English</a>
+        {% endif %}
         <a class="sidebar-block sidebar-site-option">{% trans "Quem somos" %}</a>
     </div>
 </div>

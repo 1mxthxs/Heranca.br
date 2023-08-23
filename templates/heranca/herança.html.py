@@ -151,7 +151,7 @@ XXXXXX
         XXXX
         XXXX XXXXXXXXXXXXXXX
             XXXX XXXXXXXXXXXXXXXXXXXX
-                XX XXXXXXXXXXXXXXXXXXXXXXXXX gettext(u'”Enquanto existir uma erva, uma árvore ou um rio no planeta, nós povos indígenas existiremos.” ') XXXX
+                XX XXXXXXXXXXXXXXXXXXXXXXXXX gettext(u'Enquanto existir uma erva, uma árvore ou um rio no planeta, nós povos indígenas existiremos.') XXXX
                 XX XXXXXXXXXXXXXXXXXXXXXXXXXX XX XXXXXXX XXXXXXX XXXXXX XXXXX
             XXXXXX
             XXXX XXXXXXXXXXXXXXXXXXX
@@ -166,8 +166,12 @@ XXXXXX
                     XXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXX
                 XXXXXX
                 XXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXX gettext(u'Neste quiz, convidamos você a embarcar em uma jornada fascinante pela ') XXX gettext(u'herança cultural de tribos indígenas.') XXXX  gettext(u'Explore conosco ') XXX gettext(u'a riqueza das tradições, histórias e costumes') XXXX XX XXXXX XXXX XXXXXXXX XXXXX XXXXXXXXXXX XX XXXXX XXX XXXXXXXX
-                        XXXXXX XXXX XX XXXXXXXXX X XXXXXXXXX X XXXXXXX XXXXXXXX XXXXXX XXXXXX XXXXXXXXXXX XX
+                    XXX gettext(u'Neste quiz, convidamos você a embarcar em uma jornada fascinante pela ') 
+                        XXX gettext(u'herança cultural de tribos indígenas.') XXXX
+                          gettext(u'Explore conosco ') 
+                         XXX gettext(u'a riqueza das tradições, histórias e costumes') XXXX 
+                         XX XXXXX XXXX XXXXXXXX XXXXX XXXXXXXXXXX XX XXXXX XXX XXXXXXXX
+                         XXXXXX XXXX XX XXXXXXXXX X XXXXXXXXX X XXXXXXX XXXXXXXX XXXXXX XXXXXX XXXXXXXXXXX XX
                     XXXX
                     XX XXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXX gettext(u'Cadastre-se para sabe mais') XXXX
                 XXXXXX
@@ -177,8 +181,12 @@ XXXXXX
                     XXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXX
                 XXXXXX
                 XXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XX XXXXXXXXXXX XXXXX XXXXXX XXXXX XXXXXXXXXX XXXX X XXXXXXXX XX XXX XXXXXXX XXXXXXXXXX XXXX XXXXXXX XXXXXXXX XX XXXXXX XXXXXXXXXX XXXXXXX XXXXXXX X XXXXXXX XXX XXXXXXXXXX XXXXXXXXX X XXXXXXXX XXX XXXXXXXX XXXXX XXXXXXXXXXX XX XXXXX XXX XXXXXXXX
-                        XXXXXX XXXX XX XXXXXXXXX X XXXXXXXXX X XXXXXXX XXXXXXXX XXXXXX XXXXXX XXXXXXXXXXX XX
+                    XXX gettext(u'Neste quiz, convidamos você a embarcar em uma jornada fascinante pela ') 
+                        XXX gettext(u'herança cultural de tribos indígenas.') XXXX
+                          gettext(u'Explore conosco ') 
+                         XXX gettext(u'a riqueza das tradições, histórias e costumes') XXXX 
+                         XX XXXXX XXXX XXXXXXXX XXXXX XXXXXXXXXXX XX XXXXX XXX XXXXXXXX
+                         XXXXXX XXXX XX XXXXXXXXX X XXXXXXXXX X XXXXXXX XXXXXXXX XXXXXX XXXXXX XXXXXXXXXXX XX
                     XXXX
                     XX XXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXX gettext(u'Cadastre-se para sabe mais') XXXX
                 XXXXXX
