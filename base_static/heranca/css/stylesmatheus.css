@@ -403,7 +403,9 @@ b{
     .icon-more{
         font-size: 9px !important;
     }
-
+    .home5-block{
+        font-size: 13px !important;
+    }
 
 
     .footer-media{
@@ -476,6 +478,10 @@ b{
     .slide-btn-center{
         width: 87%;
     }
+    .home5-block{
+        font-size: 7px !important;
+    }
+
     .footer-media{
         bottom: 8px !important;
     }
@@ -865,8 +871,7 @@ b{
     width: 100%;
 }
 .home5-block{
-    min-width: 290px;
-    max-width: 70%;
+    width: 100%;
     padding: 12px 25px;
     font-family: poppins;
     font-size: 20px;

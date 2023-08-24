@@ -16,7 +16,24 @@ class Noticia(models.Model):
     image = models.ImageField(upload_to='News/cover/%Y/%m/%d/', blank=True, null=True)
     is_public = models.BooleanField(default=True)
 
+
     def __str__(self):
         return self.titulo
 
 
+class Dict_letter(models.Model):
+    letter = models.AutoField(primary_key=True)
+    
+    
+    def __str__(self):
+        return self.letter
+
+
+class Dict_indigenous(models.Model):
+    name = models.CharField(max_length=40)
+    description = models.CharField(max_length=140)
+    letter = models.ForeignKey(Dict_letter, on_delete=models.CASCADE)
+    
+    
+    def __str__(self):
+        return self.name

@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
 from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
-from .models import Noticia
+from .models import Noticia, Dict_indigenous, Dict_letter
 from django.urls import reverse_lazy,reverse
-
-
 
 
 def index(request):
@@ -33,4 +31,13 @@ def profile(request):
     context = {'request': request,'page_title': page_title, 'user':user,'noticias': noticias,'login_form': login_form,
         'signup_form': signup_form,}
 
-    return redirect(reverse("index"))
+    return reverse("index")
+
+
+def dict_indigenous(request):
+    page_name = "Herança - Dicionario"
+    dict_obj = Dict_indigenous.objects.all()
+    letter_dict = Dict_indigenous.objects.all()
+    
+    return render(request, 'heranca/dict.html', name="dict")
+
