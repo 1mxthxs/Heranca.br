@@ -23,10 +23,11 @@ class Noticia(models.Model):
 
 class Dict_letter(models.Model):
     letter = models.AutoField(primary_key=True)
+    letter_char = models.CharField(max_length=1)
     
     
     def __str__(self):
-        return self.letter
+        return self.letter_char
 
 
 class Dict_indigenous(models.Model):
