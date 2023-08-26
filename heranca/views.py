@@ -3,7 +3,6 @@ from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
 from .models import Noticia, Dict_indigenous, Dict_letter
 from django.urls import reverse_lazy
-from more_itertools import chunked 
 
 
 def index(request):
