@@ -194,14 +194,18 @@ header{
     align-items: center;
    
    /* border: 1px solid black;*/
-    margin: 0px 20px;
-    padding: 0px 20px;
+
 }
 .block1{
+    margin: 0px 20px;
+    padding: 0px 20px;
     width: 59%;
 }
 .block2{
     width: 41%;
+}
+.fundo1{
+    width: 100%;
 }
 
 .block1-title{
@@ -257,7 +261,7 @@ b{
     .home1-block{
         display: block !important;
         margin: auto !important;
-        height: 650px !important;
+
     }
     .block3 > div, .block3{
         width: 400px !important;
@@ -339,7 +343,7 @@ b{
     .home1-block{
         display: block !important;
         margin: auto !important;
-        height: 460px !important;
+    
     }
 }
 
@@ -374,7 +378,6 @@ b{
     .home1-block{
         display: block !important;
         margin: auto !important;
-        height: 520px !important;
     }
     .block1-title{
         font-size: 4vw !important;
@@ -428,9 +431,6 @@ b{
     .user-name{
         font-size: 11px !important;
     }
-    .home1-block{
-        height: 380px !important;
-    }
     .header-logo{
         display: none !important;
     }
@@ -474,7 +474,7 @@ b{
     }
 
     .slide-button {
-        height: 290px !important;
+        height: 200px !important;
     }
     .slide-button-content > button{
         background-color: transparent;
@@ -837,6 +837,7 @@ b{
 
 }
 .phrase{
+    padding: 20px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -849,7 +850,7 @@ b{
     text-align: justify;
     width: 100%;
     display: block;
-    padding: 17px 0px 17px 17px;
+    padding: 6px 2px ;
 }
 .phrase-main-text{
     color: #572102;
@@ -947,4 +948,43 @@ footer{
     font-family: poppins;
     font-size: 20px;
     color: white;
+}
+
+
+
+/* Dict */
+.main_dict{
+    margin: auto;
+    min-width: 100px;
+    max-width: 1100px; 
+    padding: 0 20px 20px 20px;
+}
+
+.home_dict_top{
+    width: 100%;
+    padding: 10px 30px;
+}
+.home_dict_title, .dict_letter{
+    color: #CC362F;
+    font-family: ruda;
+}
+.dict_letter{
+    margin-bottom: 3px;
+}
+.dict_word h2{
+    font-family: poppins;
+    font-weight: 500;
+    font-size: larger;
+    text-align: justify;
+}
+.home_dict{
+    width: 330px;
+    padding-right: 15px;
+}
+.dict_block{
+    width: 100%;
+    padding: 10px 0px;
+}
+.letter_detail{
+    width: 100%;
 }
