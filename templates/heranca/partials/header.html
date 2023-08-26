@@ -16,7 +16,7 @@
         <ul class="header-nav-ul">
             <li class="nav-li"><a class="nav-li-links" href="{% url 'index' %}">INÍCIO</a></li>
             <li class="nav-li"><a class="nav-li-links" href="#">QUEM SOMOS</a></li>
-            <li class="nav-li"><a class="nav-li-links"  href="#">QUIZ</a></li>
+            <li class="nav-li"><a class="nav-li-links"  href="{% url 'dict_indigenous' %}">QUIZ</a></li>
             {% if 'en/' in request.path  %}
             <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'pt-br' %}">EN-US</a></li>
             {% else %}

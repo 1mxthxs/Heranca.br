@@ -1,7 +1,35 @@
 {% load static %}
 {% load i18n %}
 
-{% include 'heranca/partials/head.html' %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>  
+    {% include 'heranca/partials/head.html' %}
+</head>
 {% include 'heranca/partials/header.html' %}
 
+<body>
+    <main class="main_dict">
+        <div class="home_dict_top">
+            <h1 class="home_dict_title">Dicionário Indígena</h1>
+        </div>  
+        {% for letter in letters %}
 
+            <div class="home_dict">
+                <div class="dict_block">
+                    <h1 class="dict_letter">{{ letter.letter_char }}</h1>
+
+                    {% for indigenous in letter.dict_indigenous_set.all %}
+                        <div class="letter_detail">
+                            <div class="dict_word">
+                                <h2><b>{{ indigenous.name }}:</b> {{indigenous.description }}</h2>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        {% endfor %}
+    </main>
+</body>

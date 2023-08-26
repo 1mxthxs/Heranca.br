@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
 from .models import Noticia, Dict_indigenous, Dict_letter
-from django.urls import reverse_lazy,reverse
+from django.urls import reverse_lazy
+from more_itertools import chunked 
 
 
 def index(request):
@@ -12,32 +13,22 @@ def index(request):
         page_title = f"Herança - {user.username.title()}"
     login_form = LoginForm()
     signup_form = SignupForm() 
-    noticias = Noticia.objects.all()
+    noticias = Noticia.objects.filter(is_public=True)
     
     return render(request, 'heranca/herança.html', {'page_title': page_title,'noticias': noticias,'login_form': login_form,'signup_form': signup_form, 'user':user,})
 
 
 @login_required(login_url=reverse_lazy('index'))
 def profile(request):
-    noticias = Noticia.objects.all()
-    user = request.user
-    if user.first_name:
-        page_title = f'Perfil - {user.first_name.title()}'
-    else:
-         page_title = f'Perfil - {user.username.title()}'
-    login_form = LoginForm()
-    signup_form = SignupForm()
-
-    context = {'request': request,'page_title': page_title, 'user':user,'noticias': noticias,'login_form': login_form,
-        'signup_form': signup_form,}
-
-    return reverse("index")
+    return reverse_lazy("index")
 
 
 def dict_indigenous(request):
-    page_name = "Herança - Dicionario"
-    dict_obj = Dict_indigenous.objects.all()
-    letter_dict = Dict_indigenous.objects.all()
+    page_title = "Herança - Dicionario"
+    letters = Dict_letter.objects.order_by('alphabetical_order')
     
-    return render(request, 'heranca/dict.html', name="dict")
+    return render(request, 'heranca/dict.html', {
+        'page_title': page_title, 
+        'letters':letters,
+    })
 

@@ -24,17 +24,20 @@ class Noticia(models.Model):
 class Dict_letter(models.Model):
     letter = models.AutoField(primary_key=True)
     letter_char = models.CharField(max_length=1)
-    
+    alphabetical_order = models.IntegerField(default=0)
     
     def __str__(self):
         return self.letter_char
-
+    class Meta:
+            ordering = ['alphabetical_order']
 
 class Dict_indigenous(models.Model):
     name = models.CharField(max_length=40)
     description = models.CharField(max_length=140)
     letter = models.ForeignKey(Dict_letter, on_delete=models.CASCADE)
-    
-    
+   
+
     def __str__(self):
-        return self.name
+        return self.letter_char
+
+  
