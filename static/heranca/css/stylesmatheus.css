@@ -953,38 +953,224 @@ footer{
 
 
 /* Dict */
+
+@media (max-width: 660px){
+    .dict_word_popup h2{
+        font-size: large !important;
+    }
+
+    .see_more_dict > h2{
+       font-size: medium !important;
+    }
+    .more-dict{
+        height: 270px !important;
+    }
+    .more_dict_block{
+        padding: 15px !important;
+        height: 240px !important;
+
+    }
+}
+@media (max-width: 470px){
+    .more-dict{
+        display: block !important;
+        height: 500px !important;
+    }
+    .more_dict_block{
+        width: 80% !important;
+    }
+}
+@media (max-width: 400px){
+    .more_dict_dict_word h2{
+        font-size: small !important;
+    }
+    .dict_word_popup h2{
+        font-size: medium !important;
+    }
+
+}
+
+.background_popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter:  blur(0.8px);
+    z-index: -1;
+}
+.dict_block_popup {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.382);
+    border-radius: 10px;
+    padding: 15px 20px;
+    max-width: 640px;
+    min-width: 200px;
+    max-height: 400px;
+    background-color: white;
+    margin: 30px auto;
+    overflow-y: scroll;
+    
+
+}
+.dict_letter-popup{
+    margin-bottom: 3px;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+}
+.dict_word_popup h2{
+    font-family: poppins;
+    font-weight: 500;
+    font-size: x-large;
+    text-align: justify;
+}
+
+.dict_block_popup::-webkit-scrollbar { 
+    display: none;
+  }
+
 .main_dict{
     margin: auto;
     min-width: 100px;
     max-width: 1100px; 
-    padding: 0 20px 20px 20px;
 }
+.bottom-img, .bottom-img-popup{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-img-popup{   
+    width: 100%;
+    z-index: -99;
+}
+.img-gratient-detail{
+    padding-bottom: 10px;
+    background-image: linear-gradient( to bottom, transparent 94%, #F78E1C, white);
+}
+
+.bottom-img-popup img, .bottom-img img{
+    margin: auto;
+    height: 100%;
+    width: calc(100% + 10vh);
+}
+
+@media (max-width:1000px){
+    .bottom-img-popup img, .bottom-img img{
+        width: 140% !important;
+    }
+}
+@media (max-width: 800px){
+    .dict_letter-popup{
+        font-size: large !important;
+
+    }
+    .more_dict_dict_word h2{
+        font-size: medium !important;
+    }
+    .more_dict_block{
+        padding: 10px !important;
+        height: 150px !important;
+    }
+}
+@media (max-width:700px){
+    .bottom-img-popup img, .bottom-img img{
+        width: 180% !important;
+    }
+}
+@media (max-width:500px){
+    .bottom-img-popup img, .bottom-img img{
+        width: 234% !important;
+    }
+}
+@media (min-height:600px){
+    .bottom-img, .bottom-img-popup{
+
+        position: relative !important;  
+    }
+}
+
+
+
 
 .home_dict_top{
     width: 100%;
     padding: 10px 30px;
 }
-.home_dict_title, .dict_letter{
+.home_dict_top a{
+   float: right;
+}
+.home_dict_title, .dict_letter, .dict_letter-popup{
     color: #CC362F;
     font-family: ruda;
 }
 .dict_letter{
     margin-bottom: 3px;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+}
+u{
+    font-size: small;
+    color:  #572102;
+    text-decoration: none;
+    float: right;
 }
 .dict_word h2{
     font-family: poppins;
     font-weight: 500;
-    font-size: larger;
+    font-size: medium;
     text-align: justify;
 }
 .home_dict{
-    width: 330px;
-    padding-right: 15px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px,1fr)); 
+    gap: 12px;
+    justify-content: space-evenly;
+    align-items: start;
+    justify-items: center;
 }
 .dict_block{
-    width: 100%;
-    padding: 10px 0px;
+    text-decoration: none;
+    color:  #572102;
+    width: 265px;
+    padding: 10px 0px 20px 0px;
+    overflow-y: hidden;
 }
+
 .letter_detail{
     width: 100%;
+}
+.see_more_dict{
+    padding-bottom: 30px;
+}
+.see_more_dict > h2{
+    padding: 8px 15px;
+    background-color: #F78E1C;
+    color: white;
+    font-family: ruda;
+    width: 240px;
+    text-align: center;
+    margin: 20px auto;
+}
+.more-dict{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+.more_dict_block{
+    overflow: hidden;
+    margin: 10px auto;
+    display: block;
+    text-decoration: none;
+    color: #572102;
+    border: 1px solid rgba(0, 0, 0, 0.378);
+    border-radius: 4px;
+    padding: 20px;
+    height: 240px;
+    width: 32%;
 }

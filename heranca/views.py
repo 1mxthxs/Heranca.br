@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
 from .models import Noticia, Dict_indigenous, Dict_letter
@@ -28,6 +28,24 @@ def dict_indigenous(request):
     
     return render(request, 'heranca/dict.html', {
         'page_title': page_title, 
+        'letter_detail': False,
         'letters':letters,
     })
+    
+def dict_details(request, char):
+    letter = get_object_or_404(
+        Dict_letter,
+        letter_char=char,
+    )
+    more_dict = Dict_letter.objects.exclude(letter_char=char).order_by("?")[:3]    
+    
+    page_title = f"Dicionario - {more_dict}"
+    
+    return render(request, 'heranca/dict.html', {
+        'page_title': page_title, 
+        'letter_detail': True,
+        'letter':letter,
+        'more_dict': more_dict,
+    })
+    
 
