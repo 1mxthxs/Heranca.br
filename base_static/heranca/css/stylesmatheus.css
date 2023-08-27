@@ -100,7 +100,7 @@ header{
     height: 100%;
 }
 .user-name{
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #sidebar-off{
@@ -367,7 +367,7 @@ b{
 }
 @media (max-width:650px){
     .user-name{
-        font-size: 13px !important;
+        font-size: 16px !important;
     } 
     .signup{
         font-size: 14px !important;
@@ -429,7 +429,7 @@ b{
 }
 @media (max-width:415px){
     .user-name{
-        font-size: 11px !important;
+        font-size: 15px !important;
     }
     .header-logo{
         display: none !important;

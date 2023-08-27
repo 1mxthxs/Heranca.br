@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
 from .models import Noticia, Dict_indigenous, Dict_letter
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 
 def index(request):
@@ -19,7 +19,7 @@ def index(request):
 
 @login_required(login_url=reverse_lazy('index'))
 def profile(request):
-    return reverse_lazy("index")
+    return redirect(reverse("index"))
 
 
 def dict_indigenous(request):

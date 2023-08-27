@@ -24,9 +24,6 @@
     {% else %}
         <div class="home_dict_top">
             <h1 class="home_dict_title">Dicionário Indígena</h1>
-            {% if user.is_superuser and not letter_detail%}
-            <a href="#">Adionar Dicionário</a>
-            {% endif %}
         </div>  
         <div class="home_dict">
             {% for letter in letters %}
