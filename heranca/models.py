@@ -38,6 +38,6 @@ class Dict_indigenous(models.Model):
    
 
     def __str__(self):
-        return self.letter_char
+        return self.name
 
   

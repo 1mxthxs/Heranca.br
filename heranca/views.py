@@ -32,6 +32,7 @@ def dict_indigenous(request):
         'letters':letters,
     })
     
+
 def dict_details(request, char):
     letter = get_object_or_404(
         Dict_letter,
@@ -39,7 +40,7 @@ def dict_details(request, char):
     )
     more_dict = Dict_letter.objects.exclude(letter_char=char).order_by("?")[:3]    
     
-    page_title = f"Dicionario - {more_dict}"
+    page_title = f"Dicionario - {letter.letter_char}"
     
     return render(request, 'heranca/dict.html', {
         'page_title': page_title, 
@@ -48,4 +49,12 @@ def dict_details(request, char):
         'more_dict': more_dict,
     })
     
+    
+def quiz(request):
+    page_title = "Herança - Quiz"
+    
+    return render(request, 'heranca/quiz.html',{
+        'page_title':page_title,
+        
+    })
 
