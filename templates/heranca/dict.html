@@ -13,7 +13,7 @@
     {% if letter_detail %}
         <div class="dict_block_popup">
             <h1 class="dict_letter-popup">{{ letter.letter_char }}</h1>
-            {% for indigenous in letter.dict_indigenous_set.all %}
+            {% for indigenous in letter.get_words %}
                 <div class="letter_detail">
                     <div class="dict_word_popup">
                         <h2><b>{{ indigenous.name }}:</b> {{ indigenous.description }}</h2>
@@ -29,7 +29,7 @@
             {% for letter in letters %}
             <a href="{% url 'dict_details' letter.letter_char %}" class="dict_block">
                 <h1 class="dict_letter">{{ letter.letter_char }}</h1>
-                {% for indigenous in letter.dict_indigenous_set.all %}
+                {% for indigenous in letter.get_words %}
                 <div class="letter_detail">
                     <div class="dict_word">
                         <h2><b>{{ indigenous.name }}:</b> {{indigenous.description }}</h2>
@@ -42,7 +42,7 @@
             {% for letter in letters %}
             <a href="{% url 'dict_details' letter.letter_char %}" class="dict_block">
                 <h1 class="dict_letter">{{ letter.letter_char }}</h1>
-                {% for indigenous in letter.dict_indigenous_set.all %}
+                {% for indigenous in letter.get_words %}
                 <div class="letter_detail">
                     <div class="dict_word">
                         <h2><b>{{ indigenous.name }}:</b> {{indigenous.description }}</h2>
@@ -73,7 +73,7 @@
             {% for dict in more_dict %}
                 <a class="more_dict_block" href="{% url 'dict_details'  dict.letter_char %}">
                     <h1 class="dict_letter">{{ dict.letter_char }}</h1>
-                    {% for indigenous in dict.dict_indigenous_set.all %}
+                    {% for indigenous in dict.get_words %}
                     <div class="more_dict_detail">
                         <div class="more_dict_dict_word">
                             <h2><b>{{ indigenous.name }}:</b> {{indigenous.description }}</h2>

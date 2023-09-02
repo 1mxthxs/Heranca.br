@@ -5,9 +5,12 @@
     <script src="{% static 'heranca/js/sidebar.js' %}"></script>
     {% include 'heranca/partials/sidebar.html' %}
     <img class="header-logo" src="{% static 'heranca/images/logo.png' %}" alt="logo">
-    <form class="header-form" action="">
-        <input class="header-search" type="text" placeholder="Digite a palavra">
-        <img class="search-icon" src="{% static 'heranca/images/lupa.png'%}" alt="lupa">
+    <form class="header-form" action="" method='POST'>
+        {% csrf_token %}
+        <input class="header-search" name="header-search" type="text" placeholder="Digite a palavra">
+        <button type="submit" class="search-icon-btn">
+            <img class="search-icon" src="{% static 'heranca/images/lupa.png'%}" alt="lupa">
+        </button>
     </form>
     <div class="sidebar-btn">
         <img src="{% static 'heranca/images/menu.png' %}" alt="menu-btn" id="home-linkstyle-menu" onclick="entrar()">
@@ -18,9 +21,9 @@
             <li class="nav-li"><a class="nav-li-links" href="#">QUEM SOMOS</a></li>
             <li class="nav-li"><a class="nav-li-links"  href="{% url 'dict_indigenous' %}">QUIZ</a></li>
             {% if 'en/' in request.path  %}
-            <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'pt-br' %}">EN-US</a></li>
+            <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'pt-br' %}">PT-BR</a></li>
             {% else %}
-            <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'en' %}">PT-BR</a></li>
+            <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'en' %}">EN-US</a></li>
             {% endif %}
             
             {% if user.is_authenticated %}

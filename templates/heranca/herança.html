@@ -32,11 +32,11 @@
                     <button class="slide-next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="slides owl-carousel">      
-                    {% for noticia in noticias|slice:":10" %}
+                    {% for new in news|slice:":10" %}
                     <div class="slide">
                         <div class="slide-content">
-                            <img class="slide-img" src="{{ noticia.image.url }}" alt="{{ noticia.titulo }}">
-                            <h2 class="slide-title">{{ noticia.titulo }}</h2>
+                            <img class="slide-img" src="{{ new.image.url }}" alt="{{ new.titulo }}">
+                            <h2 class="slide-title">{{ new.titulo }}</h2>
                         </div>
                     </div>
                     {% endfor %} 
@@ -45,7 +45,7 @@
             </div>
             <div class="slide-selection">
                 
-                {% for noticia in noticias|slice:":10" %}
+                {% for new in news|slice:":10" %}
                 <input class="slide-option" hidden type="radio" name="slide" id="slide{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} data-position="{{ forloop.counter }}">
                 <label class="slide-option-btn" for="slide{{ forloop.counter }}"></label>
                 {% endfor %}

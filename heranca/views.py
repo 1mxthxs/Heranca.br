@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from allauth.account.forms import LoginForm, SignupForm
 from django.contrib.auth.decorators import login_required
-from .models import Noticia, Dict_indigenous, Dict_letter
+from .models import New, Dict_indigenou, Dict_letter
 from django.urls import reverse_lazy, reverse
 
 
@@ -10,11 +9,9 @@ def index(request):
     user = request.user 
     if user.is_authenticated:
         page_title = f"Herança - {user.username.title()}"
-    login_form = LoginForm()
-    signup_form = SignupForm() 
-    noticias = Noticia.objects.filter(is_public=True)
+    news = New.objects.filter(is_public=True)
     
-    return render(request, 'heranca/herança.html', {'page_title': page_title,'noticias': noticias,'login_form': login_form,'signup_form': signup_form, 'user':user,})
+    return render(request, 'heranca/herança.html', {'page_title': page_title,'news': news,'user':user,})
 
 
 @login_required(login_url=reverse_lazy('index'))
@@ -25,6 +22,15 @@ def profile(request):
 def dict_indigenous(request):
     page_title = "Herança - Dicionario"
     letters = Dict_letter.objects.order_by('alphabetical_order')
+    
+    if request.method == 'GET':
+        search_text = request.GET.get('header-search')
+        search_result = letters.filter(
+            letter_char=search_text
+        )
+        letters = search_result
+    elif request.method == 'POST':
+        page_title = "GET"
     
     return render(request, 'heranca/dict.html', {
         'page_title': page_title, 

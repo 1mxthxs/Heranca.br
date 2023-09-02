@@ -1,13 +1,13 @@
 from django.contrib import admin
 from image_cropping import ImageCroppingMixin
-from .models import Noticia, Dict_indigenous, Dict_letter
+from .models import New, Dict_indigenou, Dict_letter
 
-@admin.register(Noticia)
+@admin.register(New)
 class NoticiaAdmin(ImageCroppingMixin, admin.ModelAdmin):
     pass
 
 
-admin.site.register(Dict_indigenous)
+admin.site.register(Dict_indigenou)
 
 class DictLetterAdmin(admin.ModelAdmin):
     list_display = ('letter_char', 'alphabetical_order')

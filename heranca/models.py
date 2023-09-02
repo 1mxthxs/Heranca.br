@@ -10,7 +10,7 @@ def validate_image_ratio(image):
     if width / height != 16 / 9:
         raise ValidationError("A proporção da imagem deve ser 16:9.")
 
-class Noticia(models.Model):
+class New(models.Model):
     titulo = models.CharField(max_length=200)
     conteudo = models.TextField()
     image = models.ImageField(upload_to='News/cover/%Y/%m/%d/', blank=True, null=True)
@@ -26,12 +26,15 @@ class Dict_letter(models.Model):
     letter_char = models.CharField(max_length=1)
     alphabetical_order = models.IntegerField(default=0)
     
+    def get_words(self):
+        return self.dict_indigenou_set.all()
+    
     def __str__(self):
         return self.letter_char
     class Meta:
             ordering = ['alphabetical_order']
 
-class Dict_indigenous(models.Model):
+class Dict_indigenou(models.Model):
     name = models.CharField(max_length=40)
     description = models.CharField(max_length=140)
     letter = models.ForeignKey(Dict_letter, on_delete=models.CASCADE)
