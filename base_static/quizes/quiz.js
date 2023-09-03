@@ -32,7 +32,7 @@ const activateTimer = (time) => {
         }else{
             displaySeconds = seconds
         }
-        if(minutes === 0 && seconds === 0){
+        if((minutes === 0 && seconds === 0)){
             timerBox.innerHTML = '<b>00:00</b>'
             setTimeout(()=>{
                 clearInterval(timer)
