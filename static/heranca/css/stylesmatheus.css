@@ -43,9 +43,16 @@ header{
     width: 100px;
   
 }
-.search-icon{
+.search-icon-btn{
+    background-color: transparent;
+    border: none;
     position: relative; 
     right: 40px;
+    width: 28px;
+}
+.search-icon{
+    position: relative; 
+    right: 3px;
     width: 28px;
 }
 .header-form{
