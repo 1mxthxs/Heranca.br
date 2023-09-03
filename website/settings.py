@@ -34,6 +34,9 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'heranca',
+    'quizes',
+    'questions',
+    'results',
 ]
 
 MIDDLEWARE = [
@@ -123,10 +126,11 @@ LANGUAGES = (
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+#STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/' 
 STATICFILES_DIRS = [
-    BASE_DIR / "base_static/",
+    BASE_DIR / "static/",
+    BASE_DIR / 'quizes' / 'static',
 ]
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
