@@ -3,6 +3,7 @@ const quizBox = document.getElementById('quiz-box')
 const scoreBox = document.getElementById('score-box')
 const resultBox = document.getElementById('result-box')
 const timerBox = document.getElementById('timer-box')
+let exit = false
 
 const activateTimer = (time) => {
     if(time.toString().lenght < 2){
@@ -39,6 +40,9 @@ const activateTimer = (time) => {
                 sendData()
             }, 500)
             
+        }
+        if(exit == true){
+            exit()
         }
         timerBox.innerHTML = `<b>${displayMinutes}:${displaySeconds}</b>`
     }, 1000)
@@ -129,6 +133,7 @@ $.ajax({
                 }
             }
             //const body = document.getElementsByTagName('BODY')[0]
+            exit = true
             resultBox.append(resDiv)
         })
     },
