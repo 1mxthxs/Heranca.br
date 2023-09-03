@@ -54,7 +54,7 @@ def dict_details(request, char):
     page_title = f"Dicionario - {letter.letter_char}"
     
     return render(request, 'heranca/dict.html', {
-        'page_title': page_title, 
+        'page_title': page_title,
         'letter_detail': True,
         'letter': letter,
         'more_dict': more_dict,
