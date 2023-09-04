@@ -4,12 +4,14 @@ from django.views.generic import ListView
 from django.http import JsonResponse
 from questions.models import Question, Answer
 from results.models import Result
+from django.urls import reverse_lazy, reverse
+from django.contrib.auth.decorators import login_required
 
 class QuizListView(ListView):
     model = Quiz
     template_name = 'quizes/main.html'
 
-
+@login_required(login_url=reverse_lazy('account_login'))
 def quiz_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
     if request.method == "GET":
