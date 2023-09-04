@@ -115,8 +115,8 @@ header{
     z-index: 100;
     position: fixed;
     background-color: #00000055;
-    width: 100%;
-    height: 100%;
+    width: 200%;
+    height: 300%;
 }
 
 #sidebar > h3, .sidebar-p{
@@ -1037,7 +1037,7 @@ footer{
     display: none;
   }
 
-.main_dict{
+.main-width{
     margin: auto;
     min-width: 100px;
     max-width: 1100px; 
@@ -1108,7 +1108,7 @@ footer{
 .home_dict_top a{
    float: right;
 }
-.home_dict_title, .dict_letter, .dict_letter-popup{
+.top-title, .home_dict_title, .dict_letter, .dict_letter-popup{
     color: #CC362F;
     font-family: ruda;
 }
@@ -1181,4 +1181,62 @@ u{
     height: 240px;
     width: 32%;
     box-shadow: 2px 1px 20px rgba(0, 0, 0, 0.083);
+}
+
+
+/* ABOUT */
+
+.about-info-text{
+    font-family: poppins;
+    padding-top: 31px;
+}
+.about-info-text > h1{
+    font-family: ruda;
+    font-size: large;
+    padding: 3px 0;
+}
+.team > .top-title, .collaborators > .top-title{
+    font-size: larger;
+    padding-top: 27px;
+}
+.team-mates{
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.team-mate{
+    width: 170px;
+}
+.team-mate-img{
+    width: 100%;
+    height: 170px;
+    background-color: #661a0178;
+}
+.team-mate-text{
+    
+    text-align: center;
+}
+.team-mate-text > h1{
+    padding-top: 6px;
+    font-family: ruda;
+    font-size: medium;
+    color: #7D2102;
+}
+.team-mate-text > h2{
+    padding-top: 2px;
+    font-family: poppins;
+    font-size: small;
+}
+.collaborators{
+    margin-bottom: 14px;
+}
+.collaborators > .top-title{
+    margin-bottom: 6px;
+}
+.collaborators > h2{
+    font-size: medium;
+    padding-top: 5px;
+    font-family: poppins;
+    font-weight: 500;
 }

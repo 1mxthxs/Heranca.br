@@ -59,3 +59,8 @@ def dict_details(request, char):
         'letter': letter,
         'more_dict': more_dict,
     })
+
+def about(request):
+    return render(request, 'heranca/pages/about.html',{
+        'page_title': "Quem somos",
+    })
