@@ -24,7 +24,7 @@ class New(models.Model):
 class Dict_letter(models.Model):
     letter = models.AutoField(primary_key=True)
     letter_char = models.CharField(max_length=1)
-    alphabetical_order = models.IntegerField(default=0)
+    alphabetical_order = models.IntegerField(default=0, blank=True)
     
     def get_words(self):
         return self.dict_indigenou_set.all()
@@ -32,15 +32,20 @@ class Dict_letter(models.Model):
     def __str__(self):
         return self.letter_char
     class Meta:
-            ordering = ['alphabetical_order']
+        ordering = ['letter_char']
 
 class Dict_indigenou(models.Model):
     name = models.CharField(max_length=40)
     description = models.CharField(max_length=140)
     letter = models.ForeignKey(Dict_letter, on_delete=models.CASCADE)
+    alphabetical_order = models.IntegerField(default=0, blank=True)
    
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        ordering = ['name']
+
 
   

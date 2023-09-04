@@ -9,7 +9,7 @@ urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
     path("", include('heranca.urls')),
     path('accounts/', include('allauth.urls')),
-    path('quizes/', include('quizes.urls'), name='quizes')
+    path('quiz/', include('quizes.urls'), name='quizes')
 ]
 
 urlpatterns = [

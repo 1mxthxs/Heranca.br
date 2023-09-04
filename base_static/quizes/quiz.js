@@ -32,17 +32,16 @@ const activateTimer = (time) => {
         }else{
             displaySeconds = seconds
         }
-        if((minutes === 0 && seconds === 0)){
+        if((minutes === 0 && seconds === 0) || exit == true){
             timerBox.innerHTML = '<b>00:00</b>'
             setTimeout(()=>{
                 clearInterval(timer)
-                alert('Tempo acabou!')
-                sendData()
+                if(exit != true){
+                    alert('Tempo acabou!')
+                    sendData()
+                }
             }, 500)
             
-        }
-        if(exit == true){
-            exit()
         }
         timerBox.innerHTML = `<b>${displayMinutes}:${displaySeconds}</b>`
     }, 1000)
