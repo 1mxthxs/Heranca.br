@@ -10,7 +10,6 @@
             {% else %}
             <img src="{% static 'heranca/images/default_user_img.png' %}" alt="">
             {% endif %}
-            
         </div>
         {% if user.is_authenticated %}
         <h3 class="user-name">{{ user.username|title }}</h3>

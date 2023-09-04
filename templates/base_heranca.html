@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './heranca/css/stylesmatheus.css' %}">
+    <link rel="shortcut icon" href="{% static './heranca/images/logo.png' %}" type="image/x-icon">
+    {% block scripts %}
+    
+    {% endblock scripts %}
+    <title>Herança - {% block title %}{% endblock title %}</title>
+
+</head>
+<body>
+    <script src="{% static 'heranca/js/sidebar.js' %}"></script>
+    {% include './heranca/partials/sidebar.html' %}
+    {% include './heranca/partials/header.html' %}
+    {% if 'accounts' in request.path %}
+        {% block content_auth %}
+        {% csrf_token %}
+        {% endblock content_auth %}
+    {% else %}
+        {% block content %}
+        {% endblock content %}
+    {% endif %}
+    {% include './heranca/partials/footer.html' %}
+</body>
+</html>

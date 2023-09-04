@@ -1,9 +1,7 @@
 {% load static %}
 {% load i18n %}
-{% include 'heranca/partials/sidebar.html' %}
 <header>
-    <script src="{% static 'heranca/js/sidebar.js' %}"></script>
-    {% include 'heranca/partials/sidebar.html' %}
+    
     <img class="header-logo" src="{% static 'heranca/images/logo.png' %}" alt="logo">
     <form id="header-search-form" class="header-form" method="POST">
         {% csrf_token %}

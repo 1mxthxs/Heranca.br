@@ -6,13 +6,13 @@ from django.urls import reverse_lazy, reverse
 from django.db.models import Q
 
 def index(request):
-    page_title = "Herança!"
+    page_title = "Inicio!"
     user = request.user 
     if user.is_authenticated:
-        page_title = f"Herança - {user.username.title()}"
+        page_title = user.username.title()
     news = New.objects.filter(is_public=True)
     
-    return render(request, 'heranca/herança.html', {'page_title': page_title, 'news': news, 'user': user, })
+    return render(request, 'heranca/pages/herança.html', {'page_title': page_title, 'news': news, 'user': user,})
 
 
 @login_required(login_url=reverse_lazy('index'))
@@ -22,7 +22,7 @@ def profile(request):
 
 @csrf_protect
 def dict_indigenous(request):
-    page_title = "Herança - Dicionario"
+    page_title = "Dicionario"
     search_placeholder_text = "Busque pela letra!"
     letters = Dict_letter.objects.order_by('alphabetical_order')
     
@@ -35,7 +35,7 @@ def dict_indigenous(request):
             Q(letter_char__icontains=search_text))
         letters = search_result
     
-    return render(request, 'heranca/dict.html', {
+    return render(request, 'heranca/pages/dict.html', {
         'page_title': page_title,
         'letter_detail': False,
         'letters': letters,
@@ -53,7 +53,7 @@ def dict_details(request, char):
     
     page_title = f"Dicionario - {letter.letter_char}"
     
-    return render(request, 'heranca/dict.html', {
+    return render(request, 'heranca/pages/dict.html', {
         'page_title': page_title,
         'letter_detail': True,
         'letter': letter,

@@ -1,10 +1,10 @@
+{% extends 'base_heranca.html' %}
 {% load i18n %}
 {% load static %}
 
 <!DOCTYPE html>
 <html>
 <head>
-    {% include '../heranca/partials/head.html' %}
     <style>
         .section form > button {
             transition: 0;
@@ -22,17 +22,17 @@
 </head>
 
 <body>
-    {% include '../heranca/partials/header.html' %}
-    {% include 'heranca/partials/home1.html' %}
 
+    {% block content_auth %}
+    {% include '../heranca/partials/home1.html' %}
 
     {% block body %}
     <div id="modalBackground">
     <div id="modalContent">
         <a href="{% url 'index' %}" id="fecharModalButton">&times;</a>
         {% block content %}
-        
-        {% endblock %}     
+        {% csrf_token %}
+        {% endblock content %}
         {% if form.errors %}
         <div class="error-messages">
         <p><strong>{% trans "Erros:" %}</strong></p>
@@ -51,5 +51,6 @@
     {% block extra_body %}
 
     {% endblock %}
+    {% endblock content_auth %}
 </body>
 </html>
