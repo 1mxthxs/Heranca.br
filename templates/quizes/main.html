@@ -2,50 +2,64 @@
 {% load static %}
 
 {% block scripts %}
-<script src="{% static 'quizes/main.js' %}" defer></script>
+    <script src="{% static 'quizes/main.js' %}" defer></script>
 {% endblock scripts %}
 
-
 {% block content %}
-<!-- Button trigger modal -->
-<a href="{% url 'index' %}" type="button" class="btn btn-primary" >Voltar para o início</a>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="quizStartModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Começar?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="modal-body-confirm">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-          <button type="button" id="start-button" class="btn btn-success">Sim</button>
-        </div>
-      </div>
+<main class="main-width">
+    <div class="top-title">
+        <h1>Quiz - Tribos Indígenas</h1>
     </div>
-  </div>
 
-<div class="h1">Quiz List</div>
-
-{% for obj in object_list %}
-  <button 
-    class=" btn btn-link modal-button"
-    data-pk="{{obj.pk}}"
-    data-quiz="{{obj.name}}"
-    data-questions="{{obj.number_of_questions}}"
-    data-difficulty="{{obj.difficulty}}"
-    data-time="{{obj.time}}"
-    data-pass="{{obj.required_score_to_pass}}"
-    data-toggle="modal"
-    data-target="#quizStartModalCenter"
-  >{{obj.name}}</button>
-  
-{% endfor %}
+    <div class="modal fade" id="quizStartModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Começar?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body" id="modal-body-confirm">
+            
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+            <button type="button" id="start-button" class="btn btn-success">Sim</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% for quiz in quizes %}
+        {% if quiz.get_not_none > 0 %}
+            <div class="quiz-title" id="quiz-block">
+                {{quiz.name}}
+            </div>
+            {% for obj in quiz.get_quizes %}
+                <button
+                {% if obj.difficulty == "easy" %}class="bg-success
+                {% elif obj.difficulty == "medium" %}class="bg-warning
+                {% elif obj.difficulty == "hard" %}class="bg-danger
+                {% endif %}
+                block-quiz btn btn-link modal-button"
+                data-pk="{{obj.pk}}"
+                data-quiz="{{obj.name}}"
+                data-questions="{{obj.number_of_questions}}"
+                data-difficulty="{{obj.difficulty}}"
+                data-time="{{obj.time}}"
+                data-pass="{{obj.required_score_to_pass}}"
+                data-toggle="modal"
+                data-target="#quizStartModalCenter"
+                >{{obj.name|title}} - Nivel {{obj.difficulty|title}}</button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</main>
+<section class="img-gratient">
+    <div class="bottom-img">
+        <img src="{% static 'heranca/images/dict/bottom2.svg' %}" alt="">
+    </div>
+</section>
 {% endblock content %}
 

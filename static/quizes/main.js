@@ -1,5 +1,3 @@
-console.log('hello world')
-
 const modalBtns = [...document.getElementsByClassName('modal-button')]
 const modalBody = document.getElementById('modal-body-confirm')
 const startBtn = document.getElementById('start-button')
@@ -28,3 +26,12 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
         window.location.href = url + pk
     })
 }))
+
+function toggleQuiz(className){
+    const divs = document.getElementById('quiz-block')
+    divs.innerHTML = `
+    <div>
+        aksdfkasd
+    </div>
+`
+}
