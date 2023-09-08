@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 def validate_image_ratio(image):
     img = Image.open(image)
@@ -11,8 +12,8 @@ def validate_image_ratio(image):
         raise ValidationError("A proporção da imagem deve ser 16:9.")
 
 class New(models.Model):
-    titulo = models.CharField(max_length=200)
-    conteudo = models.TextField()
+    titulo = models.CharField(_("Titulo"), max_length=200)
+    conteudo = models.TextField(_("Conteudo"), )
     image = models.ImageField(upload_to='News/cover/%Y/%m/%d/', blank=True, null=True)
     is_public = models.BooleanField(default=True)
 
@@ -23,8 +24,8 @@ class New(models.Model):
 
 class Dict_letter(models.Model):
     letter = models.AutoField(primary_key=True)
-    letter_char = models.CharField(max_length=1)
-    alphabetical_order = models.IntegerField(default=0, blank=True)
+    letter_char = models.CharField(_("Letter Char"), max_length=1)
+    alphabetical_order = models.IntegerField(_("Alphabetical Order"), default=0, blank=True)
     
     def get_words(self):
         return self.dict_indigenou_set.all()
@@ -35,10 +36,10 @@ class Dict_letter(models.Model):
         ordering = ['letter_char']
 
 class Dict_indigenou(models.Model):
-    name = models.CharField(max_length=40)
-    description = models.CharField(max_length=140)
+    name = models.CharField(_("Name"), max_length=40)
+    description = models.CharField(_("Description"), max_length=140)
     letter = models.ForeignKey(Dict_letter, on_delete=models.CASCADE)
-    alphabetical_order = models.IntegerField(default=0, blank=True)
+    alphabetical_order = models.IntegerField(_("Alphabetical Order"), default=0, blank=True)
    
 
     def __str__(self):

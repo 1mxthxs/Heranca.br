@@ -1,9 +1,10 @@
 from django.db import models
 from quizes.models import Quiz
+from django.utils.translation import gettext_lazy as _
 
 
 class Question(models.Model):
-    text = models.CharField(max_length=200)
+    text = models.CharField(_("Text"), max_length=200)
     quiz = models.ForeignKey(Quiz, on_delete = models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -16,7 +17,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    text = models.CharField(max_length=200)
+    text = models.CharField(_("Text"), max_length=200)
     correct = models.BooleanField(default=False)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)

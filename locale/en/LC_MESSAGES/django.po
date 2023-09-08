@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 20:50-0300\n"
+"POT-Creation-Date: 2023-09-08 21:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,512 +18,220 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/account/account_inactive.html:5
-#: templates/account/account_inactive.html:8
-msgid "Account Inactive"
-msgstr "Account Inactive"
+#: heranca/models.py:15
+msgid "Titulo"
+msgstr "Title"
 
-#: templates/account/account_inactive.html:10
-msgid "This account is inactive."
-msgstr "This account is inactive."
+#: heranca/models.py:16
+msgid "Content"
+msgstr "Content"
 
-#: templates/account/base.html:38
-msgid "Erros:"
-msgstr "Errors:"
+#: heranca/models.py:27
+msgid "Letter Char"
+msgstr "Letter Char"
 
-#: templates/account/email.html:5 templates/account/email.html:8
-msgid "E-mail Addresses"
-msgstr "E-mail Addresses"
+#: heranca/models.py:28 heranca/models.py:42
+msgid "Alphabetical Order"
+msgstr "ALPHABETICAL ORDER"
 
-#: templates/account/email.html:10
-msgid "The following e-mail addresses are associated with your account:"
-msgstr "The following e-mail addresses are associated with your account:"
+#: heranca/models.py:39 quizes/models.py:14 quizes/models.py:28
+msgid "Name"
+msgstr "Name"
 
-#: templates/account/email.html:24
-msgid "Verified"
-msgstr "Verified"
+#: heranca/models.py:40
+msgid "Description"
+msgstr "Description"
 
-#: templates/account/email.html:26
-msgid "Unverified"
-msgstr "Unverified"
+#: questions/models.py:7 questions/models.py:20
+msgid "Text"
+msgstr "Text"
 
-#: templates/account/email.html:28
-msgid "Primary"
-msgstr "Primary"
+#: quizes/models.py:29
+msgid "Topic"
+msgstr "Topic"
 
-#: templates/account/email.html:34
-msgid "Make Primary"
-msgstr "Make Primary"
+#: quizes/models.py:30
+msgid "Number of Questions"
+msgstr "Number of Questions"
 
-#: templates/account/email.html:35
-msgid "Re-send Verification"
-msgstr "Re-send Verification"
+#: quizes/models.py:31
+msgid "Time"
+msgstr "Team"
 
-#: templates/account/email.html:36 templates/socialaccount/connections.html:35
-msgid "Remove"
-msgstr "Remove"
+#: quizes/models.py:31
+msgid "Time in Minutes"
+msgstr "Time in Minutes"
 
-#: templates/account/email.html:43
-msgid "Warning:"
-msgstr "Warning:"
+#: quizes/models.py:32
+msgid "Required score to pass"
+msgstr "Required Score to Pass"
 
-#: templates/account/email.html:43
+#: quizes/models.py:32
+msgid "Required score, ex: 6, then (6=score/10=questions) to pass"
+msgstr "Required Score, Ex: 6, then (6 = score/10 = questions) to pass"
+
+#: quizes/models.py:33
+msgid "Difficulty"
+msgstr "Difficulty"
+
+#: quizes/models.py:35
+msgid "Is public"
+msgstr "IS PUBLIC"
+
+#: quizes/models.py:39
 msgid ""
-"You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, etc."
+"required_score_to_pass should be less than or equal to the number_of_questions and greater than 0.\n"
+"Required_score_to_pass < Number_of_questions"
 msgstr ""
-"You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, etc."
+"Required_Score_to_Pass Should Be Less Than or Equal To the Number_of_Questions and Greater Than 0.\n"
+"Required_Score_to_Pass <number_of_questions"
 
-#: templates/account/email.html:48
-msgid "Add E-mail Address"
-msgstr "Add E-mail Address"
+#: results/models.py:10
+msgid "Score"
+msgstr "Score"
 
-#: templates/account/email.html:53
-msgid "Add E-mail"
-msgstr "Add E-mail"
-
-#: templates/account/email.html:63
-msgid "Do you really want to remove the selected e-mail address?"
-msgstr "Do you really want to remove the selected e-mail address?"
-
-#: templates/account/email/account_already_exists_message.txt:4
-#, python-format
-msgid ""
-"You are receiving this e-mail because you or someone else tried to signup "
-"for an\n"
-"account using e-mail address:\n"
-"\n"
-"%(email)s\n"
-"\n"
-"However, an account using that e-mail address already exists.  In case you "
-"have\n"
-"forgotten about this, please use the password forgotten procedure to "
-"recover\n"
-"your account:\n"
-"\n"
-"%(password_reset_url)s"
-msgstr ""
-"You are receiving this e-mail because you or someone else tried to signup "
-"for an\n"
-"account using e-mail address:\n"
-"\n"
-"%(email)s\n"
-"\n"
-"However, an account using that e-mail address already exists.  In case you "
-"have\n"
-"forgotten about this, please use the password forgotten procedure to "
-"recover\n"
-"your account:\n"
-"\n"
-"%(password_reset_url)s"
-
-#: templates/account/email/account_already_exists_subject.txt:3
-msgid "Account Already Exists"
-msgstr "Account Already Exists"
-
-#: templates/account/email/base_message.txt:1
-#, python-format
-msgid "Hello from %(site_name)s!"
-msgstr "Hello from %(site_name)s!"
-
-#: templates/account/email/base_message.txt:5
-#, python-format
-msgid ""
-"Thank you for using %(site_name)s!\n"
-"%(site_domain)s"
-msgstr ""
-"Thank you for using %(site_name)s!\n"
-"%(site_domain)s"
-
-#: templates/account/email/email_confirmation_message.txt:5
-#, python-format
-msgid ""
-"You're receiving this e-mail because user %(user_display)s has given your e-"
-"mail address to register an account on %(site_domain)s.\n"
-"\n"
-"To confirm this is correct, go to %(activate_url)s"
-msgstr ""
-"You're receiving this e-mail because user %(user_display)s has given your e-"
-"mail address to register an account on %(site_domain)s.\n"
-"\n"
-"To confirm this is correct, go to %(activate_url)s"
-
-#: templates/account/email/email_confirmation_subject.txt:3
-msgid "Please Confirm Your E-mail Address"
-msgstr "Please Confirm Your E-mail Address"
-
-#: templates/account/email/password_reset_key_message.txt:4
-msgid ""
-"You're receiving this e-mail because you or someone else has requested a "
-"password for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
-msgstr ""
-"You're receiving this e-mail because you or someone else has requested a "
-"password for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
-
-#: templates/account/email/password_reset_key_message.txt:9
-#, python-format
-msgid "In case you forgot, your username is %(username)s."
-msgstr "In case you forgot, your username is %(username)s."
-
-#: templates/account/email/password_reset_key_subject.txt:3
-#: templates/account/email/unknown_account_subject.txt:3
-msgid "Password Reset E-mail"
-msgstr "Password Reset E-mail"
-
-#: templates/account/email/unknown_account_message.txt:4
-#, python-format
-msgid ""
-"You are receiving this e-mail because you or someone else has requested a\n"
-"password for your user account. However, we do not have any record of a "
-"user\n"
-"with email %(email)s in our database.\n"
-"\n"
-"This mail can be safely ignored if you did not request a password reset.\n"
-"\n"
-"If it was you, you can sign up for an account using the link below."
-msgstr ""
-"You are receiving this e-mail because you or someone else has requested a\n"
-"password for your user account. However, we do not have any record of a "
-"user\n"
-"with email %(email)s in our database.\n"
-"\n"
-"This mail can be safely ignored if you did not request a password reset.\n"
-"\n"
-"If it was you, you can sign up for an account using the link below."
-
-#: templates/account/email_confirm.html:6
-#: templates/account/email_confirm.html:10
-msgid "Confirm E-mail Address"
-msgstr "Confirm E-mail Address"
-
-#: templates/account/email_confirm.html:16
-#, python-format
-msgid ""
-"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
-"address for user %(user_display)s."
-msgstr ""
-"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
-"address for user %(user_display)s."
-
-#: templates/account/email_confirm.html:20
-msgid "Confirm"
-msgstr "Confirm"
-
-#: templates/account/email_confirm.html:27
-#, python-format
-msgid ""
-"This e-mail confirmation link expired or is invalid. Please <a href="
-"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
-msgstr ""
-"This e-mail confirmation link expired or is invalid. Please <a href="
-"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
-
-#: templates/account/login.html:7 templates/socialaccount/login.html:4
-msgid "Sign In"
-msgstr "Sign In"
-
-#: templates/account/logout.html:6 templates/account/logout.html:10
-#: templates/account/logout.html:19
-msgid "Sign Out"
-msgstr "Sign Out"
-
-#: templates/account/logout.html:12
-msgid "Are you sure you want to sign out?"
-msgstr "Are you sure you want to sign out?"
-
-#: templates/account/messages/cannot_delete_primary_email.txt:2
-#, python-format
-msgid "You cannot remove your primary e-mail address (%(email)s)."
-msgstr "You cannot remove your primary e-mail address (%(email)s)."
-
-#: templates/account/messages/email_confirmation_sent.txt:2
-#, python-format
-msgid "Confirmation e-mail sent to %(email)s."
-msgstr "Confirmation e-mail sent to %(email)s."
-
-#: templates/account/messages/email_confirmed.txt:2
-#, python-format
-msgid "You have confirmed %(email)s."
-msgstr "You have confirmed %(email)s."
-
-#: templates/account/messages/email_deleted.txt:2
-#, python-format
-msgid "Removed e-mail address %(email)s."
-msgstr "Removed e-mail address %(email)s."
-
-#: templates/account/messages/logged_in.txt:4
-#, python-format
-msgid "Successfully signed in as %(name)s."
-msgstr "Successfully signed in as %(name)s."
-
-#: templates/account/messages/logged_out.txt:2
-msgid "You have signed out."
-msgstr "You have signed out."
-
-#: templates/account/messages/password_changed.txt:2
-msgid "Password successfully changed."
-msgstr "Password successfully changed."
-
-#: templates/account/messages/password_set.txt:2
-msgid "Password successfully set."
-msgstr "Password successfully set."
-
-#: templates/account/messages/primary_email_set.txt:2
-msgid "Primary e-mail address set."
-msgstr "Primary e-mail address set."
-
-#: templates/account/messages/unverified_primary_email.txt:2
-msgid "Your primary e-mail address must be verified."
-msgstr "Your primary e-mail address must be verified."
-
-#: templates/account/password_change.html:5
-#: templates/account/password_change.html:8
-#: templates/account/password_change.html:13
-#: templates/account/password_reset_from_key.html:4
-#: templates/account/password_reset_from_key.html:7
-#: templates/account/password_reset_from_key_done.html:4
-#: templates/account/password_reset_from_key_done.html:7
-msgid "Change Password"
-msgstr "Change Password"
-
-#: templates/account/password_change.html:14
-msgid "Forgot Password?"
-msgstr "Forgot Password?"
-
-#: templates/account/password_reset.html:6
-#: templates/account/password_reset.html:10
-#: templates/account/password_reset_done.html:6
-#: templates/account/password_reset_done.html:9
-msgid "Password Reset"
-msgstr "Password Reset"
-
-#: templates/account/password_reset.html:15
-msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you "
-"an e-mail allowing you to reset it."
-msgstr ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you "
-"an e-mail allowing you to reset it."
-
-#: templates/account/password_reset.html:20
-msgid "Reset My Password"
-msgstr "Reset My Password"
-
-#: templates/account/password_reset.html:23
-msgid "Please contact us if you have any trouble resetting your password."
-msgstr "Please contact us if you have any trouble resetting your password."
-
-#: templates/account/password_reset_done.html:15
-msgid ""
-"We have sent you an e-mail. If you have not received it please check your "
-"spam folder. Otherwise contact us if you do not receive it in a few minutes."
-msgstr ""
-"We have sent you an e-mail. If you have not received it please check your "
-"spam folder. Otherwise contact us if you do not receive it in a few minutes."
-
-#: templates/account/password_reset_from_key.html:7
-msgid "Bad Token"
-msgstr "Bad Token"
-
-#: templates/account/password_reset_from_key.html:11
-#, python-format
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
-msgstr ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
-
-#: templates/account/password_reset_from_key.html:16
-msgid "change password"
-msgstr "change password"
-
-#: templates/account/password_reset_from_key_done.html:8
-msgid "Your password is now changed."
-msgstr "Your password is now changed."
-
-#: templates/account/password_set.html:5 templates/account/password_set.html:8
-#: templates/account/password_set.html:13
-msgid "Set Password"
-msgstr "Set Password"
-
-#: templates/account/signup.html:6 templates/socialaccount/signup.html:6
-msgid "Signup"
-msgstr "Signup"
-
-#: templates/account/signup_closed.html:5
-#: templates/account/signup_closed.html:8
-msgid "Sign Up Closed"
-msgstr "Sign Up Closed"
-
-#: templates/account/signup_closed.html:10
-msgid "We are sorry, but the sign up is currently closed."
-msgstr "We are sorry, but the sign up is currently closed."
-
-#: templates/account/snippets/already_logged_in.html:5
-msgid "Note"
-msgstr "Note"
-
-#: templates/account/snippets/already_logged_in.html:5
-#, python-format
-msgid "you are already logged in as %(user_display)s."
-msgstr "you are already logged in as %(user_display)s."
-
-#: templates/account/verification_sent.html:5
-#: templates/account/verification_sent.html:8
-#: templates/account/verified_email_required.html:5
-#: templates/account/verified_email_required.html:8
-msgid "Verify Your E-mail Address"
-msgstr "Verify Your E-mail Address"
-
-#: templates/account/verification_sent.html:10
-msgid ""
-"We have sent an e-mail to you for verification. Follow the link provided to "
-"finalize the signup process. If you do not see the verification e-mail in "
-"your main inbox, check your spam folder. Please contact us if you do not "
-"receive the verification e-mail within a few minutes."
-msgstr ""
-"We have sent an e-mail to you for verification. Follow the link provided to "
-"finalize the signup process. If you do not see the verification e-mail in "
-"your main inbox, check your spam folder. Please contact us if you do not "
-"receive the verification e-mail within a few minutes."
-
-#: templates/account/verified_email_required.html:12
-msgid ""
-"This part of the site requires us to verify that\n"
-"you are who you claim to be. For this purpose, we require that you\n"
-"verify ownership of your e-mail address. "
-msgstr ""
-"This part of the site requires us to verify that\n"
-"you are who you claim to be. For this purpose, we require that you\n"
-"verify ownership of your e-mail address."
-
-#: templates/account/verified_email_required.html:16
-msgid ""
-"We have sent an e-mail to you for\n"
-"verification. Please click on the link inside that e-mail. If you do not see "
-"the verification e-mail in your main inbox, check your spam folder. "
-"Otherwise\n"
-"contact us if you do not receive it within a few minutes."
-msgstr ""
-"We have sent an e-mail to you for\n"
-"verification. Please click on the link inside that e-mail. If you do not see "
-"the verification e-mail in your main inbox, check your spam folder. "
-"Otherwise\n"
-"contact us if you do not receive it within a few minutes."
-
-#: templates/account/verified_email_required.html:20
-#, python-format
-msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
-"mail address</a>."
-msgstr ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
-"mail address</a>."
-
-#: templates/heranca/pages/herança.html:14
+#: templates/heranca/pages/herança.html:19
 msgid "Notícias"
 msgstr "News"
 
-#: templates/heranca/pages/herança.html:41
+#: templates/heranca/pages/herança.html:47
 msgid "Mais Notícias"
-msgstr "More News"
+msgstr "More news"
 
-#: templates/heranca/pages/herança.html:101
+#: templates/heranca/pages/herança.html:108
 msgid ""
 "Enquanto existir uma erva, uma árvore ou um rio no planeta, nós povos "
 "indígenas existiremos."
 msgstr ""
-
-#: templates/heranca/pages/herança.html:116
-#: templates/heranca/pages/herança.html:131
-msgid "Neste quiz, convidamos você a embarcar em uma jornada fascinante pela "
-msgstr "In this quiz, we invite you to get in into a amazing journey"
-
-#: templates/heranca/pages/herança.html:117
-#: templates/heranca/pages/herança.html:132
-msgid "herança cultural de tribos indígenas."
-msgstr ""
-
-#: templates/heranca/pages/herança.html:118
-#: templates/heranca/pages/herança.html:133
-msgid "Explore conosco "
-msgstr ""
-
-#: templates/heranca/pages/herança.html:119
-#: templates/heranca/pages/herança.html:134
-msgid "a riqueza das tradições, histórias e costumes"
-msgstr ""
+"As long as there is a grass, tree or river on the planet, we indigenous "
+"peoples will exist."
 
 #: templates/heranca/pages/herança.html:123
+#: templates/heranca/pages/herança.html:137
+msgid "Neste quiz, convidamos você a embarcar em uma jornada fascinante pela "
+msgstr ""
+"In this quiz, we invite you to embark on a fascinating journey through"
+
+#: templates/heranca/pages/herança.html:124
 #: templates/heranca/pages/herança.html:138
-#: templates/heranca/partials/home1.html:37
+msgid "herança cultural de tribos indígenas."
+msgstr "Cultural heritage of indigenous tribes."
+
+#: templates/heranca/pages/herança.html:125
+#: templates/heranca/pages/herança.html:139
+msgid "Explore conosco "
+msgstr "Explore with us"
+
+#: templates/heranca/pages/herança.html:126
+#: templates/heranca/pages/herança.html:140
+msgid "a riqueza das tradições, histórias e costumes"
+msgstr "The richness of traditions, stories and customs"
+
+#: templates/heranca/pages/herança.html:127
+#: templates/heranca/pages/herança.html:141
+msgid ""
+"que moldaram essas comunidades ao longo dos séculos.Pronto para se aventurar"
+" e descobrir a herança cultural dessas tribos indígenas?"
+msgstr ""
+"What have these communities shaped over the centuries. Read to venture and "
+"discover the cultural heritage of these indigenous tribes?"
+
+#: templates/heranca/pages/herança.html:129
+#: templates/heranca/pages/herança.html:143
+#: templates/heranca/partials/home1.html:40
 msgid "Cadastre-se para sabe mais"
-msgstr "Signup to know more!"
+msgstr "Sign up to know more"
 
 #: templates/heranca/partials/footer.html:14
 msgid "POLÍTICA DE PRIVACIDADE"
-msgstr ""
+msgstr "PRIVACY POLICY"
 
 #: templates/heranca/partials/footer.html:15
 msgid "TERMOS DE USO"
-msgstr ""
+msgstr "TERMS OF USE"
 
 #: templates/heranca/partials/footer.html:16
 msgid "CENTRAL DE AJUDA"
-msgstr ""
+msgstr "HELP CENTER"
+
+#: templates/heranca/partials/header.html:8
+msgid "Digite a palavra"
+msgstr "Enter the word"
+
+#: templates/heranca/partials/header.html:20
+msgid "INÍCIO"
+msgstr "HOME"
+
+#: templates/heranca/partials/header.html:21
+msgid "DICIONARIO"
+msgstr "DICTIONARY"
+
+#: templates/heranca/partials/header.html:22
+msgid "QUIZ"
+msgstr "Quiz"
+
+#: templates/heranca/partials/header.html:24
+msgid "PT-BR"
+msgstr "PT-BR"
+
+#: templates/heranca/partials/header.html:26
+msgid "EN-US"
+msgstr "EN-US"
+
+#: templates/heranca/partials/header.html:30
+msgid "SAIR"
+msgstr "LOGOUT"
+
+#: templates/heranca/partials/header.html:32
+msgid "ENTRAR"
+msgstr "LOGIN"
 
 #: templates/heranca/partials/home1.html:12
 msgid "Descubra tudo sobre as tribos indígenas da nossa região!"
 msgstr "Find out all about the indigenous tribes of our region!"
 
 #: templates/heranca/partials/home1.html:13
-#, fuzzy
-#| msgid ""
-#| "Venha ver a história dos <b>maiores povos indígenas que se localizam "
-#| "perto de Manacapuru,</b> todas as dificuldades que esses povos indígenas "
-#| "passam ou passaram."
 msgid ""
 "Venha ver a história dos <b>maiores povos indígenas que se localizam perto "
 "de Manacapuru,"
 msgstr ""
-"Come see the history of the largest indigenous peoples who are located near "
-"Manacapuru, all the difficulties that these indigenous peoples pass or have "
-"passed."
+"Come see the history of the largest indigenous peoples that are located near"
+" Manacapuru,"
 
-#: templates/heranca/partials/home1.html:13
+#: templates/heranca/partials/home1.html:14
 msgid " todas as dificuldades que esses povos indígenas passam ou passaram."
 msgstr ""
+"All the difficulties that these indigenous peoples pass or have passed."
 
-#: templates/heranca/partials/home1.html:14
-msgid "Venha fazer parte dessa "
-msgstr ""
+#: templates/heranca/partials/home1.html:15
+msgid "Venha fazer parte dessa"
+msgstr "Come be part of this"
 
-#: templates/heranca/partials/home1.html:14
+#: templates/heranca/partials/home1.html:16
 msgid ""
 "conscientização indígena e aprenda mais sobre as origens e heranças dos "
 "povos indigenas!!."
 msgstr ""
+"indigenous awareness and learn more about the origins and inheritances of "
+"indigenous peoples !!."
 
-#: templates/heranca/partials/home1.html:15
-msgid "Cadastre-se<"
-msgstr ""
+#: templates/heranca/partials/home1.html:18
+msgid "Cadastrar-se"
+msgstr "Register"
 
-#: templates/heranca/partials/home1.html:32
+#: templates/heranca/partials/home1.html:35
 msgid "Tribo Próximas"
-msgstr ""
+msgstr "Nearby tribe"
 
-#: templates/heranca/partials/home1.html:36
+#: templates/heranca/partials/home1.html:39
 msgid "Saiba onde encontrar tribos próximas a você para visitá-las."
-msgstr ""
+msgstr "Learn where to find tribes close to you to visit them."
 
+#: templates/heranca/partials/sidebar.html:17
+msgid "Usuário não cadastrado!"
+msgstr "User not registered!"
+
+#: templates/heranca/partials/sidebar.html:21
 #: templates/heranca/partials/sidebar.html:23
 msgid "Perfil"
 msgstr "Profile"
@@ -540,1120 +248,26 @@ msgstr "Login"
 msgid "Registrar"
 msgstr "Signup"
 
-#: templates/openid/login.html:9
-msgid "OpenID Sign In"
-msgstr "OpenID Sign In"
+#: templates/heranca/partials/sidebar.html:37
+msgid "Dicionario"
+msgstr "Dictionary"
 
-#: templates/socialaccount/authentication_error.html:5
-#: templates/socialaccount/authentication_error.html:8
-msgid "Social Network Login Failure"
-msgstr "Social Network Login Failure"
+#: templates/quizes/main.html:15
+msgid "Quiz - Tribos Indígenas"
+msgstr "Quiz - Indigenous tribes"
 
-#: templates/socialaccount/authentication_error.html:10
-msgid ""
-"An error occurred while attempting to login via your social network account."
-msgstr ""
-"An error occurred while attempting to login via your social network account."
+#: templates/quizes/main.html:65
+msgid "JOGAR!"
+msgstr "PLAY!"
 
-#: templates/socialaccount/connections.html:5
-#: templates/socialaccount/connections.html:8
-msgid "Account Connections"
-msgstr "Account Connections"
+#: templates/quizes/main.html:67
+msgid "JOGAR DE NOVO!"
+msgstr "PLAY AGAIN!"
 
-#: templates/socialaccount/connections.html:11
-msgid ""
-"You can sign in to your account using any of the following third party "
-"accounts:"
-msgstr ""
-"You can sign in to your account using any of the following third party "
-"accounts:"
-
-#: templates/socialaccount/connections.html:43
-msgid ""
-"You currently have no social network accounts connected to this account."
-msgstr ""
-"You currently have no social network accounts connected to this account."
-
-#: templates/socialaccount/connections.html:46
-msgid "Add a 3rd Party Account"
-msgstr "Add a 3rd Party Account"
-
-#: templates/socialaccount/login.html:10
-#, python-format
-msgid "Connect %(provider)s"
-msgstr "Connect %(provider)s"
-
-#: templates/socialaccount/login.html:12
-#, python-format
-msgid "You are about to connect a new third party account from %(provider)s."
-msgstr "You are about to connect a new third party account from %(provider)s."
-
-#: templates/socialaccount/login.html:14
-#, python-format
-msgid "Entrar com %(provider)s"
-msgstr "Enter with %(provider) s"
-
-#: templates/socialaccount/login.html:16
-#, python-format
-msgid "You are about to sign in using a third party account from %(provider)s."
-msgstr ""
-"You are about to sign in using a third party account from %(provider)s."
-
-#: templates/socialaccount/login.html:21
-msgid "Continue"
-msgstr "Continue"
-
-#: templates/socialaccount/login_cancelled.html:5
-#: templates/socialaccount/login_cancelled.html:9
-msgid "Login Cancelled"
-msgstr "Login Cancelled"
-
-#: templates/socialaccount/login_cancelled.html:13
-#, python-format
-msgid ""
-"You decided to cancel logging in to our site using one of your existing "
-"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
-"\">sign in</a>."
-msgstr ""
-"You decided to cancel logging in to our site using one of your existing "
-"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
-"\">sign in</a>."
-
-#: templates/socialaccount/messages/account_connected.txt:2
-msgid "The social account has been connected."
-msgstr "The social account has been connected."
-
-#: templates/socialaccount/messages/account_connected_other.txt:2
-msgid "The social account is already connected to a different account."
-msgstr "The social account is already connected to a different account."
-
-#: templates/socialaccount/messages/account_disconnected.txt:2
-msgid "The social account has been disconnected."
-msgstr "The social account has been disconnected."
-
-#: templates/socialaccount/signup.html:15
-msgid "Quase lá!"
-msgstr "Almost there!"
-
-#: templates/socialaccount/signup.html:16
-msgid "Coloque seu nome de usuário e seu email para concluir o cadastro!"
-msgstr "Put your username and email to complete the registration!"
-
-#: templates/socialaccount/signup.html:17
-msgid "Voltar ao início"
-msgstr "Back to start"
-
-#: templates/socialaccount/signup.html:29
-msgid "Sign Up"
-msgstr "Sign Up"
-
-#: website/settings.py:120
+#: website/settings.py:121
 msgid "Portuguese"
 msgstr "Portuguese"
 
-#: website/settings.py:121
+#: website/settings.py:122
 msgid "English"
 msgstr "English"
-
-#~ msgid "{editor}: Editing failed"
-#~ msgstr "{editor}: Editing failed"
-
-#~ msgid "{editor}: Editing failed: {e}"
-#~ msgstr "{editor}: Editing failed: {e}"
-
-#~ msgid "Aborted!"
-#~ msgstr "Aborted!"
-
-#~ msgid "Show this message and exit."
-#~ msgstr "Show this message and exit."
-
-#~ msgid "(Deprecated) {text}"
-#~ msgstr "(Deprecated) {text}"
-
-#~ msgid "Options"
-#~ msgstr "Options"
-
-#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
-#~ msgstr "DeprecationWarning: The command {name!r} is deprecated."
-
-#~ msgid "Commands"
-#~ msgstr "Commands"
-
-#~ msgid "Missing command."
-#~ msgstr "Missing command."
-
-#~ msgid "No such command {name!r}."
-#~ msgstr "No such command {name!r}."
-
-#~ msgid "Value must be an iterable."
-#~ msgstr "Value must be an iterable."
-
-#~ msgid "env var: {var}"
-#~ msgstr "Env Var: {War}"
-
-#~ msgid "(dynamic)"
-#~ msgstr "(dynamic)"
-
-#~ msgid "default: {default}"
-#~ msgstr "default: {default}"
-
-#~ msgid "required"
-#~ msgstr "required"
-
-#~ msgid "%(prog)s, version %(version)s"
-#~ msgstr "%(prog)s, version %(version)s"
-
-#~ msgid "Show the version and exit."
-#~ msgstr "Show the version and exit."
-
-#~ msgid "Error: {message}"
-#~ msgstr "Error: {message}"
-
-#~ msgid "Try '{command} {option}' for help."
-#~ msgstr "Try '{command} {option}' for help."
-
-#~ msgid "Invalid value: {message}"
-#~ msgstr "Invalid value: {message}"
-
-#~ msgid "Invalid value for {param_hint}: {message}"
-#~ msgstr "Invalid value for {param_hint}: {message}"
-
-#~ msgid "Missing argument"
-#~ msgstr "Missing argument"
-
-#~ msgid "Missing option"
-#~ msgstr "Missing option"
-
-#~ msgid "Missing parameter"
-#~ msgstr "Missing parameter"
-
-#~ msgid "Missing {param_type}"
-#~ msgstr "Missing {param_type}"
-
-#~ msgid "Missing parameter: {param_name}"
-#~ msgstr "Missing parameter: {param_name}"
-
-#~ msgid "No such option: {name}"
-#~ msgstr "No such option: {name}"
-
-#~ msgid "unknown error"
-#~ msgstr "unknown error"
-
-#~ msgid "Could not open file {filename!r}: {message}"
-#~ msgstr "Could not open file {filename!r}: {message}"
-
-#~ msgid "Argument {name!r} takes {nargs} values."
-#~ msgstr "Argument {name!r} takes {nargs} values."
-
-#~ msgid "Option {name!r} does not take a value."
-#~ msgstr "Option {name!r} does not take a value."
-
-#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
-#~ msgstr "Shell completion is not supported for Bash versions older than 4.4."
-
-#~ msgid "Couldn't detect Bash version, shell completion is not supported."
-#~ msgstr "Couldn't detect Bash version, shell completion is not supported."
-
-#~ msgid "Repeat for confirmation"
-#~ msgstr "Repeat for confirmation"
-
-#~ msgid "Error: The value you entered was invalid."
-#~ msgstr "Error: The value you entered was invalid."
-
-#~ msgid "Error: {e.message}"
-#~ msgstr "Error: {e.message}"
-
-#~ msgid "Error: The two entered values do not match."
-#~ msgstr "Error: The two entered values do not match."
-
-#~ msgid "Error: invalid input"
-#~ msgstr "Error: invalid input"
-
-#~ msgid "Press any key to continue..."
-#~ msgstr "Press any key to continue..."
-
-#~ msgid ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-#~ msgstr ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-
-#~ msgid "{value!r} is not a valid {number_type}."
-#~ msgstr "{value!r} is not a valid {number_type}."
-
-#~ msgid "{value} is not in the range {range}."
-#~ msgstr "{value} is not in the range {range}."
-
-#~ msgid "{value!r} is not a valid boolean."
-#~ msgstr "{value!r} is not a valid boolean."
-
-#~ msgid "{value!r} is not a valid UUID."
-#~ msgstr "{value!r} is not a valid UUID."
-
-#~ msgid "file"
-#~ msgstr "file"
-
-#~ msgid "directory"
-#~ msgstr "directory"
-
-#~ msgid "path"
-#~ msgstr "path"
-
-#~ msgid "{name} {filename!r} does not exist."
-#~ msgstr "{name} {filename!r} does not exist."
-
-#~ msgid "{name} {filename!r} is a file."
-#~ msgstr "{name} {filename!r} is a file."
-
-#~ msgid "{name} '{filename}' is a directory."
-#~ msgstr "{name} '{filename}' is a directory."
-
-#~ msgid "{name} {filename!r} is not readable."
-#~ msgstr "{name} {filename!r} is not readable."
-
-#~ msgid "{name} {filename!r} is not writable."
-#~ msgstr "{name} {filename!r} is not writable."
-
-#~ msgid "{name} {filename!r} is not executable."
-#~ msgstr "{name} {filename!r} is not executable."
-
-#~ msgid "Messages"
-#~ msgstr "Messages"
-
-#~ msgid "Site Maps"
-#~ msgstr "Site Maps"
-
-#~ msgid "Static Files"
-#~ msgstr "Static Files"
-
-#~ msgid "Syndication"
-#~ msgstr "Syndication"
-
-#~ msgid "…"
-#~ msgstr "…"
-
-#~ msgid "That page number is not an integer"
-#~ msgstr "That page number is not an integer"
-
-#~ msgid "That page number is less than 1"
-#~ msgstr "That page number is less than 1"
-
-#~ msgid "That page contains no results"
-#~ msgstr "That page contains no results"
-
-#~ msgid "Enter a valid value."
-#~ msgstr "Enter a valid value."
-
-#~ msgid "Enter a valid URL."
-#~ msgstr "Enter a valid URL."
-
-#~ msgid "Enter a valid integer."
-#~ msgstr "Enter a valid integer."
-
-#~ msgid "Enter a valid email address."
-#~ msgstr "Enter a valid email address."
-
-#~ msgid ""
-#~ "Enter a valid “slug” consisting of letters, numbers, underscores or "
-#~ "hyphens."
-#~ msgstr ""
-#~ "Enter a valid “slug” consisting of letters, numbers, underscores or "
-#~ "hyphens."
-
-#~ msgid ""
-#~ "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, "
-#~ "or hyphens."
-#~ msgstr ""
-#~ "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, "
-#~ "or hyphens."
-
-#~ msgid "Enter a valid IPv4 address."
-#~ msgstr "Enter a valid IPv4 address."
-
-#~ msgid "Enter a valid IPv6 address."
-#~ msgstr "Enter a valid IPv6 address."
-
-#~ msgid "Enter a valid IPv4 or IPv6 address."
-#~ msgstr "Enter a valid IPv4 or IPv6 address."
-
-#~ msgid "Enter only digits separated by commas."
-#~ msgstr "Enter only digits separated by commas."
-
-#~ msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-#~ msgstr "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-
-#~ msgid "Ensure this value is less than or equal to %(limit_value)s."
-#~ msgstr "Ensure this value is less than or equal to %(limit_value)s."
-
-#~ msgid "Ensure this value is greater than or equal to %(limit_value)s."
-#~ msgstr "Ensure this value is greater than or equal to %(limit_value)s."
-
-#~ msgid "Ensure this value is a multiple of step size %(limit_value)s."
-#~ msgstr "Ensure this value is a multiple of step size %(limit_value)s."
-
-#~ msgid "Enter a number."
-#~ msgstr "Enter a number."
-
-#~ msgid ""
-#~ "File extension “%(extension)s” is not allowed. Allowed extensions are: "
-#~ "%(allowed_extensions)s."
-#~ msgstr ""
-#~ "File extension “%(extension)s” is not allowed. Allowed extensions are: "
-#~ "%(allowed_extensions)s."
-
-#~ msgid "Null characters are not allowed."
-#~ msgstr "Null characters are not allowed."
-
-#~ msgid "and"
-#~ msgstr "and"
-
-#~ msgid "%(model_name)s with this %(field_labels)s already exists."
-#~ msgstr "%(model_name)s with this %(field_labels)s already exists."
-
-#~ msgid "Constraint “%(name)s” is violated."
-#~ msgstr "Constraint “%(name)s” is violated."
-
-#~ msgid "Value %(value)r is not a valid choice."
-#~ msgstr "Value %(value)r is not a valid choice."
-
-#~ msgid "This field cannot be null."
-#~ msgstr "This field cannot be null."
-
-#~ msgid "This field cannot be blank."
-#~ msgstr "This field cannot be blank."
-
-#~ msgid "%(model_name)s with this %(field_label)s already exists."
-#~ msgstr "%(model_name)s with this %(field_label)s already exists."
-
-#~ msgid ""
-#~ "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-#~ msgstr ""
-#~ "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-
-#~ msgid "Field of type: %(field_type)s"
-#~ msgstr "Field of type: %(field_type)s"
-
-#~ msgid "“%(value)s” value must be either True or False."
-#~ msgstr "“%(value)s” value must be either True or False."
-
-#~ msgid "“%(value)s” value must be either True, False, or None."
-#~ msgstr "“%(value)s” value must be either True, False, or None."
-
-#~ msgid "Boolean (Either True or False)"
-#~ msgstr "Boolean (Either True or False)"
-
-#~ msgid "String (up to %(max_length)s)"
-#~ msgstr "String (up to %(max_length)s)"
-
-#~ msgid "String (unlimited)"
-#~ msgstr "String (unlimited)"
-
-#~ msgid "Comma-separated integers"
-#~ msgstr "Comma-separated integers"
-
-#~ msgid ""
-#~ "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
-#~ "format."
-#~ msgstr ""
-#~ "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
-#~ "format."
-
-#~ msgid ""
-#~ "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an "
-#~ "invalid date."
-#~ msgstr ""
-#~ "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an "
-#~ "invalid date."
-
-#~ msgid "Date (without time)"
-#~ msgstr "Date (without time)"
-
-#~ msgid ""
-#~ "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:"
-#~ "ss[.uuuuuu]][TZ] format."
-#~ msgstr ""
-#~ "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:"
-#~ "ss[.uuuuuu]][TZ] format."
-
-#~ msgid ""
-#~ "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-#~ "[TZ]) but it is an invalid date/time."
-#~ msgstr ""
-#~ "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-#~ "[TZ]) but it is an invalid date/time."
-
-#~ msgid "Date (with time)"
-#~ msgstr "Date (with time)"
-
-#~ msgid "“%(value)s” value must be a decimal number."
-#~ msgstr "“%(value)s” value must be a decimal number."
-
-#~ msgid "Decimal number"
-#~ msgstr "Decimal number"
-
-#~ msgid ""
-#~ "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-#~ "uuuuuu] format."
-#~ msgstr ""
-#~ "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-#~ "uuuuuu] format."
-
-#~ msgid "Duration"
-#~ msgstr "Duration"
-
-#~ msgid "Email address"
-#~ msgstr "Email address"
-
-#~ msgid "File path"
-#~ msgstr "File path"
-
-#~ msgid "“%(value)s” value must be a float."
-#~ msgstr "“%(value)s” value must be a float."
-
-#~ msgid "Floating point number"
-#~ msgstr "Floating point number"
-
-#~ msgid "“%(value)s” value must be an integer."
-#~ msgstr "“%(value)s” value must be an integer."
-
-#~ msgid "Integer"
-#~ msgstr "Integer"
-
-#~ msgid "Big (8 byte) integer"
-#~ msgstr "Big (8 byte) integer"
-
-#~ msgid "Small integer"
-#~ msgstr "Small integer"
-
-#~ msgid "IPv4 address"
-#~ msgstr "IPv4 address"
-
-#~ msgid "IP address"
-#~ msgstr "IP address"
-
-#~ msgid "“%(value)s” value must be either None, True or False."
-#~ msgstr "“%(value)s” value must be either None, True or False."
-
-#~ msgid "Boolean (Either True, False or None)"
-#~ msgstr "Boolean (Either True, False or None)"
-
-#~ msgid "Positive big integer"
-#~ msgstr "Positive big integer"
-
-#~ msgid "Positive integer"
-#~ msgstr "Positive integer"
-
-#~ msgid "Positive small integer"
-#~ msgstr "Positive small integer"
-
-#~ msgid "Slug (up to %(max_length)s)"
-#~ msgstr "Slug (up to %(max_length)s)"
-
-#~ msgid "Text"
-#~ msgstr "Text"
-
-#~ msgid ""
-#~ "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[."
-#~ "uuuuuu]] format."
-#~ msgstr ""
-#~ "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[."
-#~ "uuuuuu]] format."
-
-#~ msgid ""
-#~ "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is "
-#~ "an invalid time."
-#~ msgstr ""
-#~ "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is "
-#~ "an invalid time."
-
-#~ msgid "Time"
-#~ msgstr "Time"
-
-#~ msgid "URL"
-#~ msgstr "URL"
-
-#~ msgid "Raw binary data"
-#~ msgstr "Raw binary data"
-
-#~ msgid "“%(value)s” is not a valid UUID."
-#~ msgstr "“%(value)s” is not a valid UUID."
-
-#~ msgid "Universally unique identifier"
-#~ msgstr "Universally unique identifier"
-
-#~ msgid "File"
-#~ msgstr "File"
-
-#~ msgid "Image"
-#~ msgstr "Image"
-
-#~ msgid "A JSON object"
-#~ msgstr "A JSON object"
-
-#~ msgid "Value must be valid JSON."
-#~ msgstr "Value must be valid JSON."
-
-#~ msgid "%(model)s instance with %(field)s %(value)r does not exist."
-#~ msgstr "%(model)s instance with %(field)s %(value)r does not exist."
-
-#~ msgid "Foreign Key (type determined by related field)"
-#~ msgstr "Foreign Key (type determined by related field)"
-
-#~ msgid "One-to-one relationship"
-#~ msgstr "One-to-one relationship"
-
-#~ msgid "%(from)s-%(to)s relationship"
-#~ msgstr "%(from)s-%(to)s relationship"
-
-#~ msgid "%(from)s-%(to)s relationships"
-#~ msgstr "%(from)s-%(to)s relationships"
-
-#~ msgid "Many-to-many relationship"
-#~ msgstr "Many-to-many relationship"
-
-#~ msgid ":?.!"
-#~ msgstr ":?.!"
-
-#~ msgid "This field is required."
-#~ msgstr "This field is required."
-
-#~ msgid "Enter a whole number."
-#~ msgstr "Enter a whole number."
-
-#~ msgid "Enter a valid date."
-#~ msgstr "Enter a valid date."
-
-#~ msgid "Enter a valid time."
-#~ msgstr "Enter a valid time."
-
-#~ msgid "Enter a valid date/time."
-#~ msgstr "Enter a valid date/time."
-
-#~ msgid "Enter a valid duration."
-#~ msgstr "Enter a valid duration."
-
-#~ msgid "The number of days must be between {min_days} and {max_days}."
-#~ msgstr "The number of days must be between {min_days} and {max_days}."
-
-#~ msgid "No file was submitted. Check the encoding type on the form."
-#~ msgstr "No file was submitted. Check the encoding type on the form."
-
-#~ msgid "No file was submitted."
-#~ msgstr "No file was submitted."
-
-#~ msgid "The submitted file is empty."
-#~ msgstr "The submitted file is empty."
-
-#~ msgid "Please either submit a file or check the clear checkbox, not both."
-#~ msgstr "Please either submit a file or check the clear checkbox, not both."
-
-#~ msgid ""
-#~ "Upload a valid image. The file you uploaded was either not an image or a "
-#~ "corrupted image."
-#~ msgstr ""
-#~ "Upload a valid image. The file you uploaded was either not an image or a "
-#~ "corrupted image."
-
-#~ msgid ""
-#~ "Select a valid choice. %(value)s is not one of the available choices."
-#~ msgstr ""
-#~ "Select a valid choice. %(value)s is not one of the available choices."
-
-#~ msgid "Enter a list of values."
-#~ msgstr "Enter a list of values."
-
-#~ msgid "Enter a complete value."
-#~ msgstr "Enter a complete value."
-
-#~ msgid "Enter a valid UUID."
-#~ msgstr "Enter a valid UUID."
-
-#~ msgid "Enter a valid JSON."
-#~ msgstr "Enter a valid JSON."
-
-#~ msgid ":"
-#~ msgstr ":"
-
-#~ msgid "(Hidden field %(name)s) %(error)s"
-#~ msgstr "(Hidden field %(name)s) %(error)s"
-
-#~ msgid ""
-#~ "ManagementForm data is missing or has been tampered with. Missing fields: "
-#~ "%(field_names)s. You may need to file a bug report if the issue persists."
-#~ msgstr ""
-#~ "ManagementForm data is missing or has been tampered with. Missing fields: "
-#~ "%(field_names)s. You may need to file a bug report if the issue persists."
-
-#~ msgid "Order"
-#~ msgstr "Order"
-
-#~ msgid "Delete"
-#~ msgstr "Delete"
-
-#~ msgid "Please correct the duplicate data for %(field)s."
-#~ msgstr "Please correct the duplicate data for %(field)s."
-
-#~ msgid ""
-#~ "Please correct the duplicate data for %(field)s, which must be unique."
-#~ msgstr ""
-#~ "Please correct the duplicate data for %(field)s, which must be unique."
-
-#~ msgid ""
-#~ "Please correct the duplicate data for %(field_name)s which must be unique "
-#~ "for the %(lookup)s in %(date_field)s."
-#~ msgstr ""
-#~ "Please correct the duplicate data for %(field_name)s which must be unique "
-#~ "for the %(lookup)s in %(date_field)s."
-
-#~ msgid "Please correct the duplicate values below."
-#~ msgstr "Please correct the duplicate values below."
-
-#~ msgid "The inline value did not match the parent instance."
-#~ msgstr "The inline value did not match the parent instance."
-
-#~ msgid ""
-#~ "Select a valid choice. That choice is not one of the available choices."
-#~ msgstr ""
-#~ "Select a valid choice. That choice is not one of the available choices."
-
-#~ msgid "“%(pk)s” is not a valid value."
-#~ msgstr "“%(pk)s” is not a valid value."
-
-#~ msgid ""
-#~ "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; "
-#~ "it may be ambiguous or it may not exist."
-#~ msgstr ""
-#~ "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; "
-#~ "it may be ambiguous or it may not exist."
-
-#~ msgid "Clear"
-#~ msgstr "Clear"
-
-#~ msgid "Currently"
-#~ msgstr "Currently"
-
-#~ msgid "Change"
-#~ msgstr "Change"
-
-#~ msgid "Unknown"
-#~ msgstr "Unknown"
-
-#~ msgid "Yes"
-#~ msgstr "Yes"
-
-#~ msgid "No"
-#~ msgstr "No"
-
-#~ msgid "yes,no,maybe"
-#~ msgstr "yes,no,maybe"
-
-#~ msgid "%s KB"
-#~ msgstr "%s KB"
-
-#~ msgid "%s MB"
-#~ msgstr "% s MB"
-
-#~ msgid "%s GB"
-#~ msgstr "%s gb"
-
-#~ msgid "%s TB"
-#~ msgstr "%s TB"
-
-#~ msgid "%s PB"
-#~ msgstr "%s PB"
-
-#~ msgid "p.m."
-#~ msgstr "p.m."
-
-#~ msgid "a.m."
-#~ msgstr "a.m."
-
-#~ msgid "PM"
-#~ msgstr "PM"
-
-#~ msgid "AM"
-#~ msgstr "AM"
-
-#~ msgid "midnight"
-#~ msgstr "midnight"
-
-#~ msgid "noon"
-#~ msgstr "noon"
-
-#~ msgid "Monday"
-#~ msgstr "Monday"
-
-#~ msgid "Tuesday"
-#~ msgstr "Tuesday"
-
-#~ msgid "Wednesday"
-#~ msgstr "Wednesday"
-
-#~ msgid "Thursday"
-#~ msgstr "Thursday"
-
-#~ msgid "Friday"
-#~ msgstr "Friday"
-
-#~ msgid "Saturday"
-#~ msgstr "Saturday"
-
-#~ msgid "Sunday"
-#~ msgstr "Sunday"
-
-#~ msgid "Mon"
-#~ msgstr "Mon"
-
-#~ msgid "Tue"
-#~ msgstr "Tue"
-
-#~ msgid "Wed"
-#~ msgstr "Wed"
-
-#~ msgid "Thu"
-#~ msgstr "Thu"
-
-#~ msgid "Fri"
-#~ msgstr "Fri"
-
-#~ msgid "Sat"
-#~ msgstr "Sat"
-
-#~ msgid "Sun"
-#~ msgstr "Sun"
-
-#~ msgid "January"
-#~ msgstr "January"
-
-#~ msgid "February"
-#~ msgstr "February"
-
-#~ msgid "March"
-#~ msgstr "March"
-
-#~ msgid "April"
-#~ msgstr "April"
-
-#~ msgid "May"
-#~ msgstr "May"
-
-#~ msgid "June"
-#~ msgstr "June"
-
-#~ msgid "July"
-#~ msgstr "July"
-
-#~ msgid "August"
-#~ msgstr "August"
-
-#~ msgid "September"
-#~ msgstr "September"
-
-#~ msgid "October"
-#~ msgstr "October"
-
-#~ msgid "November"
-#~ msgstr "November"
-
-#~ msgid "December"
-#~ msgstr "December"
-
-#~ msgid "jan"
-#~ msgstr "jan"
-
-#~ msgid "feb"
-#~ msgstr "feb"
-
-#~ msgid "mar"
-#~ msgstr "mar"
-
-#~ msgid "apr"
-#~ msgstr "apr"
-
-#~ msgid "may"
-#~ msgstr "may"
-
-#~ msgid "jun"
-#~ msgstr "jun"
-
-#~ msgid "jul"
-#~ msgstr "jul"
-
-#~ msgid "aug"
-#~ msgstr "aug"
-
-#~ msgid "sep"
-#~ msgstr "sep"
-
-#~ msgid "oct"
-#~ msgstr "oct"
-
-#~ msgid "nov"
-#~ msgstr "nov"
-
-#~ msgid "dec"
-#~ msgstr "dec"
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Jan."
-#~ msgstr "Jan."
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Feb."
-#~ msgstr "Feb."
-
-#~ msgctxt "abbrev. month"
-#~ msgid "March"
-#~ msgstr "March"
-
-#~ msgctxt "abbrev. month"
-#~ msgid "April"
-#~ msgstr "April"
-
-#~ msgctxt "abbrev. month"
-#~ msgid "May"
-#~ msgstr "May"
-
-#~ msgctxt "abbrev. month"
-#~ msgid "June"
-#~ msgstr "June"
-
-#~ msgctxt "abbrev. month"
-#~ msgid "July"
-#~ msgstr "July"
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Aug."
-#~ msgstr "Aug."
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Sept."
-#~ msgstr "Sept."
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Oct."
-#~ msgstr "Oct."
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Nov."
-#~ msgstr "Nov."
-
-#~ msgctxt "abbrev. month"
-#~ msgid "Dec."
-#~ msgstr "Dec."
-
-#~ msgctxt "alt. month"
-#~ msgid "January"
-#~ msgstr "January"
-
-#~ msgctxt "alt. month"
-#~ msgid "February"
-#~ msgstr "February"
-
-#~ msgctxt "alt. month"
-#~ msgid "March"
-#~ msgstr "March"
-
-#~ msgctxt "alt. month"
-#~ msgid "April"
-#~ msgstr "April"
-
-#~ msgctxt "alt. month"
-#~ msgid "May"
-#~ msgstr "May"
-
-#~ msgctxt "alt. month"
-#~ msgid "June"
-#~ msgstr "June"
-
-#~ msgctxt "alt. month"
-#~ msgid "July"
-#~ msgstr "July"
-
-#~ msgctxt "alt. month"
-#~ msgid "August"
-#~ msgstr "August"
-
-#~ msgctxt "alt. month"
-#~ msgid "September"
-#~ msgstr "September"
-
-#~ msgctxt "alt. month"
-#~ msgid "October"
-#~ msgstr "October"
-
-#~ msgctxt "alt. month"
-#~ msgid "November"
-#~ msgstr "November"
-
-#~ msgctxt "alt. month"
-#~ msgid "December"
-#~ msgstr "December"
-
-#~ msgid "This is not a valid IPv6 address."
-#~ msgstr "This is not a valid IPv6 address."
-
-#~ msgctxt "String to return when truncating text"
-#~ msgid "%(truncated_text)s…"
-#~ msgstr "%(truncated_text)s…"
-
-#~ msgid "or"
-#~ msgstr "or"
-
-#~ msgid ", "
-#~ msgstr ","
-
-#~ msgid "Forbidden"
-#~ msgstr "Forbidden"
-
-#~ msgid "CSRF verification failed. Request aborted."
-#~ msgstr "CSRF verification failed. Request aborted."
-
-#~ msgid ""
-#~ "You are seeing this message because this HTTPS site requires a “Referer "
-#~ "header” to be sent by your web browser, but none was sent. This header is "
-#~ "required for security reasons, to ensure that your browser is not being "
-#~ "hijacked by third parties."
-#~ msgstr ""
-#~ "You are seeing this message because this HTTPS site requires a “Referer "
-#~ "header” to be sent by your web browser, but none was sent. This header is "
-#~ "required for security reasons, to ensure that your browser is not being "
-#~ "hijacked by third parties."
-
-#~ msgid ""
-#~ "If you have configured your browser to disable “Referer” headers, please "
-#~ "re-enable them, at least for this site, or for HTTPS connections, or for "
-#~ "“same-origin” requests."
-#~ msgstr ""
-#~ "If you have configured your browser to disable “Referer” headers, please "
-#~ "re-enable them, at least for this site, or for HTTPS connections, or for "
-#~ "“same-origin” requests."
-
-#~ msgid ""
-#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
-#~ "or including the “Referrer-Policy: no-referrer” header, please remove "
-#~ "them. The CSRF protection requires the “Referer” header to do strict "
-#~ "referer checking. If you’re concerned about privacy, use alternatives "
-#~ "like <a rel=\"noreferrer\" …> for links to third-party sites."
-#~ msgstr ""
-#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
-#~ "or including the “Referrer-Policy: no-referrer” header, please remove "
-#~ "them. The CSRF protection requires the “Referer” header to do strict "
-#~ "referer checking. If you’re concerned about privacy, use alternatives "
-#~ "like <a rel=\"noreferrer\" …> for links to third-party sites."
-
-#~ msgid ""
-#~ "You are seeing this message because this site requires a CSRF cookie when "
-#~ "submitting forms. This cookie is required for security reasons, to ensure "
-#~ "that your browser is not being hijacked by third parties."
-#~ msgstr ""
-#~ "You are seeing this message because this site requires a CSRF cookie when "
-#~ "submitting forms. This cookie is required for security reasons, to ensure "
-#~ "that your browser is not being hijacked by third parties."
-
-#~ msgid ""
-#~ "If you have configured your browser to disable cookies, please re-enable "
-#~ "them, at least for this site, or for “same-origin” requests."
-#~ msgstr ""
-#~ "If you have configured your browser to disable cookies, please re-enable "
-#~ "them, at least for this site, or for “same-origin” requests."
-
-#~ msgid "More information is available with DEBUG=True."
-#~ msgstr "More information is available with DEBUG=True."
-
-#~ msgid "No year specified"
-#~ msgstr "No year specified"
-
-#~ msgid "Date out of range"
-#~ msgstr "Date out of range"
-
-#~ msgid "No month specified"
-#~ msgstr "No month specified"
-
-#~ msgid "No day specified"
-#~ msgstr "No day specified"
-
-#~ msgid "No week specified"
-#~ msgstr "No week specified"
-
-#~ msgid "No %(verbose_name_plural)s available"
-#~ msgstr "No %(verbose_name_plural)s available"
-
-#~ msgid ""
-#~ "Future %(verbose_name_plural)s not available because %(class_name)s."
-#~ "allow_future is False."
-#~ msgstr ""
-#~ "Future %(verbose_name_plural)s not available because %(class_name)s."
-#~ "allow_future is False."
-
-#~ msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
-#~ msgstr "Invalid date string “%(datestr)s” given format “%(format)s”"
-
-#~ msgid "No %(verbose_name)s found matching the query"
-#~ msgstr "No %(verbose_name)s found matching the query"
-
-#~ msgid "Page is not “last”, nor can it be converted to an int."
-#~ msgstr "Page is not “last”, nor can it be converted to an int."
-
-#~ msgid "Invalid page (%(page_number)s): %(message)s"
-#~ msgstr "Invalid page (%(page_number)s): %(message)s"
-
-#~ msgid "Empty list and “%(class_name)s.allow_empty” is False."
-#~ msgstr "Empty list and “%(class_name)s.allow_empty” is False."
-
-#~ msgid "Directory indexes are not allowed here."
-#~ msgstr "Directory indexes are not allowed here."
-
-#~ msgid "“%(path)s” does not exist"
-#~ msgstr "“%(path)s” does not exist"
-
-#~ msgid "Index of %(directory)s"
-#~ msgstr "Index of %(directory)s"
-
-#~ msgid "The install worked successfully! Congratulations!"
-#~ msgstr "The install worked successfully! Congratulations!"
-
-#~ msgid ""
-#~ "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django "
-#~ "%(version)s"
-#~ msgstr ""
-#~ "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django "
-#~ "%(version)s"
-
-#~ msgid ""
-#~ "You are seeing this page because <a href=\"https://docs.djangoproject.com/"
-#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-#~ "\">DEBUG=True</a> is in your settings file and you have not configured "
-#~ "any URLs."
-#~ msgstr ""
-#~ "You are seeing this page because <a href=\"https://docs.djangoproject.com/"
-#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-#~ "\">DEBUG=True</a> is in your settings file and you have not configured "
-#~ "any URLs."
-
-#~ msgid "Django Documentation"
-#~ msgstr "Django Documentation"
-
-#~ msgid "Topics, references, &amp; how-to’s"
-#~ msgstr "Topics, references, &amp; how-to’s"
-
-#~ msgid "Tutorial: A Polling App"
-#~ msgstr "Tutorial: A Polling App"
-
-#~ msgid "Get started with Django"
-#~ msgstr "Get started with Django"
-
-#~ msgid "Django Community"
-#~ msgstr "Django Community"
-
-#~ msgid "Connect, get help, or contribute"
-#~ msgstr "Connect, get help, or contribute"
-
-#~ msgid "There's no widget registered to the class {class_name}"
-#~ msgstr "There's no widget registered to the class {class_name}"
-
-#~ msgid "Can't retrieve the image backend '{}'. Message: '{}'."
-#~ msgstr "Can't retrieve the image backend '{}'. Message: '{}'."

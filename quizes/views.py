@@ -10,11 +10,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url=reverse_lazy('account_login'))
 def quiz_list(request):
-   
     quizes = Quiz.objects.filter(is_public=True)
     quiz_related = QuizRelated.objects.all()
     quiz_data = []
-    
 
     for quiz in quizes:
         if request.user.is_authenticated:

@@ -16,7 +16,13 @@ def set_language(request, language):
             break
     if view:
         translation.activate(language)
-        next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
+        url = view.url_name
+        if 'account' in url:
+            url = f'accounts:{url}'
+        elif 'main' in url:
+            url = f'quizes:{url}'
+        
+        next_url = reverse(url, args=view.args, kwargs=view.kwargs)
         response = HttpResponseRedirect(next_url)
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     else:

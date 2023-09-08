@@ -1,19 +1,41 @@
-from mtranslate import translate
+from googletrans import Translator
 import polib
+import os
+from django.core.management import call_command
 
-def translate_po_file(input_po_file, target_language):
-    input_po = polib.pofile(input_po_file)
+call_command('makemessages', '-l', 'br', '-i', 'account/*', '-i' ,'openid/*','-i','socialaccount/*')
+call_command('makemessages', '-l', 'en', '-i', 'account/*', '-i' ,'openid/*','-i','socialaccount/*')
 
-    for entry in input_po:
-        if entry.msgstr:
-            if not entry.translated():
-                translated_text = translate(entry.msgstr, target_language, 'auto')
-                entry.msgstr = translated_text
+po_file = polib.pofile('locale/en/LC_MESSAGES/django.po')
 
-    input_po.save()
+translator = Translator()
 
-if __name__ == "__main__":
-    input_po_file = "locale/en/LC_MESSAGES/django.po"
-    target_language = "en" 
+for entry in po_file:
+    if not entry.msgstr and not entry.fuzzy: 
+        original_text = entry.msgid
+        try:
+            translated_text = translator.translate(original_text, src='pt', dest='en').text
+            entry.msgstr = translated_text
+            entry.fuzzy = False
+        except Exception as e:
+            print(f"Erro ao traduzir: {e}")
 
-    translate_po_file(input_po_file, target_language)
+po_file.save('locale/en/LC_MESSAGES/django.po')
+
+po_file = polib.pofile('locale/br/LC_MESSAGES/django.po')
+translator = Translator()
+
+for entry in po_file:
+    if not entry.msgstr and not entry.fuzzy: 
+        original_text = entry.msgid
+        try:
+            translated_text = translator.translate(original_text, src='en', dest='pt').text
+            entry.msgstr = translated_text
+            entry.fuzzy = False
+        except Exception as e:
+            print(f"Erro ao traduzir: {e}")
+
+po_file.save('locale/br/LC_MESSAGES/django.po')
+
+os.system("python manage.py compilemessages")
+os.system("python manage.py runserver")

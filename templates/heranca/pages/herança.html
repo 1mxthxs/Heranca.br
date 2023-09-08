@@ -5,9 +5,14 @@
 {% block title %}
     {{page_title}}
 {% endblock title %}
+
+{% block scripts %}
+{% endblock scripts %}
+
 <body>
     
     {% block content %}
+    
     <main>
         {% include 'heranca/partials/home1.html' %}
         <section class="home3">
@@ -22,14 +27,16 @@
                     {% for new in news|slice:":10" %}
                     <div class="slide">
                         <div class="slide-content">
-                            <img class="slide-img" src="{{ new.image.url }}" alt="{{ new.titulo }}">
-                            <h2 class="slide-title">{{ new.titulo }}</h2>
+                            <img class="slide-img" src="{% if new.image %}
+                            {{ new.image.url }}{% endif %}" alt="{% trans new.titulo %}">
+                            <h2 class="slide-title"><b>{% trans new.titulo %}</b></h2>
                         </div>
                     </div>
                     {% endfor %} 
                 </div>   
                
             </div>
+            <!--
             <div class="slide-selection">
                 
                 {% for new in news|slice:":10" %}
@@ -40,9 +47,10 @@
             <a class="more-news signup">
                 {% trans "Mais Notícias" %}
             </a>
+            -->
         </section>      
         <script>
-            jQuery(document).ready(function($) {
+        jQuery(document).ready(function($) {
             var owl = $('.owl-carousel');
             var prevBtn = $('.slide-prev-btn');
             var nextBtn = $('.slide-next-btn');
@@ -117,8 +125,7 @@
                             <b>{% trans "herança cultural de tribos indígenas." %}</b>
                             {% trans "Explore conosco " %}
                             <b>{% trans "a riqueza das tradições, histórias e costumes" %}</b> 
-                            {% trans "que moldaram essas comunidades ao longo dos séculos.
-                            Pronto para se aventurar e descobrir a herança cultural dessas tribos indígenas?" %}
+                            {% trans "que moldaram essas comunidades ao longo dos séculos.Pronto para se aventurar e descobrir a herança cultural dessas tribos indígenas?" %}
                         </p>
                         <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
                     </div>
@@ -132,8 +139,7 @@
                             <b>{% trans "herança cultural de tribos indígenas." %}</b>
                             {% trans "Explore conosco " %}
                             <b>{% trans "a riqueza das tradições, histórias e costumes" %}</b> 
-                            {% trans "que moldaram essas comunidades ao longo dos séculos.
-                            Pronto para se aventurar e descobrir a herança cultural dessas tribos indígenas?" %}
+                            {% trans "que moldaram essas comunidades ao longo dos séculos.Pronto para se aventurar e descobrir a herança cultural dessas tribos indígenas?" %}
                         </p>
                         <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
                     </div>
@@ -142,19 +148,6 @@
         </section>
     </main>
     {% endblock content %}
-    {% block scripts %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    {% endblock scripts %}
 </body>
 </html>
