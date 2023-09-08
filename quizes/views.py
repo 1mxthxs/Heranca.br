@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url=reverse_lazy('account_login'))
 def quiz_list(request):
+   
     quizes = Quiz.objects.all()
     quiz_related = QuizRelated.objects.all()
     quiz_data = []
@@ -30,12 +31,14 @@ def quiz_list(request):
         'quiz_data': list(quiz_data),
         'quiz_related': quiz_related,
         'user_result': user_result,
+        'page_title': 'Quiz',
     })
         
 
 @login_required(login_url=reverse_lazy('account_login'))
 def quiz_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
+    page_title = quiz.name
     if request.method == "GET":
         questions = []
         number = 0
@@ -49,7 +52,7 @@ def quiz_view(request, pk):
             'obj': quiz,
             'data': questions,
             'result': False,
-            'page_title':"GET",
+            'page_title': page_title,
         })
     elif request.method == "POST":
         data = request.POST
@@ -114,7 +117,7 @@ def quiz_view(request, pk):
             'obj': quiz,
             'data': questions,
             'result': True,
-            'page_title':response,
+            'page_title': f'Repostas {page_title}',
             'response': response,
             'passed': passed,
             'score': score,
