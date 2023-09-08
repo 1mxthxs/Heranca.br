@@ -7,15 +7,35 @@ from results.models import Result
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.decorators import login_required
 
-class QuizListView(ListView):
-    model = Quiz
-    template_name = 'quizes/main.html'
-    extra_context={'quizes': QuizRelated.objects.all(),}
+
+@login_required(login_url=reverse_lazy('account_login'))
+def quiz_list(request):
+    quizes = Quiz.objects.all()
+    quiz_related = QuizRelated.objects.all()
+    quiz_data = []
     
+
+    for quiz in quizes:
+        if request.user.is_authenticated:
+            user_result = quiz.get_user_result(request.user)
+        else:
+            user_result = "N/A"
+        quiz_data.append({
+            'quiz': quiz,
+            'user_result': user_result,
+            'quiz_related': quiz_related,
+        }) 
+   
+    return render(request, 'quizes/main.html', {
+        'quiz_data': list(quiz_data),
+        'quiz_related': quiz_related,
+        'user_result': user_result,
+    })
+        
 
 @login_required(login_url=reverse_lazy('account_login'))
 def quiz_view(request, pk):
-    quiz = Quiz.objects.get(pk=pk).filter(is_public=True)
+    quiz = Quiz.objects.get(pk=pk)
     if request.method == "GET":
         questions = []
         number = 0
@@ -76,19 +96,17 @@ def quiz_view(request, pk):
                 result = Res(str(q), correct_answer, 'Not answered!')
                 results.append(result)
                 
-                
-        score_ = score * multiplier
         response = []
         passed = True
-        Result.objects.create(quiz=quiz, user=user, score=score_)
-        if score_ >= quiz.required_score_to_pass: 
-            passed = True
-        else:
+        Result.objects.create(quiz=quiz, user=user, score=score)
+        if score < quiz.required_score_to_pass: 
             passed = False
+        else:
+            passed = True
             
         response.append({
                 'passed': passed,
-                'score': score_,
+                'score': score,
                 'results': results,
             })
 
@@ -99,7 +117,7 @@ def quiz_view(request, pk):
             'page_title':response,
             'response': response,
             'passed': passed,
-            'score': score_,
+            'score': score,
             'results': results,
 
         })

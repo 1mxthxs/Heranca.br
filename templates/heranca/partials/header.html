@@ -1,12 +1,10 @@
 {% load static %}
 {% load i18n %}
 <header>
-    
     <img class="header-logo" src="{% static 'heranca/images/logo.png' %}" alt="logo">
     <form id="header-search-form" class="header-form" method="POST">
         {% csrf_token %}
-        <input class="header-search" name="header-search" type="text" placeholder="
-        {% if search_placeholder_text %}{{search_placeholder_text}}
+        <input class="header-search" name="header-search" type="text" placeholder="{% if search_placeholder_text %}{{search_placeholder_text}}
         {% else %}Digite a palavra
         {% endif %}"      
         value="{{text_value}}">

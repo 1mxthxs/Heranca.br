@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col">
         <b>{{obj.name}}</b>
-        <p>Pontuação para passar: {{obj.required_score_to_pass}}%</p>
+        <p>Numero minimo de questões certas para passar: {{obj.required_score_to_pass}}.</p>
     </div>
     <div class="col text-right" id="timer-box"></div>
 </div>
@@ -56,19 +56,19 @@
     </div>
 {% else %}
     <div id="score-box">
-        {% if results.passed %}
-            <p>Parabéns! Seu resultado foi {{ score|floatformat:2 }}%</p>
+        {% if passed %}
+            <p>Parabéns! Você acertou {{ score }} de {{obj.number_of_questions}}.</p>
         {% else %}
-            <p>Opa... Seu resultado foi {{ score|floatformat:2 }}%</p>
+            <p>Opa... Seu resultado foi {{ score }}, você precisava acertar pelo menos {{obj.required_score_to_pass}}.</p>
         {% endif %}
     </div>
     <div id="result-box">
         {% for res in results %}
             <div class="container p-3 text-light h6 
-            {% if res.answered == None %}bg-danger
-            {% elif res.answered == res.correct_answer %}bg-success
-            {% else %}bg-danger
-            {% endif %}">
+                {% if res.answered == None %}bg-danger
+                {% elif res.answered == res.correct_answer %}bg-success
+                {% else %}bg-danger
+                {% endif %}">
                 {{ res.question }}
                 {% if resp == 'Not answered!' %}
                 - Não respondido!
@@ -83,12 +83,14 @@
                 {% endif %}
             </div>
         {% endfor %}
+    </div>
 <hr>
 <hr>
-
-    
 {% endif %}
-
-
+<section class="img-gratient">
+    <div class="bottom-img">
+        <img src="{% static 'heranca/images/dict/bottom2.svg' %}" alt="">
+    </div>
+</section>
 {% endblock content %}
 

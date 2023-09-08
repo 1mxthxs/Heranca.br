@@ -17,7 +17,7 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
             <ul>
                 <li>Dificuldade: <b>${difficulty}</b></li>
                 <li>Número de questões: <b>${numQuestions}</b></li>
-                <li>Pontuação para passar: <b>${scoreToPass}</b></li>
+                <li>Pontuação para passar: <b>${scoreToPass}/${numQuestions}</b></li>
                 <li>Tempo: <b>${time}</b></li>
             </ul>
         </div>
@@ -35,3 +35,12 @@ function toggleQuiz(className){
     </div>
 `
 }
+
+$(document).ready(function() {
+    $(".quiz-title").click(function() {
+        var content = $(this).next(".quiz-content");
+        content.stop().slideToggle(500);
+        $(this).toggleClass("active");
+    });
+});
+

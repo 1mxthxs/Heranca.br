@@ -5,6 +5,10 @@
     <script src="{% static 'quizes/main.js' %}" defer></script>
 {% endblock scripts %}
 
+{% block extra_styles_main %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock extra_styles_main %}
+
 {% block content %}
 <main class="main-width">
     <div class="top-title">
@@ -30,31 +34,48 @@
         </div>
         </div>
     </div>
-    {% for quiz in quizes %}
+    <section class="quizes-height">
+    {% for quiz in quiz_related %}
         {% if quiz.get_not_none > 0 %}
             <div class="quiz-title" id="quiz-block">
-                {{quiz.name}}
+                <i class="arrow fas fa-chevron-right"></i> {{ quiz.name }}
             </div>
-            {% for obj in quiz.get_quizes %}
-                <button
-                {% if obj.difficulty == "easy" %}class="bg-success
-                {% elif obj.difficulty == "medium" %}class="bg-warning
-                {% elif obj.difficulty == "hard" %}class="bg-danger
-                {% endif %}
-                block-quiz btn btn-link modal-button"
-                data-pk="{{obj.pk}}"
-                data-quiz="{{obj.name}}"
-                data-questions="{{obj.number_of_questions}}"
-                data-difficulty="{{obj.difficulty}}"
-                data-time="{{obj.time}}"
-                data-pass="{{obj.required_score_to_pass}}"
-                data-toggle="modal"
-                data-target="#quizStartModalCenter"
-                >{{obj.name|title}} - Nivel {{obj.difficulty|title}}</button>
-                </div>
-            {% endfor %}
+            <div class="quiz-content">
+                {% for data in quiz_data %}
+                    {% if data.quiz.quiz_related == quiz %}
+                        <a
+                        {% if data.quiz.difficulty == "easy" %}class="bg-success
+                        {% elif data.quiz.difficulty == "medium" %}class="bg-warning
+                        {% elif data.quiz.difficulty == "hard" %}class="bg-danger
+                        {% endif %}
+                        block-quiz btn btn-link modal-button"
+                        data-pk="{{ data.quiz.pk }}"
+                        data-quiz="{{ data.quiz.name }}"
+                        data-questions="{{ data.quiz.number_of_questions }}"
+                        data-difficulty="{{ data.quiz.difficulty }}"
+                        data-time="{{ data.quiz.time }}"
+                        data-pass="{{ data.quiz.required_score_to_pass }}"
+                        data-toggle="modal"
+                        data-target="#quizStartModalCenter"
+                        >
+                        <div class="block-quiz-result">
+                            {% if data.user_result is None%}0{% else %}{{ data.user_result }}{% endif %}/{{ data.quiz.number_of_questions }}
+                        </div>
+                        {{ data.quiz.name|title }} - Nivel {{ data.quiz.difficulty|title }}
+                        <div class="quiz-left">
+                            {% if data.user_result is None%}
+                                Jogar!
+                            {% else %}
+                                Jogar denovo!
+                            {% endif %}
+                        </div>
+                    </a>
+                    {% endif %}
+                {% endfor %}    
+            </div>
         {% endif %}
-    {% endfor %}
+    {% endfor %}          
+    </section>
 </main>
 <section class="img-gratient">
     <div class="bottom-img">
