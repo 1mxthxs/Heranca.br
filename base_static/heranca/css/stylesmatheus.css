@@ -1312,6 +1312,9 @@ u{
     vertical-align: middle;
     margin-top: -2px;
 }
+#quiz-form{
+    height: 240px;
+}
 
 
 

@@ -1258,7 +1258,7 @@ u{
 
 /* QUIZ */
 .quizes-height{
-    height: 500px;
+    height: 100px;
 }
 .quiz-title{
     cursor: pointer;
@@ -1311,6 +1311,9 @@ u{
 .arrow {
     vertical-align: middle;
     margin-top: -2px;
+}
+#quiz-form{
+    height: 240px;
 }
 
 

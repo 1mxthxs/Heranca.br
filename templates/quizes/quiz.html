@@ -10,78 +10,78 @@
 {% endblock time %}
 
 {% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    const formCount = {{ data|length }};
-    let currentQuestion = 0;
+    $(document).ready(function() {
+        const formCount = {{ data|length }};
+        let currentQuestion = 0;
 
-    function showQuestion(index) {
-        const questions = document.querySelectorAll('.question');
-        questions.forEach((question, i) => {
-            if (i === index) {
-                question.style.display = 'block';
+        function showQuestion(index) {
+            const questions = $('.question');
+            questions.hide(); // Esconda todas as perguntas
+            questions.eq(index).fadeIn(300); // Exiba a pergunta atual com uma transição de fade
+
+            // Atualize o número da questão atual
+            $('#question-number').text(index + 1);
+
+            // Verifique se a pergunta atual é a última
+            if (index === formCount - 1) {
+                $('#submit-button').show();
             } else {
-                question.style.display = 'none';
+                $('#submit-button').hide();
             }
-        });
 
-        // Atualize o número da questão atual
-        document.getElementById('question-number').textContent = index + 1;
+            // Atualize a visibilidade dos botões "Anterior" e "Próxima"
+            if (index === 0) {
+                $('#previous-button').hide();
+            } else {
+                $('#previous-button').show();
+            }
 
-        // Verifique se a pergunta atual é a última
-        if (index === formCount - 1) {
-            document.getElementById('submit-button').style.display = 'block';
-        } else {
-            document.getElementById('submit-button').style.display = 'none';
+            if (index === formCount - 1) {
+                $('#next-button').hide();
+            } else {
+                $('#next-button').show();
+            }
         }
 
-        // Atualize a visibilidade dos botões "Anterior" e "Próxima"
-        if (index === 0) {
-            document.getElementById('previous-button').style.display = 'none';
-        } else {
-            document.getElementById('previous-button').style.display = 'block';
+        function nextQuestion() {
+            if (currentQuestion < formCount - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else if (currentQuestion === formCount - 1) {
+                const selectedAnswer = document.querySelector('.ans:checked');
+                if (selectedAnswer) {
+                    const submitButton = document.getElementById('submit-button');
+                    submitButton.click();
+                }
+            }
+        }
+        
+        
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
         }
 
-        if (index === formCount - 1) {
-            document.getElementById('next-button').style.display = 'none';
-        } else {
-            document.getElementById('next-button').style.display = 'block';
+        function autoSubmit() {
+            const submitButton = $('#submit-button');
+            if (submitButton.is(':visible')) {
+                submitButton.click();
+            }
         }
-    }
-
-    function nextQuestion() {
-        if (currentQuestion < formCount - 1) {
-            currentQuestion++;
-            showQuestion(currentQuestion);
-        }
-    }
-
-    function previousQuestion() {
-        if (currentQuestion > 0) {
-            currentQuestion--;
-            showQuestion(currentQuestion);
-        }
-    }
-
-    function autoSubmit() {
-        const submitButton = document.getElementById('submit-button');
-        if (submitButton.style.display === 'block') {
-            submitButton.click();
-        }
-    }
-
-    // Adicione um evento para avançar automaticamente quando um radio for selecionado
-    document.querySelectorAll('.ans').forEach((radio) => {
-        radio.addEventListener('change', () => {
-            setTimeout(() => {
+        $('.ans').on('change', function() {
+            setTimeout(function() {
                 nextQuestion();
-                autoSubmit(); // Chame a função autoSubmit() após avançar para a próxima pergunta
-            }, 100); // Espere 100 milissegundos antes de avançar para a próxima pergunta
+            }, 100);
         });
+
+        showQuestion(currentQuestion);
     });
-
-    showQuestion(currentQuestion);
 </script>
-
 {% endblock scripts %}
 
 {% block content %}
@@ -101,11 +101,10 @@
 <a href="{% url 'quizes:main-view' %}" class="btn btn-danger">Voltar</a>
 
 <hr>
+{% if result is not True %}
 <div class="mb-2">
     <b>Questão <span id="question-number">1</span></b>
 </div>
-
-{% if result is not True %}
     <form id="quiz-form" class="mt-3 mb-3" method="POST">
         {% csrf_token %}
         
@@ -114,9 +113,6 @@
                 <div class="question">
                     {% for question, answers in dicionario.items %}
                         <hr>
-                        
-                        
-                        
                         
                         <div class="mb-2">
                             <b>{{ question }}</b>
@@ -133,6 +129,7 @@
             {% endfor %}
         </div>
         <button hidden type="submit" class="btn btn-primary mt-3" id="submit-button" style="display: none;">Salvar</button>
+
 
     </form>
 
