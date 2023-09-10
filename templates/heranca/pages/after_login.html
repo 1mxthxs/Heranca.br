@@ -1,0 +1,83 @@
+{% extends "base_heranca.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_styles %}
+{% endblock extra_styles %}
+{% block title %}{{page_title}}{% endblock title %}
+{% block content %}
+<main>
+    <section>
+        <div class="slide-button">
+            <div class="slide-button-content">
+                <button class="slide-prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slide-btn-center"></div>
+                <button class="slide-next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slides owl-carousel">      
+                <div class="slide">
+                    <div class="slide-content">
+                        <img class="slide-img" src="{% static '../media/News/cover/2023/08/16/ind1.png' %}" alt="">
+                        <h1 class="login-title"><b>Explore o universno dos povos indígenas!!</b></h1>
+                        <h2 class="login-text"><b>Mergulhe neste quiz repleto de curiosidades e saberes ancestrais!</b></h2>
+                        <h4 class="login-see-more"><b>Jogue</b></h4>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </section>
+    <script>
+        jQuery(document).ready(function($) {
+            var owl = $('.owl-carousel');
+            var prevBtn = $('.slide-prev-btn');
+            var nextBtn = $('.slide-next-btn');
+            var currentSlide = 0;
+            
+            owl.owlCarousel({
+                center: true,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 10000, 
+                items: 3,
+                margin: 10,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 1
+                    }
+                }
+            });
+
+
+            owl.on('changed.owl.carousel', function(event) {
+                currentSlide = event.item.index + 1;
+            });
+        
+            prevBtn.on('click', function() {
+                currentSlide = (currentSlide - 1) % owl.find('.owl-item').length + 1;
+                updateSlideOption(currentSlide);
+                owl.trigger('prev.owl.carousel');
+            });
+        
+            nextBtn.on('click', function() {
+                currentSlide = currentSlide % owl.find('.owl-item').length + 1;
+                updateSlideOption(currentSlide);
+                owl.trigger('next.owl.carousel');
+            });
+        
+            $('.slide-option').on('change', function() {
+                var position = $(this).data('position');
+                currentSlide = position;
+                owl.trigger('to.owl.carousel', position - 1);
+            });
+        
+            function updateSlideOption(slideNumber) {
+                $('.slide-option').prop('checked', false);
+                $('#slide' + slideNumber).prop('checked', true);
+            }
+        });
+        </script>        
+</main>
+{% endblock content %}

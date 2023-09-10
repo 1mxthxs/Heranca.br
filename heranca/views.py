@@ -64,3 +64,10 @@ def about(request):
     return render(request, 'heranca/pages/about.html',{
         'page_title': "Quem somos",
     })
+
+
+def after_login(request):
+    return render(request, 'heranca/pages/after_login.html',{
+        'page_title':"After Login",
+        
+    })

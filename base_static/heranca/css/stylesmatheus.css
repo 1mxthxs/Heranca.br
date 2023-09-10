@@ -794,13 +794,10 @@ b{
 }
 .slide {
     display: flex;
-    align-items: center; /* Alinhar as imagens na parte inferior */
-    transition: .6s;
+    align-items: center;
     height: 290px;
 }
-.slide:hover{
-    transform: scale(1.04);
-}
+
 .slide-title {
     position: relative;
     bottom: 70px;
@@ -1412,3 +1409,34 @@ u{
 
 
 
+
+
+/* afterlogin */
+
+.login-title{
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 28%;
+    left: 7%;
+    width: 87%;
+    text-align: justify;
+    background-color: black;
+}
+.login-title b{
+    color: white !important;
+}
+.login-text{
+    font-size: 17px;
+    padding: 0 13px;
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 7%;
+    width: 87%;
+    text-align: justify;
+    background-color: black;
+}
+.login-text b{
+    color: white !important;
+}
