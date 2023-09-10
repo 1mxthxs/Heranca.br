@@ -24,7 +24,7 @@ idna==2.10
 isort==5.11.0
 oauthlib==3.2.2
 packaging==23.1
-Pillow==10.0.0
+Pillow==9.5.0
 polib==1.2.0
 pycparser==2.21
 PyJWT==2.8.0
