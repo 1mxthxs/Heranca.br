@@ -30,6 +30,7 @@ def quiz_list(request):
         'quiz_related': quiz_related,
         'user_result': user_result,
         'page_title': 'Quiz',
+        'quiz': None,
     })
         
 
@@ -51,14 +52,13 @@ def quiz_view(request, pk):
             'data': questions,
             'result': False,
             'page_title': page_title,
+            'quiz': True,
         })
     elif request.method == "POST":
         data = request.POST
         questions = []
         data_ = dict(data.lists())
         data_.pop('csrfmiddlewaretoken')
-
-       
     
         for k in data_.keys():
             question = Question.objects.get(text=k)
@@ -120,5 +120,5 @@ def quiz_view(request, pk):
             'passed': passed,
             'score': score,
             'results': results,
-
+            'quiz': True,
         })

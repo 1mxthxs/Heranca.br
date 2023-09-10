@@ -30,7 +30,7 @@
     <h3>Site</h3>
     <div class="sidebar-site-options block-options">
         {% if 'en/' in request.path  %}
-        <a class="sidebar-block sidebar-site-option"href="{% url 'set-language' 'pt-br' %}">Porutguês</a>
+        <a class="sidebar-block sidebar-site-option"href="{% url 'set-language' 'pt-br' %}">Português</a>
         {% else %}
         <a class="sidebar-block sidebar-site-option"  href="{% url 'set-language' 'en' %}">English</a>
         {% endif %}

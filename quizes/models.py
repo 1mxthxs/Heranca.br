@@ -5,9 +5,9 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 DIFF_CHOICES = (
-    ('easy', 'easy'),
-    ('medium', 'medium'),
-    ('hard', 'hard'),
+    (_('easy'), _('easy')),
+    (_('medium'), _('medium')),
+    (_('hard'), _('hard')),
 )
 
 class QuizRelated(models.Model):
