@@ -39,11 +39,13 @@
 {% elif quiz is True %}
     <header class="quiz-header">
         <div class="quiz-header-text">
-            <b>Pergunta: <span id="question-number">1</span>/{{ obj.number_of_questions }}</b>
+            <b>{{obj.name}} - <span id="question-number">1</span>/{{ obj.number_of_questions }}</b>
         </div>
-        <div class="quiz-exit">
-            <i class="fa-solid fa-circle-x" style="color: #ffffff;"></i>
-        </div>
+        <a href="{% url 'quizes:main-view' %}"  class="quiz-exit">
+            <div>
+                &times;
+            </div>
+        </a>
     </header>
 {% endif %}
 
