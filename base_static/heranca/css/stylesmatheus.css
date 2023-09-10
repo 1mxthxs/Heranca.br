@@ -1312,6 +1312,26 @@ u{
     vertical-align: middle;
     margin-top: -2px;
 }
+
+/* INSIDE QUIZ - QUIZ QUESTIONS */
+.quiz-header{
+    width: 100%;
+    font-size: larger;
+    background-color: #F78E1C;
+    text-align: center;
+    padding: 0 ;
+    height: 50px;
+}
+.quiz-header-text{
+    width: 150px;
+    margin: auto;
+   
+}
+.quiz-header-text b{
+    color: white !important;
+}
+
+
 #quiz-form{
     height: 240px;
 }

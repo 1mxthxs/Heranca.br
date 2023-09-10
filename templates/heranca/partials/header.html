@@ -1,8 +1,8 @@
 {% load static %}
 {% load i18n %}
 
+{% if quiz is None %}
 <header>
-    {% if quiz is None %}
     <img class="header-logo" src="{% static 'heranca/images/logo.png' %}" alt="logo">
     <form id="header-search-form" class="header-form" method="POST">
         {% csrf_token %}
@@ -35,11 +35,15 @@
             {% endif %}
         </ul>
     </nav>
-    {% elif quiz is True %}
-    <div class="quiz-header">
-        <div class="quiz-main-text">
-            <b>Questão <span id="question-number">1</span></b>
-        </div>
-    </div>
-    {% endif %}
 </header>
+{% elif quiz is True %}
+    <header class="quiz-header">
+        <div class="quiz-header-text">
+            <b>Pergunta: <span id="question-number">1</span>/{{ obj.number_of_questions }}</b>
+        </div>
+        <div class="quiz-exit">
+            <i class="fa-solid fa-circle-x" style="color: #ffffff;"></i>
+        </div>
+    </header>
+{% endif %}
+

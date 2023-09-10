@@ -9,6 +9,10 @@
 {{ obj.name }}
 {% endblock time %}
 
+{% block extra_styles_main %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock extra_styles_main %}
+
 {% block scripts %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -18,20 +22,14 @@
 
         function showQuestion(index) {
             const questions = $('.question');
-            questions.hide(); // Esconda todas as perguntas
-            questions.eq(index).fadeIn(300); // Exiba a pergunta atual com uma transição de fade
-
-            // Atualize o número da questão atual
+            questions.hide(); 
+            questions.eq(index).fadeIn(300); 
             $('#question-number').text(index + 1);
-
-            // Verifique se a pergunta atual é a última
             if (index === formCount - 1) {
                 $('#submit-button').show();
             } else {
                 $('#submit-button').hide();
             }
-
-            // Atualize a visibilidade dos botões "Anterior" e "Próxima"
             if (index === 0) {
                 $('#previous-button').hide();
             } else {
@@ -57,8 +55,6 @@
                 }
             }
         }
-        
-        
 
         function previousQuestion() {
             if (currentQuestion > 0) {
@@ -86,28 +82,16 @@
 
 {% block content %}
 <div class="row">
-    <div class="main-width">
-    <b>{{ obj.name }}</b>
-        
-    </div>
-    <div class="col">
-        
 
-        <p>Numero minimo de questões certas para passar: {{ obj.required_score_to_pass }}.</p>
-    </div>
     <div class="col text-right" id="timer-box"></div>
 </div>
 
-<a href="{% url 'quizes:main-view' %}" class="btn btn-danger">Voltar</a>
+<a href="{% url 'quizes:main-view' %}" class="btn btn-danger">Voltar<i class="fa-solid fa-circle-x" ="color: #000;"></i></a>
 
 <hr>
 {% if result is not True %}
-<div class="mb-2">
-    <b>Questão <span id="question-number">1</span></b>
-</div>
     <form id="quiz-form" class="mt-3 mb-3" method="POST">
         {% csrf_token %}
-        
         <div id="quiz-box">
             {% for dicionario in data %}
                 <div class="question">
@@ -132,11 +116,8 @@
 
 
     </form>
-
     <hr>
-    <hr>
-    <hr>
-    <div hidden>
+    <div class="not-visible">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.9689954335873!2d-60.02587278393003!3d-3.127473833881316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c056298d635ff%3A0x4a0526a9b08baff4!2sPra%C3%A7a%205%20de%20Setembro%20(Pra%C3%A7a%20da%20Saudade)!5e0!3m2!1spt-BR!2sbr!4v1693786466928!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 {% else %}
