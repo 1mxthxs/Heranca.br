@@ -5,7 +5,6 @@ from .models import Post, New, Dict_indigenou, Dict_letter
 from django.urls import reverse_lazy, reverse
 from django.db.models import Q
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
 
 def index(request):
     page_title = "Inicio!"
@@ -74,6 +73,8 @@ def after_login(request):
         
     })
     
+    
+@login_required(login_url=reverse_lazy('account_login')) 
 def community(request):
     user = request.user
     posts = Post.objects.filter(is_public=True)
@@ -91,8 +92,7 @@ def community(request):
 
 
 
-from django.shortcuts import redirect
-
+@login_required(login_url=reverse_lazy('account_login'))
 def like_post(request, post_id):
     if request.method == 'POST':
         post = get_object_or_404(Post, id=post_id)
