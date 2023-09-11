@@ -71,3 +71,9 @@ def after_login(request):
         'page_title':"After Login",
         
     })
+    
+def community(request):
+    return render(request, 'heranca/pages/community.html',{
+        'page_title':"Community",
+        
+    })

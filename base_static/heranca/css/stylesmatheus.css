@@ -1429,7 +1429,7 @@ u{
 .login-text{
     font-size: 17px;
     padding: 0 13px;
-    text-align: center;
+    text-align: center !important;
     position: absolute;
     top: 35%;
     left: 7%;
@@ -1439,4 +1439,22 @@ u{
 }
 .login-text b{
     color: white !important;
+}
+
+/* community */
+
+.community-posts{
+    display: flex;
+    justify-content: space-evenly;
+}
+.post{
+    background-color: rgb(216, 99, 99);
+    padding: 15px;
+    min-width: 250px;
+    max-width: 350px;
+    margin: 2px;
+}
+.post-author{
+    width: 100%;
+    padding: 2px 0;
 }

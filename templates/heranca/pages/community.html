@@ -1,0 +1,37 @@
+{% extends "base_heranca.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_styles %}
+{% endblock extra_styles %}
+{% block title %}{{page_title}}{% endblock title %}
+{% block content %}
+<main class="main-width">
+    <section class="community-posts>
+        <div class="post">
+
+            <div class="post-author">
+                <div class="post-author-img">
+                    <img src="" alt="img">
+                </div>
+                <div class="post-author-name" >{{post.author}}</div>
+                <div class="left">
+
+                </div>
+
+            </div>
+            <div class="post-img">
+            <img src="{% if post.image %}{{post.image.url}}{% endif %}" alt="post-img">
+            </div>
+            <div class="post-media">
+            <div class="post-like" >Like</div>
+            <div class="post-share" >Enviar</div>
+            <div class="post-keep" >Arquivar</div>
+            </div>
+            <div class="post-description">
+            {{post.author}}
+            </div>
+        </div>
+    </section>  
+</main>
+{% endblock content %}
