@@ -29,7 +29,7 @@
                         <div class="slide-content">
                             <img class="slide-img" src="{% if new.image %}
                             {{ new.image.url }}{% endif %}" alt="{% trans new.titulo %}">
-                            <h2 class="slide-title"><b>{% trans new.titulo %}</b></h2>
+                            <h2 class="slide-title"><b>{{ new.titulo }}</b></h2>
                         </div>
                     </div>
                     {% endfor %} 
