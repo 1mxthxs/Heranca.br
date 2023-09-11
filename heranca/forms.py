@@ -1,13 +1,4 @@
-from django import forms 
-from allauth.account.forms import LoginForm, SignupForm
+from django import forms
 
-class CustomLoginForm(LoginForm):
-    email = forms.EmailField(label=("Email"))
-    
-class CustomSignupForm(SignupForm):
-    email = forms.EmailField(
-        max_length=254,
-        label="Email",
-        widget=forms.EmailInput(attrs={'type': 'email'}),
-        required=True)
-    
+class LikeForm(forms.Form):
+    action = forms.ChoiceField(choices=[('add', 'Adicionar Like'), ('remove', 'Remover Like')])

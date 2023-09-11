@@ -1,10 +1,10 @@
 from django.contrib import admin
 from image_cropping import ImageCroppingMixin
-from .models import New, Dict_indigenou, Dict_letter
+from .models import Post, New, Dict_indigenou, Dict_letter
 from django.conf import settings 
 from django.utils.translation import activate 
 
-
+admin.site.register(Post)
 admin.site.register(New)
 admin.site.register(Dict_indigenou)
 class DictLetterAdmin(admin.ModelAdmin):

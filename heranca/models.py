@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
 def validate_image_ratio(image):
@@ -10,6 +11,36 @@ def validate_image_ratio(image):
     width, height = img.size
     if width / height != 16 / 9:
         raise ValidationError("A proporção da imagem deve ser 16:9.")
+
+
+class Post(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='Posts/cover/%Y/%m/%d/', blank=True, null=True)
+    description = models.CharField(max_length=255)
+    is_public = models.BooleanField(default=True)
+    likes_count = models.PositiveIntegerField(default=0)
+    likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+
+    def __str__(self):
+        return self.description
+    
+    def liked(self, user):
+        if user not in self.likes.all():
+            return False
+        else:
+            return True
+
+    def like(self, user):
+        if user not in self.likes.all():
+            self.likes.add(user)
+            self.likes_count += 1
+            
+        else:
+            self.likes.remove(user)
+            self.likes_count -= 1
+            
+        self.save()
+
 
 class New(models.Model):
     titulo = models.CharField(_("Titulo"), max_length=200)

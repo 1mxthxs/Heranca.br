@@ -60,7 +60,7 @@
                             {% if data.user_result is None%}0{% else %}{{ data.user_result }}{% endif %}/{{ data.quiz.number_of_questions }}
                         </div>
                         {{ data.quiz.name|title }} - Nivel {{ data.quiz.difficulty|title }}
-                        <div class="quiz-left">
+                        <div class="left">
                             {% if data.user_result is None%}
                                 {% trans "JOGAR!" %}
                             {% else %}

@@ -8,5 +8,8 @@ urlpatterns = [
     path('dict/<str:char>', views.dict_details, name='dict_details'),
     path('about/', views.about, name='about'),
     path('after_login/', views.after_login, name="after_login"),
-    path('community/', views.community, name="community")
+    path('community/', views.community, name="community"),
+    path('like_post/<int:post_id>/', views.like_post, name='like_post'),
+
+
 ]

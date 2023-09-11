@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
-from .models import New, Dict_indigenou, Dict_letter
+from .models import Post, New, Dict_indigenou, Dict_letter
 from django.urls import reverse_lazy, reverse
 from django.db.models import Q
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 def index(request):
     page_title = "Inicio!"
@@ -73,7 +75,26 @@ def after_login(request):
     })
     
 def community(request):
-    return render(request, 'heranca/pages/community.html',{
-        'page_title':"Community",
-        
+    user = request.user
+    posts = Post.objects.filter(is_public=True)
+
+    liked_posts = {}
+    for post in posts:
+        liked_posts[post.id] = user.is_authenticated and post.likes.filter(id=user.id).exists()
+
+    return render(request, 'heranca/pages/community.html', {
+        'page_title': "Community",
+        'posts': posts,
+        'liked_posts': liked_posts,
+        'liked':post.liked(request.user),
     })
+
+
+
+from django.shortcuts import redirect
+
+def like_post(request, post_id):
+    if request.method == 'POST':
+        post = get_object_or_404(Post, id=post_id)
+        post.like(request.user)
+    return redirect('community') 

@@ -21,6 +21,7 @@
         <ul class="header-nav-ul">
             <li class="nav-li"><a class="nav-li-links" href="{% url 'index' %}">{% trans "INÍCIO" %}</a></li>
             <li class="nav-li"><a class="nav-li-links" href="{% url 'dict_indigenous' %}">{% trans "DICIONARIO" %}</a></li>
+            <li class="nav-li"><a class="nav-li-links" href="{% url 'community' %}">{% trans "Comunidade" %}</a></li>
             <li class="nav-li"><a class="nav-li-links"  href="{% url 'quizes:main-view' %}">{% trans "QUIZ" %}</a></li>
             {% if 'en/' in request.path  %}
             <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'pt-br' %}">{% trans "PT-BR" %}</a></li>
