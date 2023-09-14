@@ -1,0 +1,86 @@
+BBBB BBBBBB
+BBBB BBBB
+XXXXXXXX XXXXXXXXXXXXXX
+    XXXX XXXXXXXXXXXXXXXXXXXX
+        XXXX XXXXXXXXXXXXXXX
+            XXXXX
+                XXXX XXXXXXXXXXXXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXXXXXXXXXX
+            XXXXXX
+        XXXXXX
+        XXXX XXXXXXXXXXXXXXX
+            XXXXX
+                XXX XXXXXXXXXXXXXXXXXXXXX gettext(u'Descubra tudo sobre as tribos indígenas da nossa região!') XXXXX
+                XX XXXXXXXXXXXXXXXXXXXX gettext(u'Venha ver a história dos <b>maiores povos indígenas que se localizam perto de Manacapuru,') XXXX
+                 gettext(u' todas as dificuldades que esses povos indígenas passam ou passaram.') XXXX
+                XX XXXXXXXXXXXXXXXXXXXX gettext(u'Venha fazer parte dessa') 
+                XXX  gettext(u'conscientização indígena e aprenda mais sobre as origens e heranças dos povos indigenas!!.') XXXX
+                XXXX
+                XX XXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXX gettext(u'Cadastrar-se') XXXX
+            XXXXXX
+            
+        XXXXXX
+        XXXX XXXXXXXXXXXXXXX
+            XXXX XXXXXXXXXXXXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXXXXXXXXXX
+        XXXXXX
+    XXXXXX
+XXXXXXXXXX
+XXXXXXXX XXXXXXXXXXXXXX
+    XXXX XXXXXXXXXXXXXX
+        XXXX XXXXXXXXXXXXXXXXXXXX
+            XX XXXXXXXX XXXXXXXXX
+                XXXX XXXXXXXXXXXXXXXXX
+                    XXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXX
+                XXXXXX
+                XXXX XXXXXXXXXXXXXXXXXXXXXXX
+                    XXXX gettext(u'Tribo Próximas') XXXXX
+                XXXXXX
+            XXXX
+            XXXX XXXXXXXXXXXXXXXXXXXXX
+                XXXX gettext(u'Saiba onde encontrar tribos próximas a você para visitá-las.') XXXXX
+                XX XXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXX gettext(u'Cadastre-se para sabe mais') XXXX
+            XXXXXX
+        XXXXXX
+        XXXX XXXXXXXXXXXXXXXXXXXX
+            XX XXXXXXXX XXXXXXXXX
+                XXXX XXXXXXXXXXXXXXXXX
+                    XXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXX
+                XXXXXX
+                XXXX XXXXXXXXXXXXXXXXXXXXXXX
+                    XXXXXXXXX XXXXXXXXXXXXX
+                XXXXXX
+            XXXX
+            XXXX XXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXX XXXX XXXXXXXXX XXXXXX XXXXXXXX X XXXX XXXX XXXXXXXXXXXXXXXX
+                XX XXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXXXXXXXXXXXXX XXXX XXXX XXXXXXXX
+            XXXXXX
+        XXXXXX
+        XXXX XXXXXXXXXXXXXXXXXXXX
+            XX XXXXXXXX XXXXXXXXX
+                XXXX XXXXXXXXXXXXXXXXX
+                    XXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXX
+                XXXXXX
+                XXXX XXXXXXXXXXXXXXXXXXXXXXX
+                    XXXXXXXXX XXXXXXXXXXXXX
+                XXXXXX
+            XXXX
+            XXXX XXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXX XXXX XXXXXXXXX XXXXXX XXXXXXXX X XXXX XXXX XXXXXXXXXXXXXXXX
+                XX XXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXXXXXXXXXXXXX XXXX XXXX XXXXXXXX
+            XXXXXX
+        XXXXXX
+        XXXX XXXXXXXXXXXXXXXXXXXX
+            XX XXXXXXXX XXXXXXXXX
+                XXXX XXXXXXXXXXXXXXXXX
+                    XXXX XXXXXBBBBBB BBBBBBBBBBBBBBBBBBBBBBBBBX XXXXXXX
+                XXXXXX
+                XXXX XXXXXXXXXXXXXXXXXXXXXXX
+                    XXXXXXXXX XXXXXXXXXXXXX
+                XXXXXX
+            XXXX
+            XXXX XXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXX XXXX XXXXXXXXX XXXXXX XXXXXXXX X XXXX XXXX XXXXXXXXXXXXXXXX
+                XX XXXXXXXXXXXXXXXXX XXXXXXBBB BBBBBBBBBBBBBBBBXXXXXXXXXXXXX XXXX XXXX XXXXXXXX
+            XXXXXX
+        XXXXXX
+    XXXXXX
+XXXXXXXXXX

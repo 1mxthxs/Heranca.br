@@ -53,6 +53,7 @@ def quiz_view(request, pk):
             'result': False,
             'page_title': page_title,
             'quiz': True,
+            'background_quiz': True,
         })
     elif request.method == "POST":
         data = request.POST
@@ -121,4 +122,5 @@ def quiz_view(request, pk):
             'score': score,
             'results': results,
             'quiz': True,
+            'background_quiz': True,
         })

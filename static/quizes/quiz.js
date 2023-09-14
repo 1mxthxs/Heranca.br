@@ -3,6 +3,7 @@ const quizBox = document.getElementById('quiz-box')
 const scoreBox = document.getElementById('score-box')
 const resultBox = document.getElementById('result-box')
 const timerBox = document.getElementById('timer-box')
+let exit = false
 
 const activateTimer = (time) => {
     if(time.toString().lenght < 2){
@@ -31,12 +32,14 @@ const activateTimer = (time) => {
         }else{
             displaySeconds = seconds
         }
-        if(minutes === 0 && seconds === 0){
+        if((minutes === 0 && seconds === 0) || exit == true){
             timerBox.innerHTML = '<b>00:00</b>'
             setTimeout(()=>{
                 clearInterval(timer)
-                alert('Tempo acabou!')
-                sendData()
+                if(exit != true){
+                    alert('Tempo acabou!')
+                    sendData()
+                }
             }, 500)
             
         }
@@ -129,6 +132,7 @@ $.ajax({
                 }
             }
             //const body = document.getElementsByTagName('BODY')[0]
+            exit = true
             resultBox.append(resDiv)
         })
     },

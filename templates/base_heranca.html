@@ -32,7 +32,11 @@
     <title>Herança - {% block title %}{% endblock title %}</title>
 
 </head>
-<body>
+<body
+{% if background_quiz %}
+class="quiz-background"
+{% endif %}
+>
     {% include './heranca/partials/sidebar.html' %}
     {% include './heranca/partials/header.html' %}
     {% if 'accounts' in request.path %}
@@ -44,6 +48,7 @@
         {% csrf_token %}
         {% endblock content %}
     {% endif %}
+    {% block sub_footer %}{% endblock sub_footer %}
     {% include './heranca/partials/footer.html' %}
 
     {% block quiz_scripts %}
