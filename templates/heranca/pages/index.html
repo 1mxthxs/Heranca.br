@@ -1,0 +1,313 @@
+{% extends "base_heranca.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {{page_title}}
+{% endblock title %}
+
+{% block scripts %}
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% endblock scripts %}
+
+{% block extra_styles %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "heranca/css/after_login.css" %}">
+    
+{% endblock extra_styles %}
+    
+  {% block content %}
+  <section>
+
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false" style="border-bottom: solid 5px #afadad;">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'heranca/images/after_login/1.png' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="button" class="btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .100rem;">Jogue</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'heranca/images/after_login/2.png' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="button" class="btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Entre</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'heranca/images/after_login/3.png' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="button" class="btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'heranca/images/after_login/4.png' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="button" class="btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'heranca/images/after_login/5.png' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="button" class="btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Saiba Mais</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+
+
+
+
+  </div>
+</section>
+    <img src="{% static 'heranca/images/after_login/transition_1.png' %}" alt="" class="w-100" style="margin-top: -9px;">
+
+
+
+
+      <!--Segunda Parte-->
+      <div class="container-fluid" style="margin-top: 2px;">
+        <div class="row main-scroll">
+          <div class="col-md-6 tribes-height">
+      
+            <div class="row scroll-hidden" style="margin-top: 50px;">
+              <div class="col">
+                <!-- Texto e botão para os três primeiros cards -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p style="font-family: MinhaFonte; font-size: xx-large; margin-left: 20px; color: #CC362F; font-weight: bold;">Povos Indígenas</p>
+                  </div>
+                  <a href="#" class="btn btn-primary" style="background-color: #6eb750;">Ver mais</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="row" style="margin-top: 20px;">
+              <!-- Os três primeiros cards -->
+              <div class="col">
+                <div class="card bg-transparent" style="width: 12rem; border: none;">
+                  <div style="width: 150px; height: 150px; margin: 0 auto; overflow: hidden; border-radius: 50%;">
+                    <img src="{% static 'heranca/images/after_login/PV_IND_1.png' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                  </div>
+                  <div class="card-body text-center" style="padding: 10px; position: absolute; bottom: -20px; left: 0; right: 0; background-color: none;">
+                    <a href="#" class="btn btn-primary" style="background-color: #f78e1c;">Sateré-Mawé</a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col">
+                <div class="card bg-transparent" style="width: 12rem; border: none;">
+                  <div style="width: 150px; height: 150px; margin: 0 auto; overflow: hidden; border-radius: 50%;">
+                    <img src="{% static 'heranca/images/after_login/PV_IND_2.png' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                  </div>
+                  <div class="card-body text-center" style="padding: 10px; position: absolute; bottom: -20px; left: 0; right: 0; background-color: none;">
+                    <a href="#" class="btn btn-primary" style="background-color: #f78e1c;">Desana</a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col">
+                <div class="card bg-transparent" style="width: 12rem; border: none;">
+                  <div style="width: 150px; height: 150px; margin: 0 auto; overflow: hidden; border-radius: 50%;">
+                    <img src="{% static 'heranca/images/after_login/PV_IND_3.png' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                  </div>
+                  <div class="card-body text-center" style="padding: 10px; position: absolute; bottom: -20px; left: 0; right: 0; background-color: none;">
+                    <a href="#" class="btn btn-primary" style="background-color: #f78e1c;">Tukano</a>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+          <div class="col-md-6 scroll-hidden"> 
+
+            <div class="row" style="margin-top: 50px;">
+              <div class="col">
+                <!-- Texto e botão para os três últimos cards -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p style="font-family: MinhaFonte; font-size: xx-large; margin-left: 20px; color: #CC362F; font-weight: bold;">Tribos para Visitar</p>
+                  </div>
+                  <a href="#" class="btn btn-primary" style="background-color: #6eb750;">Ver mais</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="row" style="margin-top: 20px;">
+              <!-- Os três últimos cards -->
+              <div class="col">
+                <div class="card bg-transparent" style="width: 12rem; border: none;">
+                  <div style="width: 150px; height: 150px; margin: 0 auto; overflow: hidden; border-radius: 0;">
+                    <a href="seu-link-aqui">
+                      <img src="{% static 'heranca/images/after_login/PV_IND_4.png' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                    </a>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text" style="background-color: #f78e1c; color: white; font-size: large; font-weight: bold;">Sateré-Mawé
+                      <small class="text-muted">8KM</small>
+                    </p>
+                    <p>SE Localiza...</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col">
+                <div class="card bg-transparent" style="width: 12rem; border: none;">
+                  <div style="width: 150px; height: 150px; margin: 0 auto; overflow: hidden; border-radius: 0;">
+                    <a href="seu-link-aqui">
+                      <img src="{% static 'heranca/images/after_login/PV_IND_4.png' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                    </a>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text" style="background-color: #f78e1c; color: white; font-size: large; font-weight: bold;">Desana
+                      <small class="text-muted">8KM</small>
+                    </p>
+                    <p>SE Localiza...</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col">
+                <div class="card bg-transparent" style="width: 12rem; border: none;">
+                  <div style="width: 150px; height: 150px; margin: 0 auto; overflow: hidden; border-radius: 0;">
+                    <a href="seu-link-aqui">
+                      <img src="{% static 'heranca/images/after_login/PV_IND_4.png' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
+                    </a>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text" style="background-color: #f78e1c; color: white; font-size: large; font-weight: bold;">Tukano
+                      <small class="text-muted">8KM</small>
+                    </p>
+                    <p>SE Localiza...</p>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!--Terceira Parte-->
+      <div class="container-fluid quiz-image">
+        <h2 class="text-center p-3" style="background-color: #F78E1C; color: white;">QUIZ-Povos Indígenas</h2>
+        <div style="position: relative; margin-top: -10px;" class="quiz-section">
+          <p style="font-family: MinhaFonte2; text-align: center; color: #602417;  z-index: 1;" class="question-index">Qual é o instrumento musical de sopro comum nas tradições indígenas do Amazonas?</p>
+         
+          <ul class="list-group text-center quiz-selection" style="position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); background-color: #F78E1C; border-radius: 15px; padding: 10px;">
+            <li class="list-group-item" style="background-color: transparent; border: none;"><button class="btn btn-primary options-quiz" style="border: none; background-color: white; color: #602417; width: 400px;">Violino</button></li>
+            <li class="list-group-item" style="background-color: transparent; border: none;"><button class="btn btn-primary options-quiz" style="border: none; background-color: white; color: #602417; width: 400px;" >Flauta de Pan</button></li>
+            <li class="list-group-item" style="background-color: transparent; border: none;"><button class="btn btn-primary options-quiz" style="border: none; background-color: white; color: #602417; width: 400px;" >Acordeão</button></li>
+            <li class="list-group-item" style="background-color: transparent; border: none;"><button class="btn btn-primary options-quiz" style="border: none; background-color: white; color: #602417; width: 400px;" >Trompete</button></li>
+          </ul>
+         
+        </div>
+
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              <button type="button" class="btn customizado">
+                <div class="d-flex align-items-center">
+                  <img src="{% static 'heranca/images/after_login/icon_1.png' %}" alt="Imagem" class="btn-icon" />
+                  <span style="margin-left: 25px;">Dicionário Indígena</span>
+                </div>
+              </button>
+              <div class="mt-2">PALAVRAS INDIGENAS E SEUS SIGNFICADOS...</div>
+            </div>
+            <div class="col">
+              <button type="button" class="btn customizado">
+                <div class="d-flex align-items-center">
+                  <img src="{% static 'heranca/images/after_login/icon_2.png' %}" alt="Imagem" class="btn-icon" />
+                  <span style="margin-left:25px;">Bibliografia Indígena</span>
+                </div>
+              </button>
+              <div class="mt-2">SITES,ARTIGOS,LIVROS,TUDO RELACIONADO AOS POVOS INDIGENAS...</div>
+            </div>
+            <div class="col">
+              <button type="button" class="btn customizado">
+                <div class="d-flex align-items-center">
+                  <img src="{% static 'heranca/images/after_login/icon_3.png' %}" alt="Imagem" class="btn-icon" />
+                  <span style="margin-left: 80px;">Doações</span>
+                </div>
+              </button>
+              <div class="mt-2">ENCONTRE ORGANIZAÇÕES QUE TE AJUDAM A DOAR...</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!--Area Perigosa
+
+      <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-6">
+                <form>
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" id="texto" placeholder="Digite o texto (limite de 100 caracteres)" maxlength="100" rows="4"></textarea>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span id="contadorCaracteres">0/100</span>
+                    </div>
+                </form>
+            </div>
+            
+            
+            <div class="col-md-6">
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-secondary mb-3">
+                        Botão Adicional
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Pesquisar
+                    </button>
+                    <p>Seu texto será exibido aqui.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+      var textarea = document.getElementById("texto");
+      var contadorCaracteres = document.getElementById("contadorCaracteres");
+  
+      textarea.addEventListener("input", function () {
+          var maxLength = 100;
+          var currentLength = this.value.length;
+          var remainingLength = maxLength - currentLength;
+          contadorCaracteres.value = currentLength + "/" + maxLength;
+      });
+  </script>
+-->
+  
+    
+
+{% endblock content %}

@@ -14,6 +14,8 @@ function sair(){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    
    
     var menuBtn = document.getElementById("home-linkstyle-menu");
     var sidebar = document.getElementById("sidebar");

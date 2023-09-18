@@ -7,13 +7,14 @@ from django.db.models import Q
 from django.http import JsonResponse
 
 def index(request):
-    page_title = "Inicio!"
     user = request.user 
+    news = New.objects.filter(is_public=True)
     if user.is_authenticated:
         page_title = user.username.title()
-    news = New.objects.filter(is_public=True)
-    
-    return render(request, 'heranca/pages/herança.html', {'page_title': page_title, 'news': news, 'user': user,})
+        return render(request, 'heranca/pages/index.html', {'page_title': page_title, 'news': news, 'user': user,})
+    else:
+        page_title = "Inicio!"
+        return render(request, 'heranca/pages/herança.html', {'page_title': page_title, 'news': news, 'user': user,})
 
 
 @login_required(login_url=reverse_lazy('index'))

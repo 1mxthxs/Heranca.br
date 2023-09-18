@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('../fonts/Decalotype-Black.ttf') format('ttf'),
+    /* Adicione mais formatos de fonte, se necessário */
+  }
+
+  @font-face {
+    font-family: 'MinhaFonte2';
+    src: url('../fonts/OpenSans-Bold.ttf') format('ttf'),
+    /* Adicione mais formatos de fonte, se necessário */
+  }
+
+  body,html{
+    margin: 0%;
+    padding: 0%;
+  }
+
+
+.col{
+    background-color: none;
+}
+.txtCarrosel{
+    max-width: 500px;
+    font-size: larger;
+    margin-bottom: 200px;
+}
+.btn {
+    font-size: larger;
+    font-weight: bold;
+    background-color: #c3282e;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    font-family: MinhaFonte;
+  }
+.btn:hover{
+    color: white;
+    background-color: #a8262a;
+}
+.btn:focus{
+    box-shadow: none;
+}
+/* seu-estilo.css */
+.customizado {
+    background-color: #F78E1C;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 23px;
+  }
+  
+  .btn-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 10px; /* Adicione margem à direita do ícone */
+    border-radius: 20px;
+  }
+.customizado:hover{
+    background-color: #d17411;
+}
+  
+  /* Para ajustar o espaçamento do texto */
+/* Aplique margem à esquerda do texto para afastá-lo do ícone */
+.mt-2{
+    margin-left: 30px;
+    font-weight: bold;
+    max-width: 300px;
+}
+  
+.slide {
+  display: block !important;
+  height: auto !important;
+}
+
+.quiz-image{
+  overflow: hidden;
+  padding: 0 !important;
+  background-image: url('../images/after_login/Background_QUIZ.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.quiz-section > img{
+  width: 100%;
+}
+
+.question-index{
+  font-size: 3.7vh !important;
+  font-weight: 600;
+  position: absolute;
+  top:10%;
+  margin: auto;
+  width: 100%;
+  padding: 0 3%;
+  text-align: center;
+}
+.list-group{
+  width: 40%;
+}
+.options-quiz{
+  width: 100% !important;
+}
+.main-scroll{
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 420px !important;
+}
+.scroll-hidden{
+  overflow-y: scroll !important;
+}
+.quiz-section{
+  overflow: hidden;
+  height: 800px !important;
+}
+.tribes-height{
+  height: 100%;
+}
