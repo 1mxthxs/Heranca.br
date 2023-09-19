@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://heranca.onrender.com/']
+#CSRF_TRUSTED_ORIGINS = ['https://heranca.onrender.com/']
 ROOT_URLCONF = 'website.urls'
 
 TEMPLATES = [
