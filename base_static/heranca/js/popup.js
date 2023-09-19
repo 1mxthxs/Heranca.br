@@ -147,3 +147,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
 });
+
+var add = document.getElementById('add-post')
+        add.addEventListener('click', function (){
+            add.classList.add('show-new-post')
+        })
+        

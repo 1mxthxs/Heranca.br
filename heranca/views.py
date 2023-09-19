@@ -5,6 +5,8 @@ from .models import Post, New, Dict_indigenou, Dict_letter
 from django.urls import reverse_lazy, reverse
 from django.db.models import Q
 from django.http import JsonResponse
+from .forms import NewPost
+
 
 def index(request):
     user = request.user 
@@ -77,6 +79,20 @@ def after_login(request):
     
 @login_required(login_url=reverse_lazy('account_login')) 
 def community(request):
+    
+    if request.method == 'POST':
+        form = NewPost(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.is_public = True 
+            post.save()
+            return redirect('community')
+    else:
+        form = NewPost()
+            
+    
+    
     user = request.user
     posts = Post.objects.filter(is_public=True)
 
@@ -84,12 +100,14 @@ def community(request):
     for post in posts:
         liked_posts[post.id] = user.is_authenticated and post.likes.filter(id=user.id).exists()
 
+
     return render(request, 'heranca/pages/community.html', {
         'page_title': "Community",
         'posts': posts,
         'liked_posts': liked_posts,
-        'liked':post.liked(request.user),
+        'form': form,
     })
+    
 
 
 

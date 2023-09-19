@@ -20,25 +20,22 @@ class Post(models.Model):
     is_public = models.BooleanField(default=True)
     likes_count = models.PositiveIntegerField(default=0)
     likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+    is_liked = models.BooleanField(default=False)
 
     def __str__(self):
         return self.description
-    
-    def liked(self, user):
-        if user not in self.likes.all():
-            return False
-        else:
-            return True
+
 
     def like(self, user):
         if user not in self.likes.all():
             self.likes.add(user)
+            self.is_liked = True
             self.likes_count += 1
             
         else:
             self.likes.remove(user)
+            self.is_liked = False
             self.likes_count -= 1
-            
         self.save()
 
 
@@ -68,7 +65,7 @@ class Dict_letter(models.Model):
 
 class Dict_indigenou(models.Model):
     name = models.CharField(_("Name"), max_length=40)
-    description = models.CharField(_("Description"), max_length=140)
+    description = models.CharField(_("Description"), max_length=740)
     letter = models.ForeignKey(Dict_letter, on_delete=models.CASCADE)
     alphabetical_order = models.IntegerField(_("Alphabetical Order"), default=0, blank=True)
    
