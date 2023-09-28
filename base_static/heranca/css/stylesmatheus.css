@@ -1445,14 +1445,14 @@ u{
 
 
 #add-post{
-    background-color: lightblue;
-    width: 90px;
-
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
     text-align: center;
     position: fixed;
     bottom: 25%;
     right: 60px;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.431);
 }
 
 
@@ -1480,7 +1480,6 @@ u{
 .new-post{
     z-index: 999;
     background-color: white;
-    border: 1px solid black;
     width: 450px;
     margin: auto;
     padding: 20px;
@@ -1507,6 +1506,8 @@ u{
 
 .community-background{
     position: relative;
+    background-color: #7cae43;
+   
 }
 
 .community-posts{
@@ -1558,7 +1559,6 @@ u{
 }
 .post{
     overflow-y: scroll;
-    border: 1px solid black;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 350px;
@@ -1574,7 +1574,6 @@ u{
 }
 .post-with-img{
     overflow-y: scroll;
-    border: 1px solid black;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 350px;

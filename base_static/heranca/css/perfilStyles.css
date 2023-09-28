@@ -1,0 +1,146 @@
+        /* Estilos para a fonte Decalotype */
+        @font-face {
+            font-family: 'Decalotype';
+            src: url('../fonts//Decalotype-Black.ttf') format('ttf');
+            /* Adicione mais formatos de fonte, se necessário */
+        }
+
+        .main-container {
+            display: flex;
+        }
+        h2 {
+            white-space: nowrap; 
+        }
+
+        .container {
+            margin-left: -90px; 
+        }
+
+
+        .waves-container{
+            display: block;  
+            width: 200px !important;  
+        }
+        .waves-container > img {
+            width: 100%;  
+            
+        }
+        .waves-container {
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+        }
+
+        /* Estilos para os textos solicitados */
+        h2{
+            color: #CC362F; 
+            font-family: 'Decalotype';
+            font-weight: bold;
+        }
+        h2 {
+            white-space: nowrap; 
+        }
+        .form-label{
+            color: #602417; 
+            font-family: 'Decalotype';
+            font-weight: bold;
+        }
+
+    .btn-edit {
+        color: gray; 
+        text-decoration: none; 
+        padding: 0; 
+        background: none; 
+        border: none;
+        box-shadow: none; 
+        outline: none; 
+        transition: none; 
+    }
+
+    .btn-edit:focus, .btn-edit:active {
+        background: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        color: gray; 
+    }
+
+        .form-control {
+            width: 100%; 
+        }
+
+        .d-flex > div {
+            flex: 1; 
+        }
+        .main-container{
+            margin: auto;
+        }
+
+        .arrow-icon {
+            width: 100%; 
+        }
+        .profile-section{
+            display: block;
+            margin: 0 auto 10% auto;
+            width: 85%;
+        }
+        .profile-section-inputs{
+            display: block;
+            margin: auto;
+        }
+        #bio {
+            border: 0.5px solid #602417; /* Borda com a cor especificada */
+            resize: none; /* Desativa o redimensionamento */
+        }
+        #name, #email, #pronouns {
+            border: 0.5px solid #602417; /* Borda com a cor especificada */
+        }
+        #name, #email, #pronouns, #bio {
+            border-radius: 12px;  /* Arredondamento de bordas de 20px */
+        }
+        
+
+
+
+
+        .default-profile-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .image-container {
+            position: relative;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            background-color:none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;  /* Centralizar texto horizontalmente */
+            width: 100%;  /* Ocupar toda a largura do contêiner da imagem */
+        }
+        
+        .image-container:hover .overlay {
+            display: block;
+        }
+        

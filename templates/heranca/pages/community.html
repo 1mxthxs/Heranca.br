@@ -3,6 +3,11 @@
 {% load i18n %}
 {% csrf_token %}
 {% block extra_styles %}
+<style>
+    body{
+        background-color: #7cae43;
+    }
+</style>
 {% endblock extra_styles %}
 {% block title %}{{page_title}}{% endblock title %}
 
@@ -22,15 +27,11 @@
         bg.classList.remove('show-new-post')
     })
 
-    // JavaScript para mostrar/ocultar o botão "Adicionar Post" com base no scroll
-
-    var footer = document.querySelector('footer'); // Usar querySelector para selecionar o primeiro elemento <footer>
+    var footer = document.querySelector('footer');
         window.addEventListener('scroll', function () {
             if (window.scrollY + window.innerHeight < footer.offsetTop) {
-                // Quando o footer não está visível
                 add.style.transform = 'translateY(0)';
             } else {
-                // Quando o footer está visível
                 add.style.transform = 'translateY(-30vh)';
             }
         });

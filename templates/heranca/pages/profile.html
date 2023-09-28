@@ -1,0 +1,108 @@
+{% extends "base_heranca.html" %}
+{% load static %}
+{% block page_title %}Perfil{% endblock page_title %}
+    
+    {% block extra_styles %}
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+    <link href="{% static 'heranca/css/perfilStyles.css' %}" rel="stylesheet"/>
+    {% endblock extra_styles %}
+    
+    {% block content %}
+        <div class="main-container d-flex">
+            <div class="waves-container">
+                <img alt="Ondas" src="{% static 'heranca/images/OndasBackground.png'%}"/>
+            </div>
+            <div class="container mt-5 profile-section">
+                <div class="mb-4 d-flex align-items-center justify-content-between">
+                    <h2>
+                        Editar Perfil
+                    </h2>
+                    <a>
+                        <img alt="Seta para voltar" class="arrow-icon" src="{% static 'heranca/images/Seta.png'%}"/>
+                    </a>
+                </div>
+                <div class="container mt-5 profile-section-inputs">
+                    <div class="row profile-container">
+                        <div class="col-md-10 d-flex">
+                            <div class="d-flex flex-column align-items-center me-4 image-container">
+                                <label class="profile-image mb-3 d-flex align-items-center justify-content-center" for="profileImage">
+                                    <img alt="Imagem de Perfil" class="default-profile-image" src="{% static 'heranca/images/PerfilPadrao.png'%}"/>
+                                    <div class="overlay">
+                                        Editar Foto
+                                    </div>
+                                </label>
+                                <input class="form-control d-none" id="profileImage" type="file"/
+                               
+                                >
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <!-- Campo Nome -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <label class="form-label" for="name">
+                                                Nome
+                                            </label>
+                                            <button class="btn btn-link btn-edit" type="button">
+                                                Editar
+                                            </button>
+                                        </div>
+                                        <input class="form-control" id="name" placeholder="Seu nome" type="text"/value="{{user.username}}">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <label class="form-label" for="email">
+                                                    Email
+                                                </label>
+                                                <button class="btn btn-link btn-edit" type="button">
+                                                    Editar
+                                                </button>
+                                            </div>
+                                            <input class="form-control" id="email" placeholder="Seu email" type="email"/ value="
+                                            {% if user.email %}
+                                            {{user.email}}
+                                            {% else %}
+                                            Email não cadastrado.
+                                            {% endif %}
+                                            "
+                                            >
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <label class="form-label" for="pronouns">
+                                                        Pronomes
+                                                    </label>
+                                                    <button class="btn btn-link btn-edit" type="button">
+                                                        Editar
+                                                    </button>
+                                                </div>
+                                                <input class="form-control" id="pronouns" placeholder="Seus pronomes (ex: ele/dele)" type="text"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <label class="form-label" for="bio">
+                                                        Biografia
+                                                    </label>
+                                                    <button class="btn btn-link btn-edit" type="button">
+                                                        Editar
+                                                    </button>
+                                                </div>
+                                                <textarea class="form-control" id="bio" placeholder="Conte-nos mais sobre você" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% block scripts %}
+                                    <script crossorigin="anonymous" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+                                    </script>
+                                {% endblock scripts %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock content %}

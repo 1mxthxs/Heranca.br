@@ -39,7 +39,7 @@ class="quiz-background"
 >
     {% include './heranca/partials/sidebar.html' %}
     {% include './heranca/partials/header.html' %}
-    {% if 'accounts' in request.path %}
+    {% if 'accounts' in request.path and 'accounts/profile' not in request.path%}
         {% block content_auth %}
         {% csrf_token %}
         {% endblock content_auth %}

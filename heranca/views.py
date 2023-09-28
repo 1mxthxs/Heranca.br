@@ -19,9 +19,13 @@ def index(request):
         return render(request, 'heranca/pages/herança.html', {'page_title': page_title, 'news': news, 'user': user,})
 
 
-@login_required(login_url=reverse_lazy('index'))
+@login_required(login_url=reverse_lazy('account_login'))
 def profile(request):
-    return redirect(reverse("index"))
+    user = request.user
+    return render(request, 'heranca/pages/profile.html',{
+        'page_title': "Perfil",
+        'user': user,
+    })
 
 
 @csrf_protect
