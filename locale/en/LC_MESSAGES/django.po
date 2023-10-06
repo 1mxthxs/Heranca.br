@@ -184,7 +184,7 @@ msgstr "DICTIONARY"
 
 #: templates/heranca/partials/header.html:22
 msgid "QUIZ"
-msgstr "Quiz"
+msgstr "QUIZ"
 
 #: templates/heranca/partials/header.html:24
 msgid "PT-BR"

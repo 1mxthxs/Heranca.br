@@ -40,14 +40,14 @@ class Post(models.Model):
 
 
 class New(models.Model):
-    titulo = models.CharField(_("Titulo"), max_length=200)
-    conteudo = models.TextField(_("Conteudo"), )
     image = models.ImageField(upload_to='News/cover/%Y/%m/%d/', blank=True, null=True)
+    title = models.CharField(_("Titulo"), max_length=200)
+    title_en = models.CharField(_("Title - (Titulo Ingles)"), max_length=220)
+    link = models.URLField()
     is_public = models.BooleanField(default=True)
 
-
     def __str__(self):
-        return self.titulo
+        return self.title
 
 
 class Dict_letter(models.Model):

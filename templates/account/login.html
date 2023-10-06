@@ -11,12 +11,14 @@
 <div class="section" id="loginSection">
 	<h2>Login</h2>
 	{% if error_message %} <div class="error-message">{{ error_message }}</div>{% endif %}
-	<h4>Ainda não tem uma conta?</h4>
-	<a href="{% url 'account_signup' %}" id="abrirCadastro">Cadastrar!</a>
+	
 	<form method="post" class="login-form form_credentials" action="{% url 'account_login' %}">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<button type="submit">Entrar</button>
+		<h4>{% trans "Ainda não tem uma conta?" %}</h4>
+		<a href="{% url 'account_signup' %}" id="abrirCadastro">{% trans "Cadastrar!" %}</a>
+		<button type="submit">{% trans "Continuar" %}</button>
 	</form>
+	
 </div>
 {% endblock %}

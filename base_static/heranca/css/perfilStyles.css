@@ -1,7 +1,7 @@
         /* Estilos para a fonte Decalotype */
         @font-face {
             font-family: 'Decalotype';
-            src: url('../fonts//Decalotype-Black.ttf') format('ttf');
+            src: url(../fonts/Decalotype-Black.ttf) format('ttf');
             /* Adicione mais formatos de fonte, se necessário */
         }
 
@@ -9,6 +9,7 @@
             display: flex;
         }
         h2 {
+            font-family: Arial;
             white-space: nowrap; 
         }
 
@@ -48,7 +49,7 @@
         /* Estilos para os textos solicitados */
         h2{
             color: #CC362F; 
-            font-family: 'Decalotype';
+            font-family: Arial;
             font-weight: bold;
         }
         h2 {
@@ -56,7 +57,7 @@
         }
         .form-label{
             color: #602417; 
-            font-family: 'Decalotype';
+            font-family: Arial;
             font-weight: bold;
         }
 
@@ -143,4 +144,9 @@
         .image-container:hover .overlay {
             display: block;
         }
+        .btn-link:hover {
+            color: #000 !important;
+        }
+        
+        
         

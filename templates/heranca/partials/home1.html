@@ -27,9 +27,23 @@
 <section class="home2">
     <div class="icons">
         <div class="icon-detail">
-            <a class="" href="#">
+            <a class=""  href="{% url 'account_signup' %}">
                 <div class="icon-img">
-                    <img src="{% static 'heranca/images/quiz.png'%}" alt="">
+                    <img src="{% static 'heranca/images/estrela.png'%}" alt="">
+                </div>
+                <div class="icon-main-text">
+                    <h2>{% trans "Cultura" %}</h2>
+                </div>
+            </a>
+            <div class="icon-subtext">
+                <h3>{% trans "Aprenda mais sobre a cultura de alguns povos indigenas bem conhecidos." %}</h3>
+                <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
+            </div>
+        </div>
+        <div class="icon-detail">
+            <a class="" href="{% url 'account_signup' %}">
+                <div class="icon-img">
+                    <img src="{% static 'heranca/images/mapa.png'%}" alt="">
                 </div>
                 <div class="icon-main-text">
                     <h2>{% trans "Tribo Próximas" %}</h2>
@@ -41,44 +55,30 @@
             </div>
         </div>
         <div class="icon-detail">
-            <a class="" href="#">
+            <a class="" href="{% url 'account_signup' %}">
                 <div class="icon-img">
-                    <img src="{% static 'heranca/images/quiz.png'%}" alt="">
+                    <img src="{% static 'heranca/images/comunidade.png'%}" alt="">
                 </div>
                 <div class="icon-main-text">
-                    <h2>Tribo Próximas</h2>
+                    <h2>{% trans "Comunidade" %}</h2>
                 </div>
             </a>
             <div class="icon-subtext">
-                <h3>Saiba onde encontrar tribos próximas a você para visitá-las.</h3>
-                <a class="icon-more" href="{% url 'account_signup' %}">Cadastre-se para sabe mais</a>
+                <h3>{% trans "Debata com diversas pessoas sobre a conscientização indígena." %}</h3>
+                <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
             </div>
         </div>
         <div class="icon-detail">
-            <a class="" href="#">
+            <a class="" href="{% url 'account_signup' %}">
                 <div class="icon-img">
                     <img src="{% static 'heranca/images/quiz.png'%}" alt="">
                 </div>
                 <div class="icon-main-text">
-                    <h2>Tribo Próximas</h2>
+                    <h2>{% trans "Quiz" %}</h2>
                 </div>
             </a>
             <div class="icon-subtext">
-                <h3>Saiba onde encontrar tribos próximas a você para visitá-las.</h3>
-                <a class="icon-more" href="{% url 'account_signup' %}">Cadastre-se para sabe mais</a>
-            </div>
-        </div>
-        <div class="icon-detail">
-            <a class="" href="#">
-                <div class="icon-img">
-                    <img src="{% static 'heranca/images/quiz.png'%}" alt="">
-                </div>
-                <div class="icon-main-text">
-                    <h2>Tribo Próximas</h2>
-                </div>
-            </a>
-            <div class="icon-subtext">
-                <h3>Saiba onde encontrar tribos próximas a você para visitá-las.</h3>
+                <h3>{% trans "Saiba onde encontrar tribos próximas a você para visitá-las." %}</h3>
                 <a class="icon-more" href="{% url 'account_signup' %}">Cadastre-se para sabe mais</a>
             </div>
         </div>

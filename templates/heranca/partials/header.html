@@ -29,8 +29,10 @@
             <li class="nav-li"><a class="nav-li-links"  href="{% url 'set-language' 'en' %}">{% trans "EN-US" %}</a></li>
             {% endif %}
             
-            {% if user.is_authenticated %}
+            {% if user.is_authenticated and "accounts/profile/" in request.path %}
             <li class="nav-li"><a class="nav-li-links" href="{% url 'account_logout' %}" id="">{% trans "SAIR" %}</a></li>
+            {% elif user.is_authenticated%}
+            <li class="nav-li"><a class="nav-li-links" href="{% url 'profile' %}" id="">{% trans "PERFIL" %}</a></li>
             {% else %}
             <li class="nav-li"><a class="nav-li-links" href="{% url 'account_login' %}" id="menu-login">{% trans "ENTRAR" %}</a></li>
             {% endif %}

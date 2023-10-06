@@ -6,6 +6,11 @@
 <style>
     body{
         background-color: #7cae43;
+        background-image: url({% static 'heranca/images/comunidadeBackground.svg' %});
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 101%;
     }
 </style>
 {% endblock extra_styles %}
@@ -63,7 +68,7 @@
         
     </div>
 </div>
-<main class="main-width community-background">
+<main class="main-width ">
 
     <section class="community-posts">
         
@@ -140,5 +145,5 @@
         {% endfor %}
     </section>         
 </main>
-<button id="add-post" class="fixed-button">Adicionar Post</button>
+<button id="add-post" class="fixed-button">&plus;</button>
 {% endblock content %}

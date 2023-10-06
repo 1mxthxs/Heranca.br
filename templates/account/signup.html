@@ -8,13 +8,13 @@
 {% block content %}
 
 <div class="section" id="cadastroSection">
-	<h2>Cadastrar</h2>
-	<h4>Já tem uma conta?</h4>
-	<a href="{% url 'account_login' %}" id="abrirLogin">Entrar!</a>
+	<h2>{% trans "Cadastrar Conta" %}</h2>
+	<h4>{% trans "Já registrado?" %}</h4>
+	<a href="{% url 'account_login' %}" id="abrirLogin">{% trans "Entrar!" %}</a>
 	<form method="post" class="signup-form form_credentials" action="{% url 'account_signup' %}">
 	  {% csrf_token %}
 	  {{ form.as_p }}
-	  <button type="submit">Cadastrar</button>
+	  <button type="submit">{% trans "Continuar" %}</button>
 	</form>
 	
 </div>

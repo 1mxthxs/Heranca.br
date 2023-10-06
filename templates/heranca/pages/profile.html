@@ -1,5 +1,6 @@
 {% extends "base_heranca.html" %}
 {% load static %}
+{% load i18n %}
 {% block page_title %}Perfil{% endblock page_title %}
     
     {% block extra_styles %}
@@ -15,7 +16,7 @@
             <div class="container mt-5 profile-section">
                 <div class="mb-4 d-flex align-items-center justify-content-between">
                     <h2>
-                        Editar Perfil
+                        {% trans "Editar Perfil" %}
                     </h2>
                     <a>
                         <img alt="Seta para voltar" class="arrow-icon" src="{% static 'heranca/images/Seta.png'%}"/>
@@ -28,7 +29,7 @@
                                 <label class="profile-image mb-3 d-flex align-items-center justify-content-center" for="profileImage">
                                     <img alt="Imagem de Perfil" class="default-profile-image" src="{% static 'heranca/images/PerfilPadrao.png'%}"/>
                                     <div class="overlay">
-                                        Editar Foto
+                                        {% trans "Editar Foto" %}
                                     </div>
                                 </label>
                                 <input class="form-control d-none" id="profileImage" type="file"/
@@ -40,11 +41,11 @@
                                     <div class="mb-3">
                                         <div class="d-flex align-items-center justify-content-between">
                                             <label class="form-label" for="name">
-                                                Nome
+                                                {% trans "Nome" %}
                                             </label>
-                                            <button class="btn btn-link btn-edit" type="button">
-                                                Editar
-                                            </button>
+                                            <a href="" class="btn btn-link btn-edit" type="button">
+                                                {% trans "Editar" %}
+                                            </a>
                                         </div>
                                         <input class="form-control" id="name" placeholder="Seu nome" type="text"/value="{{user.username}}">
                                         </div>
@@ -53,9 +54,9 @@
                                                 <label class="form-label" for="email">
                                                     Email
                                                 </label>
-                                                <button class="btn btn-link btn-edit" type="button">
-                                                    Editar
-                                                </button>
+                                                <a href="" class="btn btn-link btn-edit" type="button">
+                                                    {% trans "Editar" %}
+                                                </a>
                                             </div>
                                             <input class="form-control" id="email" placeholder="Seu email" type="email"/ value="
                                             {% if user.email %}
@@ -69,11 +70,11 @@
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <label class="form-label" for="pronouns">
-                                                        Pronomes
+                                                        {% trans "Pronomes" %}
                                                     </label>
-                                                    <button class="btn btn-link btn-edit" type="button">
-                                                        Editar
-                                                    </button>
+                                                    <a href="" class="btn btn-link btn-edit" type="button">
+                                                        {% trans "Editar" %}
+                                                    </a>
                                                 </div>
                                                 <input class="form-control" id="pronouns" placeholder="Seus pronomes (ex: ele/dele)" type="text"/>
                                                 </div>
@@ -83,11 +84,11 @@
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <label class="form-label" for="bio">
-                                                        Biografia
+                                                        {% trans "Biografia" %}
                                                     </label>
-                                                    <button class="btn btn-link btn-edit" type="button">
-                                                        Editar
-                                                    </button>
+                                                    <a href="" class="btn btn-link btn-edit" type="button">
+                                                        {% trans "Editar" %}
+                                                    </a>
                                                 </div>
                                                 <textarea class="form-control" id="bio" placeholder="Conte-nos mais sobre você" rows="5"></textarea>
                                                 </div>

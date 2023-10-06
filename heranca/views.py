@@ -6,6 +6,7 @@ from django.urls import reverse_lazy, reverse
 from django.db.models import Q
 from django.http import JsonResponse
 from .forms import NewPost
+from django.utils.translation import gettext_lazy as _
 
 
 def index(request):
@@ -15,7 +16,7 @@ def index(request):
         page_title = user.username.title()
         return render(request, 'heranca/pages/index.html', {'page_title': page_title, 'news': news, 'user': user,})
     else:
-        page_title = "Inicio!"
+        page_title = _("Inicio!")
         return render(request, 'heranca/pages/herança.html', {'page_title': page_title, 'news': news, 'user': user,})
 
 
@@ -23,14 +24,14 @@ def index(request):
 def profile(request):
     user = request.user
     return render(request, 'heranca/pages/profile.html',{
-        'page_title': "Perfil",
+        'page_title': _("Perfil"),
         'user': user,
     })
 
 
 @csrf_protect
 def dict_indigenous(request):
-    page_title = "Dicionario"
+    page_title = _("Dicionario")
     search_placeholder_text = "Busque pela letra!"
     letters = Dict_letter.objects.order_by('alphabetical_order')
     
@@ -59,7 +60,7 @@ def dict_details(request, char):
     )
     more_dict = Dict_letter.objects.exclude(letter_char=char).order_by("?")[:3]    
     
-    page_title = f"Dicionario - {letter.letter_char}"
+    page_title = _("Dicionario") + f" - {letter.letter_char}"
     
     return render(request, 'heranca/pages/dict.html', {
         'page_title': page_title,
@@ -70,13 +71,13 @@ def dict_details(request, char):
 
 def about(request):
     return render(request, 'heranca/pages/about.html',{
-        'page_title': "Quem somos",
+        'page_title': _("Quem somos"),
     })
 
 
 def after_login(request):
     return render(request, 'heranca/pages/after_login.html',{
-        'page_title':"After Login",
+        'page_title': _("Início"),
         
     })
     
@@ -106,7 +107,7 @@ def community(request):
 
 
     return render(request, 'heranca/pages/community.html', {
-        'page_title': "Community",
+        'page_title': _("Community"),
         'posts': posts,
         'liked_posts': liked_posts,
         'form': form,
