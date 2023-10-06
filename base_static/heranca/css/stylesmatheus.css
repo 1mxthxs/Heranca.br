@@ -680,6 +680,7 @@ b{
 
 }
 .signup:hover{
+    color: white  !important;
     transform: translateY(-10px);
 }
 
@@ -1206,6 +1207,9 @@ u{
     width: 32%;
     box-shadow: 2px 1px 20px rgba(0, 0, 0, 0.083);
 }
+.more_dict_block:hover{
+    color: #572102 !important;
+}
 
 
 /* ABOUT */
@@ -1274,7 +1278,8 @@ u{
 
 /* QUIZ */
 .quizes-height{
-    height: 350px;
+    min-height: 350px;
+    max-height: 2000px;
 }
 .quiz-title{
     cursor: pointer;
@@ -1285,6 +1290,7 @@ u{
 }
 #quiz-block{
     font-size: large;
+    
 }
 .block-quiz{
     display: flex;

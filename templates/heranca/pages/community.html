@@ -7,10 +7,11 @@
     body{
         background-color: #7cae43;
         background-image: url({% static 'heranca/images/comunidadeBackground.svg' %});
-        background-position: center center;
+        background-position: top center;
         background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: 101%;
+        background-repeat: repeat;
+        background-size: 160%;
+        background-clip: border-box;
     }
 </style>
 {% endblock extra_styles %}
@@ -48,8 +49,8 @@
 <section id="background-exit" class="background-new-post"></section>
 <div id="bg-exit" class="add-post-width">
     <div class="new-post">
-        <div class="new-post-title"><h1>Criar um post</h1></div>
-        <p>Publicando como {{user.username|title}}</p>
+        <div class="new-post-title"><h1>{% trans "Criar um post" %}</h1></div>
+        <p>{% trans "Publicando como" %} {{user.username|title}}</p>
         <form class="new-post-form" id="form-new-post" method='POST' enctype="multipart/form-data" action="{% url 'community' %}">
             {% csrf_token %}
             {{ form.non_field_errors }}
@@ -62,7 +63,7 @@
                 {{ form.description }}
             </div>
             <div class="publish-new-post">
-                <button type="submit">Publicar!</button>
+                <button type="submit">{% trans "Publicar!" %}</button>
             </div>
         </form>
         

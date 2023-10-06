@@ -26,7 +26,7 @@
             </div>
         {% else %}
             <div class="home_dict_top top-title">
-                <h1 class="home_dict_title">Dicionário Indígena</h1>
+                <h1 class="home_dict_title">{% trans "Dicionário Indígena" %}</h1>
             </div>  
             <div class="home_dict">
                 {% for letter in letters %}
@@ -71,7 +71,7 @@
     
     {% if letter_detail %}   
     <section class="see_more_dict">
-            <h2>Veja mais sobre a cultura indígena!</h2>
+            <h2>{% trans "Veja mais sobre a cultura indígena!" %}</h2>
             <div class="more-dict">
                 {% for dict in more_dict %}
                     <a class="more_dict_block" href="{% url 'dict_details'  dict.letter_char %}">
