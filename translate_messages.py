@@ -7,6 +7,9 @@ call_command('makemessages', '-l', 'br', '-i', 'account/*', '-i' ,'openid/*','-i
 call_command('makemessages', '-l', 'en', '-i', 'account/*', '-i' ,'openid/*','-i','socialaccount/*')
 
 
+## makemessages -l br -i account/*  -i openid/* -i socialaccount/*
+## makemessages -l en -i account/*  -i openid/* -i socialaccount/*
+
 po_file = polib.pofile('locale/en/LC_MESSAGES/django.po')
 
 translator = Translator()

@@ -33,13 +33,13 @@
                 <div class="slides owl-carousel">      
                     {% for new in news|slice:":10" %}
                     <div class="slide">
-                        <a href="{{new.link}}" target="_blank" class="slide-content">
+                        <a href="{{new.link}}" target="_blank" class="slide-content text-decoration-none">
                             <img class="slide-img" src="{% if new.image %}
                             {{ new.image.url }}{% endif %}" alt="{{new.title}}">
                             {% if "en/" in request.path %}
-                            <h2 class="slide-title">{{ new.title_en }}</h2>
+                            <h2 class="slide-title text-decoration-none">{{ new.title_en }}</h2>
                             {% else %}
-                            <h2 class="slide-title">{{ new.title }}</h2>
+                            <h2 class="slide-title text-decoration-none">{{ new.title }}</h2>
                             {% endif %}
                            
                         </a>

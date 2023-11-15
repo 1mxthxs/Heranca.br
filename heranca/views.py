@@ -21,12 +21,19 @@ def index(request):
 
 
 @login_required(login_url=reverse_lazy('account_login'))
-def profile(request):
+def profile(request,  click=''):
+    user = request.user
+    if click == '':
+        return redirect("index")
+
+
+def profile_logged(request):
     user = request.user
     return render(request, 'heranca/pages/profile.html',{
         'page_title': _("Perfil"),
         'user': user,
     })
+
 
 
 @csrf_protect

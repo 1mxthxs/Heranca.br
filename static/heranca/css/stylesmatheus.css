@@ -180,6 +180,9 @@ header{
     border: 2px solid #572102;
 
 }
+.nav-li > a{
+    color: black !important;
+}
 .nav-li-links{
     text-align: center;
     color: #602417;
@@ -339,7 +342,7 @@ b{
     
     
 }
-@media (max-width: 1018px){
+@media (max-width: 1150px){
     .header-nav{
         display: none !important;
     }
@@ -547,18 +550,20 @@ b{
 #fecharModalButton {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-decoration: none;
     position: absolute;
     top: 20px;
     right: 20px;
     text-align: center;
     font-size: 24px;
+    padding-bottom: 6px;
     height: 30px;
     width: 30px;
     border: none;
     cursor: pointer;
     color: black;
-    z-index: 10;
+    z-index: 100;
 }
 #fecharModalButton:hover {
     border: 1px solid rgba(0, 0, 0, 0.29);
@@ -567,22 +572,26 @@ b{
     position: relative;
 
 }
-.section h2{
+.section h2 {
+    margin-top: 35px;
     font-family: poppins;
-    font-size: 30px;
+    font-size: 29px;
     color: #A82020;
     width: 100%;
 }
-.section> h4 {
-    display: inline;
-    margin-top: 10px;
+.section > h4, .login-form > h4{
+    display: inline-block;
+    margin: 14px 0 20px 0;
     text-align: center;
     color: #8F8E8E;
     font-size: 14px;
 }
-.section > a {
+.login-form > h4{
+    margin: 0;
+}
+.section > a, .login-form > a{
     display: inline;
-    color: #8F8E8E;
+    color: #2567ff;
     font-size: 14px;
 }
 .section > form{
@@ -671,6 +680,7 @@ b{
 
 }
 .signup:hover{
+    color: white  !important;
     transform: translateY(-10px);
 }
 
@@ -798,12 +808,15 @@ b{
     height: 290px;
 }
 
+
 .slide-title {
+
     position: relative;
     bottom: 70px;
     padding: 0 20px;
-    color: white;
+    color: white !important;
     font-size: larger;
+
 }
 .content {
     width: 100%;
@@ -1130,11 +1143,16 @@ u{
     float: right;
 }
 .dict_word h2{
+    text-decoration: none;
     font-family: poppins;
     font-weight: 500;
     font-size: medium;
     text-align: justify;
 }
+.dict_word h2:hover{
+    color:  #572102 !important;
+}
+
 .home_dict{
     width: 100%;
     display: grid;
@@ -1151,6 +1169,10 @@ u{
     padding: 10px 0px 20px 0px;
     overflow-y: hidden;
 }
+.dict_block:hover {
+    color:  #572102 !important;
+}
+
 
 .letter_detail{
     width: 100%;
@@ -1186,6 +1208,9 @@ u{
     height: 240px;
     width: 32%;
     box-shadow: 2px 1px 20px rgba(0, 0, 0, 0.083);
+}
+.more_dict_block:hover{
+    color: #572102 !important;
 }
 
 
@@ -1255,7 +1280,8 @@ u{
 
 /* QUIZ */
 .quizes-height{
-    height: 350px;
+    min-height: 350px;
+    max-height: 2000px;
 }
 .quiz-title{
     cursor: pointer;
@@ -1266,6 +1292,7 @@ u{
 }
 #quiz-block{
     font-size: large;
+    
 }
 .block-quiz{
     display: flex;
@@ -1445,14 +1472,21 @@ u{
 
 
 #add-post{
-    background-color: lightblue;
-    width: 90px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
     text-align: center;
     position: fixed;
     bottom: 25%;
     right: 60px;
-    border: none;
+    font-size: 100px;
+    font-weight: 600;
+    color: rgba(100, 100, 100, 0.431);
+    border: 4px solid rgba(100, 100, 100, 0.431);
 }
 
 
@@ -1480,7 +1514,6 @@ u{
 .new-post{
     z-index: 999;
     background-color: white;
-    border: 1px solid black;
     width: 450px;
     margin: auto;
     padding: 20px;
@@ -1507,6 +1540,8 @@ u{
 
 .community-background{
     position: relative;
+    background-color: #7cae43;
+   
 }
 
 .community-posts{
@@ -1558,7 +1593,6 @@ u{
 }
 .post{
     overflow-y: scroll;
-    border: 1px solid black;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 350px;
@@ -1574,7 +1608,6 @@ u{
 }
 .post-with-img{
     overflow-y: scroll;
-    border: 1px solid black;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 350px;

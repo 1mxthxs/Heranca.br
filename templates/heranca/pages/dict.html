@@ -41,19 +41,6 @@
                     {% endfor %}
                 </a>
                 {% endfor %}
-    
-                {% for letter in letters %}
-                <a href="{% url 'dict_details' letter.letter_char %}" class="dict_block">
-                    <h1 class="dict_letter">{{ letter.letter_char }}</h1>
-                    {% for indigenous in letter.get_words %}
-                    <div class="letter_detail">
-                        <div class="dict_word">
-                            <h2><b>{{ indigenous.name }}:</b> {{indigenous.description }}</h2>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </a>
-                {% endfor %}
             </div>  
         {% endif %}
     </main>
@@ -84,7 +71,6 @@
                         </div>
                         {% endfor %}
                     </a>
-            
                 {% endfor %}
             </div>
         </section>   

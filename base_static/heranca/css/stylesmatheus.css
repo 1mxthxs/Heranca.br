@@ -808,13 +808,15 @@ b{
     height: 290px;
 }
 
+
 .slide-title {
+
     position: relative;
     bottom: 70px;
     padding: 0 20px;
     color: white !important;
     font-size: larger;
-    text-decoration: none !important;
+
 }
 .content {
     width: 100%;

@@ -36,7 +36,12 @@
                 </div>
             </a>
             <div class="icon-subtext">
+                {% if '/en/' in request.path %}
+                <h3>Learn about the culture of some well-known indigenous peoples.</h3>
+                {% else %}
                 <h3>{% trans "Aprenda mais sobre a cultura de alguns povos indigenas bem conhecidos." %}</h3>
+                {% endif %}
+                
                 <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
             </div>
         </div>
@@ -60,11 +65,21 @@
                     <img src="{% static 'heranca/images/comunidade.png'%}" alt="">
                 </div>
                 <div class="icon-main-text">
-                    <h2>{% trans "Comunidade" %}</h2>
+                    {% if '/en/' in request.path %}
+                    <h2>Community</h2>
+                    {% else %}
+                    <h2>Comunidade</h2>
+                    {% endif %}
                 </div>
             </a>
             <div class="icon-subtext">
+                {% if '/en/' in request.path %}
+                <h3>Debate with different people about indigenous awareness.</h3>
+                {% else %}
                 <h3>{% trans "Debata com diversas pessoas sobre a conscientização indígena." %}</h3>
+                {% endif %}
+
+                
                 <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
             </div>
         </div>
@@ -78,8 +93,12 @@
                 </div>
             </a>
             <div class="icon-subtext">
-                <h3>{% trans "Saiba onde encontrar tribos próximas a você para visitá-las." %}</h3>
-                <a class="icon-more" href="{% url 'account_signup' %}">Cadastre-se para sabe mais</a>
+                {% if '/en/' in request.path %}
+                <h3>Play the quizzes and discover a little more about the history of the people!</h3>
+                {% else %}
+                <h3>Jogue o quizes e descubra um pouco mais da história dos povos!</h3>
+                {% endif %}
+                <a class="icon-more" href="{% url 'account_signup' %}">{% trans "Cadastre-se para sabe mais" %}</a>
             </div>
         </div>
     </div>
