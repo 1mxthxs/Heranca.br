@@ -1,0 +1,77 @@
+{% extends 'base_heranca.html' %}
+{% load static %}
+{% block title %}
+    {{page_title}}
+{% endblock title %}
+{% block content %}
+{% if '/en/' in request.path %}
+
+{% else %}
+<main class="main-width">
+    <div class="top-title">
+        <h1>Sateré - Mawé</h1>
+    </div>
+    <div class="about-info">
+        <section class="about-info-text about-info-map padding-none">
+            <p> Sateré-Mawé significa “lagarta de fogo” e “papagaio inteligente e curioso”, esse é o nome da tribo indígena que habita a região do médio rio Amazonas, em duas terras indígenas, um pequeno grupo localizado na Ti Coatá-Laranjal da etnia Munduruku, e outro na Ti Andirá-Marau, que fica situada na fronteira dos estados do Amazonas e do Pará. 
+            Eles também são encontrados morando em várias cidades no estado do Amazonas como Barreirinha, Maués, Nova Olinda do Norte, Parintins e em Manaus, onde vários indígenas Mawés (são chamados assim regionalmente) vivem em áreas periféricas e formam quatro aldeias urbanas nesta região.</p>
+            <div class="tribe-location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1019216.6025370689!2d-57.58062914491722!3d-3.7414180882445205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9260d4b4aad57c79%3A0x6a82dda1730d6f9!2sAndir%C3%A1-Marau!5e0!3m2!1spt-BR!2sbr!4v1700605650138!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section class="about-info-text padding-none">
+            <p> Ao longo dos séculos, os Sateré-Mawé enfrentaram uma série de desafios em relação à sua terra. Desde as missões jesuítas no século XVIII até a extração de borracha e a expansão econômica recente, seu território foi constantemente modificado. Essas mudanças resultaram na criação de fazendas, abertura de garimpos, desmatamento e na dominação da economia indígena pelos comerciantes ambulantes.</p>
+            <p>Além disso, epidemias e perseguição forçaram os Sateré-Mawé a deixarem suas terras tradicionais, o que levou à redução de sua população. Nas décadas de 1980, eles lutaram contra a invasão da estatal francesa de petróleo Elf-Aquitaine, que causou impactos ambientais e a morte de indígenas por intoxicação. Felizmente, os Sateré-Mawé ganharam o processo judicial movido contra a empresa e também conseguiram impedir a construção de uma rodovia que atravessaria seu território.</p>
+            <p>Atualmente, os jovens líderes indígenas estão lutando para ampliar o território de seu povo e combater a construção de dezenas de hidrelétricas na bacia do Amazonas, que ameaçam suas terras. Esses projetos representam um novo desafio para os Sateré-Mawé, que buscam preservar sua cultura e modo de vida.
+            </p>
+        </section>
+        <section class="about-info-text ">
+            <h1><b>Sateré-Mawé e o guaraná</b></h1>
+        </section>
+        <section class="about-info-text about-info-map padding-none">
+            <div class="tribe-location">
+                <img src="{% static 'heranca/images/tribes/satere2.svg' %}" alt="">
+            </div>
+            <p> Os Sateré-Mawé foram os primeiros a cultivar o guaraná, fruto originário da Amazônia, e que está diretamente traçado no plano ideológico do mito fundador desse povo. Os Mawés transformaram a planta Paullinia Cupana em uma espécie cultivada, introduzindo o cultivo e o processo de beneficiamento. O guaraná é originário das terras altas do rio Maués-Açu, que pertence ao território tradicional dos Sateré-Mawé.<br>O guaraná é o principal produto da economia dos Sateré-Mawé e é muito valorizado no mercado. A habilidade comercial dos Sateré-Mawé pode ser atribuída à importância cultural e econômica do guaraná para a comunidade.</p>
+        </section>
+        <section class="about-info-text">
+            <p>   A primeira descrição do guaraná e sua importância para os Sateré-Mawé foi feita por volta de 1669, quando eles tiveram o primeiro contato com os colonizadores. Segundo o relato do padre João Felipe Betendorf, o guaraná é uma fruta encontrada na floresta dos Sateré-Mawé, que é seca e moída em forma de bolas. Quando essas bolas são dissolvidas em água e consumidas, fornecem energia e força aos indígenas, além de serem utilizadas no tratamento de doenças como febres, dores de cabeça e cãibras.<br>
+            O guaraná nativo cultivado pelos Sateré-Mawé é extraído da natureza, sendo cuidadosamente coletado na floresta e submetido a um processo de secagem gradual em forno de barro. Além disso, é defumado de forma artesanal, a fim de preservar suas propriedades aromáticas e gustativas por um período prolongado. Apenas o excedente não utilizado pela comunidade é comercializado como grãos, pó ou em formato de bastão ou pão de guaraná.
+            </p>
+        </section>
+        <section class="about-info-text ">
+            <h1><b>Língua</b></h1>
+        </section>
+        <section class="about-info-text padding-none">
+            <p>A língua Sateré-Mawé pertence à família linguística tupi, mas possui palavras que não são encontradas em outros dialetos tupis nem em outras famílias linguísticas.<br>
+            Atualmente, os homens são bilíngues e falam tanto o Sateré-Mawé quanto o português. No entanto, em algumas aldeias mais isoladas, ainda existem mulheres que falam apenas o idioma nativo, mesmo após mais de trezentos anos de contato com os colonizadores brancos.</p>
+        </section>
+
+        <section class="about-info-text ">
+            <h1><b>Cultura e artesanato</b></h1>
+        </section>
+        <section class="about-info-text about-info-map padding-none">
+            <div class="tribe-location">
+                <img src="{% static 'heranca/images/tribes/satere1.svg' %}" alt="">
+            </div>
+            <p> A sobrevivência das famílias Sateré-Mawé baseia-se na agricultura como principal fonte de sustento, com destaque para a produção de guaraná e mandioca. O excedente de alimentos como farinha, mel, castanhas, diversos tipos de frutos, resina, cipós e uma variedade de fibras vegetais é vendido nas cidades vizinhas.<br>
+            Além disso, a comunidade indígena comercializa seus artesanatos e outros objetos de grande importância cultural. Essas obras são conhecidas como tessumi e são produzidas pelos homens utilizando caules e folhas de plantas locais, como caranã, arumã, entre outras matérias-primas encontradas na Floresta Amazônica. </p>
+        </section>
+        <section class="about-info-text ">
+            <p>  Os artesãos confeccionam peneiras, cestos, esteiras, abanos, bolsas, chapéus e também utilizam esses mesmos materiais tradicionalmente para a construção das paredes e dos telhados de suas casas.</p>
+        </section>
+    </div>
+    <div class="tribe-quiz">
+        <section class="about-info-text ">
+            <h1><b>Sateré Mawé ainda não tem quiz</b></h1>
+            <h1><b><a class="text-decoration-none b-color" href="{% url "quizes:main-view" %}">Clique aqui para acessar os outros quizes sobre outros povos.</a></b></h1>
+        </section>
+    </div>
+</main>
+{% endif %}
+<section class="img-gratient">
+    <div class="bottom-img">
+        <img src="{% static 'heranca/images/dict/bottom2.svg' %}" alt="">
+    </div>
+</section>
+{% endblock content %}

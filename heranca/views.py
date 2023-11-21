@@ -80,6 +80,11 @@ def about(request):
     return render(request, 'heranca/pages/about.html',{
         'page_title': _("Quem somos"),
     })
+    
+def tribe_satere(request):
+    return render(request, 'heranca/pages/tribe_satere.html',{
+        'page_title': _("Sateré Mawé"),
+    })
 
 
 def after_login(request):

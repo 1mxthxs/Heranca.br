@@ -4,6 +4,106 @@
     {{page_title}}
 {% endblock title %}
 {% block content %}
+{% if '/en/' in request.path %}
+<main class="main-width">
+    <div class="top-title">
+        <h1>About Us</h1>
+    </div>
+    <div class="about-info">
+        <section class="about-info-text">
+            <p>Welcome to <b>HERANÇA.BR</b> - Unveiling the History of the Indigenous Peoples of Manacapuru!</p>
+        </section>
+        <section class="about-info-text">
+            <p>We are a platform dedicated to exploring and sharing the rich histories, origins, and heritages of the major indigenous peoples living around Manacapuru, offering a unique opportunity to understand their struggles, triumphs, and contributions to culture and society.</p>
+        </section>
+        <section class="about-info-text">
+            <h1><b>Our Mission</b></h1>
+            <p>Our mission is to create a deep and lasting awareness of the lives and experiences of the indigenous peoples who have shaped the landscapes and stories of Manacapuru and surrounding regions for centuries. Through authentic narratives and firsthand accounts, we seek to offer an intimate view of the hardships these peoples have faced or faced over time.</p>
+        </section>
+        <section class="about-info-text">
+            <h1><b>Exploring Cultural Diversity</b></h1>
+            <p>At HERANÇA.BR, we believe that understanding begins with learning. We invite you to dive into the fascinating traditions, languages, rituals, and beliefs of the indigenous peoples, discovering the depth of their ancestral wisdom. Each community is a unique link in the vast tapestry of indigenous culture, and we are committed to celebrating this diversity and preserving their narratives for future generations.</p>
+        </section>
+        <section class="about-info-text">
+            <h1><b>Join the Indigenous Awareness Movement</b></h1>
+            <p>By exploring this enriching space, you will be joining a vital movement of indigenous awareness. Learning about the difficulties faced by these communities is just the beginning. We aim to inspire action, promote empathy, and support initiatives that contribute to the well-being of these peoples. Be part of the positive change by informing yourself and sharing knowledge.</p>
+        </section>
+        <section class="about-info-text">
+            <h1><b>Navigate Through Stories</b></h1>
+            <p>Embark on a journey of discovery as we navigate through the stories of the indigenous peoples of Manacapuru. From ancient times to modern challenges, each page of HERANÇA.BR is a doorway to the past and a window to the future. Join us to explore the trails of memory and honor the heritages that connect us.</p>
+        </section>
+        <section class="about-info-text">
+            <h1><b>Contribute to Preservation</b></h1>
+            <p>Our commitment to cultural preservation does not end here. We invite everyone to share their own stories, photos, knowledge, and experiences related to the indigenous peoples of Manacapuru. By doing so, you help build a living and constantly evolving platform, dedicated to the preservation of indigenous narratives.</p>
+        </section>
+        <section class="about-info-text">
+            <h1><b>Join us on this journey of learning, empathy, and respect for the rich heritage of the indigenous peoples of Manacapuru. Together, we can make a difference!</b></h1>
+        </section>
+        <section class="team">
+            <div class="top-title">
+                <h1>Our Team</h1>
+            </div>
+            <div class="team-mates">
+                <div class="team-mate">
+                    <div class="team-mate-img">
+                        <img src="{% static 'heranca/images/about/camila.svg' %}" alt="">
+                    </div>
+                    <div class="team-mate-text">
+                        <h1>Camila Brito</h1>
+                        <h2>Designer and CEO.</h2>
+                    </div>
+                </div>
+                <div class="team-mate">
+                    <div class="team-mate-img">
+                        <img src="{% static 'heranca/images/about/debora.svg' %}" alt="">
+                    </div>
+                    <div class="team-mate-text">
+                        <h1>DEBORA CALHEIROS</h1>
+                        <h2>Designer</h2>
+                    </div>
+                </div>
+                <div class="team-mate">
+                    <div class="team-mate-img">
+                        <img src="{% static 'heranca/images/about/daiane.svg' %}" alt="">
+                    </div>
+                    <div class="team-mate-text">
+                        <h1>DAIANE SOARES</h1>
+                        <h2>Researcher</h2>
+                    </div>
+                </div>
+                <div class="team-mate">
+                    <div class="team-mate-img">
+                        <img src="{% static 'heranca/images/about/henry.svg' %}" alt="">
+                    </div>
+                    <div class="team-mate-text">
+                        <h1>HENRY COSTA</h1>
+                        <h2>Researcher and Translator</h2>
+                    </div>
+                </div>
+                <div class="team-mate">
+                    <div class="team-mate-img">
+                        <img src="{% static 'heranca/images/about/ana.svg' %}" alt="">
+                    </div>
+                    <div class="team-mate-text">
+                        <h1>ANA VITÓRIA</h1>
+                        <h2>Researcher</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="collaborators">
+            <div class="top-title">
+                <h1>Collaborators</h1>
+            </div>
+            <h2><b>Matheus Ricardo</b> - Programmer</h2>
+            <h2><b>Tiago da Silva</b> - Programmer</h2>
+            <h2><b>Patrícia</b> - Former Member and Researcher</h2>
+        </section>
+    </div>
+    
+</main>
+{% else %}
+
 <main class="main-width">
     <div class="top-title">
         <h1>Quem somos</h1>
@@ -13,23 +113,32 @@
             <p>Bem-vindo ao <b>HERANÇA.BR</b> - Desvendando a História dos Povos Indígenas de Manacapuru!</p>
         </section>
         <section class="about-info-text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vel libero! Totam, unde. Voluptas reprehenderit illo officiis autem, possimus dignissimos eaque debitis aliquid, corrupti dolor molestiae earum quos quidem eveniet.</p>
+            <p>Somos uma plataforma dedicada a explorar e compartilhar as ricas histórias, origens e heranças dos maiores povos indígenas que habitam as proximidades de Manacapuru, proporcionando uma oportunidade única de compreender suas lutas, triunfos e contribuições para a cultura e a sociedade.</p>
         </section>
         <section class="about-info-text">
-            <h1><b>Nossa Missão</b></h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vel libero! Totam, unde. Voluptas reprehenderit illo officiis autem, possimus dignissimos eaque debitis aliquid, corrupti dolor molestiae earum quos quidem eveniet.</p>
+            <h6><b>Nossa Missão</b></h6>
+            <p>Nossa missão é criar uma conscientização profunda e duradoura sobre as vidas e experiências dos povos indígenas que há séculos moldam as paisagens e as histórias de Manacapuru e regiões circunvizinhas. Através de narrativas autênticas e relatos diretos, buscamos oferecer uma visão íntima das dificuldades que esses povos enfrentam ou enfrentaram ao longo do tempo.</p>
         </section>
         <section class="about-info-text">
-            <h1><b>Nossa Missão</b></h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vel libero! Totam, unde. Voluptas reprehenderit illo officiis autem, possimus dignissimos eaque debitis aliquid, corrupti dolor molestiae earum quos quidem eveniet.</p>
+            <h6><b>Explorando a Diversidade Cultural</b></h6>
+            <p> No HERANÇA.BR, acreditamos que a compreensão começa com a aprendizagem. Convidamos você a mergulhar nas fascinantes tradições, línguas, rituais e crenças dos povos indígenas, descobrindo a profundidade de sua sabedoria ancestral. Cada comunidade é um elo único na vasta tapeçaria da cultura indígena, e estamos empenhados em celebrar essa diversidade e preservar suas narrativas para as gerações futuras.
+            </p>
         </section>
         <section class="about-info-text">
-            <h1><b>Nossa Missão</b></h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vel libero! Totam, unde. Voluptas reprehenderit illo officiis autem, possimus dignissimos eaque debitis aliquid, corrupti dolor molestiae earum quos quidem eveniet.</p>
+            <h6><b>Junte-se à Conscientização Indígena</b></h6>
+            <p>Ao explorar este espaço enriquecedor, você estará se unindo a um movimento vital de conscientização indígena. Aprender sobre as dificuldades enfrentadas por essas comunidades é apenas o começo. Queremos inspirar ações, promover a empatia e apoiar iniciativas que contribuam para o bem-estar desses povos. Seja parte da mudança positiva ao se informar e compartilhar conhecimento.
+            </p>
         </section>
         <section class="about-info-text">
-            <h1><b>Nossa Missão</b></h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vel libero! Totam, unde. Voluptas reprehenderit illo officiis autem, possimus dignissimos eaque debitis aliquid, corrupti dolor molestiae earum quos quidem eveniet.</p>
+            <h6><b>Navegue pelas Histórias</b></h6>
+            <p>Embarque em uma jornada de descoberta enquanto navegamos pelas histórias dos povos indígenas de Manacapuru. Desde os tempos ancestrais até os desafios modernos, cada página do HERANÇA.BR é uma porta para o passado e uma janela para o futuro. Junte-se a nós para explorar as trilhas da memória e honrar as heranças que nos conectam.</p>
+        </section>
+        <section class="about-info-text">
+            <h6><b>Contribua para a Preservação</b></h6>
+            <p>Nosso compromisso com a preservação cultural não termina aqui. Convidamos todos a compartilhar suas próprias histórias, fotos, conhecimentos e experiências relacionadas aos povos indígenas de Manacapuru. Ao fazer isso, você ajuda a construir uma plataforma viva e em constante evolução, dedicada à preservação das narrativas indígenas.</p>
+        </section>
+        <section class="about-info-text">
+            <h6><b>Junte-se a nós nesta jornada de aprendizado, empatia e respeito pela rica herança dos povos indígenas de Manacapuru. Juntos, podemos fazer a diferença!</b></h6>
         </section>
         <section class="team">
             <div class="top-title">
@@ -38,7 +147,7 @@
             <div class="team-mates">
                 <div class="team-mate">
                     <div class="team-mate-img">
-                        <img src="" alt="">
+                        <img src="{% static 'heranca/images/about/camila.svg' %}" alt="">
                     </div>
                     <div class="team-mate-text">
                         <h1>Camila Brito</h1>
@@ -47,7 +156,7 @@
                 </div>
                 <div class="team-mate">
                     <div class="team-mate-img">
-                        <img src="" alt="">
+                        <img src="{% static 'heranca/images/about/debora.svg' %}" alt="">
                     </div>
                     <div class="team-mate-text">
                         <h1>DEBORA CALHEIROS</h1>
@@ -56,7 +165,7 @@
                 </div>
                 <div class="team-mate">
                     <div class="team-mate-img">
-                        <img src="" alt="">
+                        <img src="{% static 'heranca/images/about/daiane.svg' %}" alt="">
                     </div>
                     <div class="team-mate-text">
                         <h1>DAIANE SOARES</h1>
@@ -65,7 +174,7 @@
                 </div>
                 <div class="team-mate">
                     <div class="team-mate-img">
-                        <img src="" alt="">
+                        <img src="{% static 'heranca/images/about/henry.svg' %}" alt="">
                     </div>
                     <div class="team-mate-text">
                         <h1>HENRY COSTA</h1>
@@ -74,7 +183,7 @@
                 </div>
                 <div class="team-mate">
                     <div class="team-mate-img">
-                        <img src="" alt="">
+                        <img src="{% static 'heranca/images/about/ana.svg' %}" alt="">
                     </div>
                     <div class="team-mate-text">
                         <h1>ANA VITÓRIA</h1>
@@ -94,6 +203,7 @@
     </div>
     
 </main>
+{% endif %}
 <section class="img-gratient">
     <div class="bottom-img">
         <img src="{% static 'heranca/images/dict/bottom2.svg' %}" alt="">

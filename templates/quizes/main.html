@@ -59,7 +59,21 @@
                         <div class="block-quiz-result">
                             {% if data.user_result is None%}0{% else %}{{ data.user_result }}{% endif %}/{{ data.quiz.number_of_questions }}
                         </div>
-                        {{ data.quiz.name|title }} - Nivel {{ data.quiz.difficulty|title }}
+                        {{ data.quiz.name|title }} - 
+                        {% if "/en/" in request.path %}Level
+                        {% else %}Nivel
+                        {% endif %}
+                         
+                        
+                        {% if data.quiz.difficulty == "easy" and "/en/" not in request.path %}
+                        Fácil
+                        {% elif data.quiz.difficulty == "medium" and "/en/" not in request.path%}
+                        Médio
+                        {% elif data.quiz.difficulty == "hard" and "/en/" not in request.path %}
+                        Difícil
+                        {% else %}
+                        {{ data.quiz.difficulty|title }}
+                        {% endif %}
                         <div class="left">
                             {% if data.user_result is None%}
                                 {% trans "JOGAR!" %}

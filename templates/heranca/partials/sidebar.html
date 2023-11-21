@@ -36,7 +36,13 @@
         {% endif %}
         <a class="sidebar-block sidebar-site-option" href="{% url 'dict_indigenous' %}">{% trans "Dicionario" %}</a>
         <a class="sidebar-block sidebar-site-option" href="{% url 'community' %}">{% trans "Comunidade" %}</a>
-        <a class="sidebar-block sidebar-site-option" href="{% url 'quizes:main-view' %}">Quiz</a>
+        <a class="sidebar-block sidebar-site-option" href="{% url 'about' %}">
+            {% if '/en/' in request.path  %}
+            About
+            {% else %}
+            Sobre
+            {% endif %}
+        </a>
     </div>
 </div>
     
